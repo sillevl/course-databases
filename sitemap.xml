@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>None/</loc>
+     <loc>/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -11,7 +11,7 @@
 
     
     <url>
-     <loc>None/mysql-introduction/</loc>
+     <loc>/mysql-introduction/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -19,7 +19,7 @@
 
     
     <url>
-     <loc>None/retreiving-data/</loc>
+     <loc>/retreiving-data/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -27,7 +27,7 @@
 
     
     <url>
-     <loc>None/sorting-retreived-data/</loc>
+     <loc>/sorting-retreived-data/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -35,7 +35,7 @@
 
     
     <url>
-     <loc>None/filtering-data/</loc>
+     <loc>/filtering-data/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -43,7 +43,7 @@
 
     
     <url>
-     <loc>None/searching-using-regular-expressions/</loc>
+     <loc>/searching-using-regular-expressions/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -51,7 +51,7 @@
 
     
     <url>
-     <loc>None/calculated-fields/</loc>
+     <loc>/calculated-fields/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -59,7 +59,7 @@
 
     
     <url>
-     <loc>None/summarizing-data/</loc>
+     <loc>/summarizing-data/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -67,7 +67,7 @@
 
     
     <url>
-     <loc>None/grouping-data/</loc>
+     <loc>/grouping-data/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -75,7 +75,7 @@
 
     
     <url>
-     <loc>None/subqueries/</loc>
+     <loc>/subqueries/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -83,7 +83,7 @@
 
     
     <url>
-     <loc>None/joins/</loc>
+     <loc>/joins/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -91,7 +91,7 @@
 
     
     <url>
-     <loc>None/combining-queries/</loc>
+     <loc>/combining-queries/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -99,7 +99,7 @@
 
     
     <url>
-     <loc>None/full-text-searching/</loc>
+     <loc>/full-text-searching/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -107,7 +107,7 @@
 
     
     <url>
-     <loc>None/inserting-data/</loc>
+     <loc>/inserting-data/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -115,7 +115,7 @@
 
     
     <url>
-     <loc>None/update-and-delete/</loc>
+     <loc>/update-and-delete/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -123,7 +123,7 @@
 
     
     <url>
-     <loc>None/creating-and-manipulating-tables/</loc>
+     <loc>/creating-and-manipulating-tables/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -131,7 +131,7 @@
 
     
     <url>
-     <loc>None/views/</loc>
+     <loc>/views/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -139,7 +139,7 @@
 
     
     <url>
-     <loc>None/stored-procedures/</loc>
+     <loc>/stored-procedures/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -147,7 +147,7 @@
 
     
     <url>
-     <loc>None/cursors/</loc>
+     <loc>/cursors/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -155,7 +155,7 @@
 
     
     <url>
-     <loc>None/triggers/</loc>
+     <loc>/triggers/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -163,7 +163,7 @@
 
     
     <url>
-     <loc>None/transactions/</loc>
+     <loc>/transactions/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -171,7 +171,7 @@
 
     
     <url>
-     <loc>None/globalization-and-localization/</loc>
+     <loc>/globalization-and-localization/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -179,7 +179,7 @@
 
     
     <url>
-     <loc>None/security/</loc>
+     <loc>/security/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -187,7 +187,7 @@
 
     
     <url>
-     <loc>None/database-maintenance/</loc>
+     <loc>/database-maintenance/</loc>
      <lastmod>2016-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
