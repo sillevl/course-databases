@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>None/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/mysql-introduction/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/retreiving-data/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/sorting-retreived-data/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/filtering-data/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/searching-using-regular-expressions/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/calculated-fields/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/summarizing-data/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/grouping-data/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/subqueries/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/joins/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/combining-queries/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/full-text-searching/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/inserting-data/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/update-and-delete/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/creating-and-manipulating-tables/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/views/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/stored-procedures/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/cursors/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/triggers/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/transactions/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/globalization-and-localization/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/security/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/database-maintenance/</loc>
+     <lastmod>2016-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+</urlset>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Filtering data - Databases</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Filtering data";
+    var mkdocs_page_input_path = "filtering-data.md";
+    var mkdocs_page_url = "/filtering-data/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Databases</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../mysql-introduction/">MySQL introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../retreiving-data/">Retreiving data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../sorting-retreived-data/">Sorting retreived data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Filtering data</a>
+        
+            <ul>
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../searching-using-regular-expressions/">Searching using Regular Expressions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../calculated-fields/">Calculated fields</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../summarizing-data/">Summarizing data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../grouping-data/">Grouping data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../subqueries/">Working with subqueries</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../joins/">Joining tables</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../combining-queries/">Combining queries</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../full-text-searching/">Full-text searching</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../inserting-data/">Inserting data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../update-and-delete/">Updating and deleting data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../creating-and-manipulating-tables/">Creating and manipulating tables</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../views/">Using views</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../stored-procedures/">Stored procedures</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../cursors/">Using cursors</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../triggers/">Using triggers</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../transactions/">Managing transaction processing</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../globalization-and-localization/">Globalization and localization</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">Managing Security</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../database-maintenance/">Database maintenance</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Databases</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Filtering data</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <pre><code class="sql">MariaDB [forta]&gt; SELECT prod_name FROM products LIMIT 5;
++--------------+
+| prod_name    |
++--------------+
+| .5 ton anvil |
+| 1 ton anvil  |
+| 2 ton anvil  |
+| Detonator    |
+| Bird seed    |
++--------------+
+5 rows in set (0.00 sec)
+</code></pre>
+
+<pre><code class="sql">MariaDB [forta]&gt; SELECT prod_name FROM products LIMIT 5, 5;
++--------------+
+| prod_name    |
++--------------+
+| Carrots      |
+| Fuses        |
+| JetPack 1000 |
+| JetPack 2000 |
+| Oil can      |
++--------------+
+5 rows in set (0.00 sec)
+</code></pre>
+
+<pre><code class="sql">MariaDB [forta]&gt; SELECT products.prod_name FROM products;
++----------------+
+| prod_name      |
++----------------+
+| .5 ton anvil   |
+| 1 ton anvil    |
+| 2 ton anvil    |
+| Detonator      |
+| Bird seed      |
+| Carrots        |
+| Fuses          |
+| JetPack 1000   |
+| JetPack 2000   |
+| Oil can        |
+| Safe           |
+| Sling          |
+| TNT (1 stick)  |
+| TNT (5 sticks) |
++----------------+
+14 rows in set (0.00 sec)
+</code></pre>
+
+<pre><code class="sql">MariaDB [forta]&gt; SELECT prod_name FROM products ORDER BY prod_name;
++----------------+
+| prod_name      |
++----------------+
+| .5 ton anvil   |
+| 1 ton anvil    |
+| 2 ton anvil    |
+| Bird seed      |
+| Carrots        |
+| Detonator      |
+| Fuses          |
+| JetPack 1000   |
+| JetPack 2000   |
+| Oil can        |
+| Safe           |
+| Sling          |
+| TNT (1 stick)  |
+| TNT (5 sticks) |
++----------------+
+14 rows in set (0.00 sec)
+</code></pre>
+
+<pre><code class="sql">MariaDB [forta]&gt; SELECT prod_id, prod_price, prod_name FROM products ORDER BY prod_price, prod_name;
++---------+------------+----------------+
+| prod_id | prod_price | prod_name      |
++---------+------------+----------------+
+| FC      |       2.50 | Carrots        |
+| TNT1    |       2.50 | TNT (1 stick)  |
+| FU1     |       3.42 | Fuses          |
+| SLING   |       4.49 | Sling          |
+| ANV01   |       5.99 | .5 ton anvil   |
+| OL1     |       8.99 | Oil can        |
+| ANV02   |       9.99 | 1 ton anvil    |
+| FB      |      10.00 | Bird seed      |
+| TNT2    |      10.00 | TNT (5 sticks) |
+| DTNTR   |      13.00 | Detonator      |
+| ANV03   |      14.99 | 2 ton anvil    |
+| JP1000  |      35.00 | JetPack 1000   |
+| SAFE    |      50.00 | Safe           |
+| JP2000  |      55.00 | JetPack 2000   |
++---------+------------+----------------+
+14 rows in set (0.03 sec)
+</code></pre>
+
+<pre><code class="sql">MariaDB [forta]&gt; SELECT prod_id, prod_price, prod_name FROM products ORDER BY prod_price DESC;
++---------+------------+----------------+
+| prod_id | prod_price | prod_name      |
++---------+------------+----------------+
+| JP2000  |      55.00 | JetPack 2000   |
+| SAFE    |      50.00 | Safe           |
+| JP1000  |      35.00 | JetPack 1000   |
+| ANV03   |      14.99 | 2 ton anvil    |
+| DTNTR   |      13.00 | Detonator      |
+| TNT2    |      10.00 | TNT (5 sticks) |
+| FB      |      10.00 | Bird seed      |
+| ANV02   |       9.99 | 1 ton anvil    |
+| OL1     |       8.99 | Oil can        |
+| ANV01   |       5.99 | .5 ton anvil   |
+| SLING   |       4.49 | Sling          |
+| FU1     |       3.42 | Fuses          |
+| FC      |       2.50 | Carrots        |
+| TNT1    |       2.50 | TNT (1 stick)  |
++---------+------------+----------------+
+14 rows in set (0.00 sec)
+</code></pre>
+
+<pre><code class="sql">MariaDB [forta]&gt; SELECT prod_id, prod_price, prod_name FROM products ORDER BY prod_price DESC, prod_name;
++---------+------------+----------------+
+| prod_id | prod_price | prod_name      |
++---------+------------+----------------+
+| JP2000  |      55.00 | JetPack 2000   |
+| SAFE    |      50.00 | Safe           |
+| JP1000  |      35.00 | JetPack 1000   |
+| ANV03   |      14.99 | 2 ton anvil    |
+| DTNTR   |      13.00 | Detonator      |
+| FB      |      10.00 | Bird seed      |
+| TNT2    |      10.00 | TNT (5 sticks) |
+| ANV02   |       9.99 | 1 ton anvil    |
+| OL1     |       8.99 | Oil can        |
+| ANV01   |       5.99 | .5 ton anvil   |
+| SLING   |       4.49 | Sling          |
+| FU1     |       3.42 | Fuses          |
+| FC      |       2.50 | Carrots        |
+| TNT1    |       2.50 | TNT (1 stick)  |
++---------+------------+----------------+
+14 rows in set (0.00 sec)
+</code></pre>
+
+<pre><code class="sql">MariaDB [forta]&gt; SELECT prod_price FROM products ORDER BY prod_price DESC LIMIT 1;
++------------+
+| prod_price |
++------------+
+|      55.00 |
++------------+
+1 row in set (0.00 sec)
+</code></pre>
+
+<pre><code class="sql">MariaDB [forta]&gt; SELECT prod_name, prod_price FROM products WHERE prod_price = 2.50;
++---------------+------------+
+| prod_name     | prod_price |
++---------------+------------+
+| Carrots       |       2.50 |
+| TNT (1 stick) |       2.50 |
++---------------+------------+
+2 rows in set (0.00 sec)
+</code></pre>
+
+<pre><code class="sql">MariaDB [forta]&gt; SELECT prod_name, prod_price FROM products WHERE prod_name = 'fuses';
++-----------+------------+
+| prod_name | prod_price |
++-----------+------------+
+| Fuses     |       3.42 |
++-----------+------------+
+1 row in set (0.00 sec)
+</code></pre>
+
+<pre><code class="sql">MariaDB [forta]&gt; SELECT prod_name, prod_price FROM products WHERE prod_price &lt;= 10;
++----------------+------------+
+| prod_name      | prod_price |
++----------------+------------+
+| .5 ton anvil   |       5.99 |
+| 1 ton anvil    |       9.99 |
+| Bird seed      |      10.00 |
+| Carrots        |       2.50 |
+| Fuses          |       3.42 |
+| Oil can        |       8.99 |
+| Sling          |       4.49 |
+| TNT (1 stick)  |       2.50 |
+| TNT (5 sticks) |      10.00 |
++----------------+------------+
+9 rows in set (0.00 sec)
+</code></pre>
+
+<pre><code class="sql">MariaDB [forta]&gt; SELECT vend_id, prod_name FROM products WHERE vend_id &lt;&gt; 1003;
++---------+--------------+
+| vend_id | prod_name    |
++---------+--------------+
+|    1001 | .5 ton anvil |
+|    1001 | 1 ton anvil  |
+|    1001 | 2 ton anvil  |
+|    1002 | Fuses        |
+|    1005 | JetPack 1000 |
+|    1005 | JetPack 2000 |
+|    1002 | Oil can      |
++---------+--------------+
+7 rows in set (0.00 sec)
+</code></pre>
+
+<pre><code class="sql">MariaDB [forta]&gt; SELECT vend_id, prod_name FROM products WHERE vend_id != 1003;
++---------+--------------+
+| vend_id | prod_name    |
++---------+--------------+
+|    1001 | .5 ton anvil |
+|    1001 | 1 ton anvil  |
+|    1001 | 2 ton anvil  |
+|    1002 | Fuses        |
+|    1005 | JetPack 1000 |
+|    1005 | JetPack 2000 |
+|    1002 | Oil can      |
++---------+--------------+
+7 rows in set (0.00 sec)
+</code></pre>
+
+<pre><code class="sql">MariaDB [forta]&gt; SELECT prod_name, prod_price FROM products WHERE prod_price BETWEEN 5 and 10;
++----------------+------------+
+| prod_name      | prod_price |
++----------------+------------+
+| .5 ton anvil   |       5.99 |
+| 1 ton anvil    |       9.99 |
+| Bird seed      |      10.00 |
+| Oil can        |       8.99 |
+| TNT (5 sticks) |      10.00 |
++----------------+------------+
+5 rows in set (0.00 sec)
+</code></pre>
+
+<pre><code class="sql">MariaDB [forta]&gt; SELECT prod_name FROM products WHERE prod_price IS NULL;
+Empty set (0.00 sec)
+</code></pre>
+
+<pre><code class="sql">MariaDB [forta]&gt; SELECT cust_id FROM customers WHERE cust_email IS NULL;
++---------+
+| cust_id |
++---------+
+|   10002 |
+|   10005 |
++---------+
+2 rows in set (0.00 sec)
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../searching-using-regular-expressions/" class="btn btn-neutral float-right" title="Searching using Regular Expressions">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../sorting-retreived-data/" class="btn btn-neutral" title="Sorting retreived data"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../sorting-retreived-data/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../searching-using-regular-expressions/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
