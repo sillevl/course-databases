@@ -8,3 +8,4 @@
 * Sorting retreived Databases
 * Filtering data
 * Advanced data filtering
+* Niels was aanwezig 
