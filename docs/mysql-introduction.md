@@ -16,9 +16,9 @@ And enter the following command :
 ```
 
 ---
-To combine all steps above a script has been created for your ease , save the following code as a batch file (.bat extension) and double click it. This will :
-* open Xammp Control center (for easier monitoring & managing of the server)
-* a command window that will actually start the srever (so you don't have to click Start, a real timesaver). This windwo remains open.
+To combine all steps above a script has been created for your ease , save the following code as a batch file (.bat extension) and double click it. This will open/run :
+* Xammp Control center (for easier monitoring & managing of the server)
+* a command window that will actually start the server (so you don't have to click Start, a real timesaver). This window remains open.
 * a command window that will log in to the database monitor 
 ```bat
 @echo off
@@ -48,7 +48,7 @@ pause
 
 
 # Navigating the MySQL Database Monitor (MariaDB)
-<i><b>Pro tip</b> : first thing you do is change the standard delimiter (``` ; ```) so when needed, you can combine SQL commands.</i>
+<i><b>Pro tip</b> : first thing you should do is change the standard delimiter (``` ; ```) so when needed, you can combine SQL commands.</i>
 ```sql
 delimiter &&
 ```
@@ -74,8 +74,9 @@ MariaDB [(none)]> show databases &&
 ### Select a database
 
 ```sql
-MariaDB [mysql]> use phpmyadmin &&
+MariaDB [(none)]> use phpmyadmin &&
 Database changed
+MariaDB [phpmyadmin]>
 ```
 ### Show tables
 ```sql
