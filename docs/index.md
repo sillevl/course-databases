@@ -6,5 +6,7 @@
 * Working with MySQL
 * Retrieving data
 * Sorting retreived Databases
-* Filtering data
 * Advanced data filtering
+
+## Hello world
+### Lorem ipsum
