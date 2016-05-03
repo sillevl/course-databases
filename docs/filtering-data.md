@@ -1,8 +1,12 @@
-
+# Filtering data
 
 
 ```sql
-MariaDB [forta]> SELECT prod_name FROM products LIMIT 5;
+SELECT prod_name
+FROM products
+LIMIT 5;
+```
+```
 +--------------+
 | prod_name    |
 +--------------+
@@ -16,7 +20,11 @@ MariaDB [forta]> SELECT prod_name FROM products LIMIT 5;
 ```
 
 ```sql
-MariaDB [forta]> SELECT prod_name FROM products LIMIT 5, 5;
+SELECT prod_name
+FROM products
+LIMIT 5, 5;
+```
+```
 +--------------+
 | prod_name    |
 +--------------+
@@ -30,7 +38,10 @@ MariaDB [forta]> SELECT prod_name FROM products LIMIT 5, 5;
 ```
 
 ```sql
-MariaDB [forta]> SELECT products.prod_name FROM products;
+SELECT products.prod_name
+FROM products;
+```
+```
 +----------------+
 | prod_name      |
 +----------------+
@@ -54,7 +65,11 @@ MariaDB [forta]> SELECT products.prod_name FROM products;
 
 
 ```sql
-MariaDB [forta]> SELECT prod_name FROM products ORDER BY prod_name;
+SELECT prod_name
+FROM products
+ORDER BY prod_name;
+```
+```
 +----------------+
 | prod_name      |
 +----------------+
@@ -77,7 +92,11 @@ MariaDB [forta]> SELECT prod_name FROM products ORDER BY prod_name;
 ```
 
 ```sql
-MariaDB [forta]> SELECT prod_id, prod_price, prod_name FROM products ORDER BY prod_price, prod_name;
+SELECT prod_id, prod_price, prod_name
+FROM products
+ORDER BY prod_price, prod_name;
+```
+```
 +---------+------------+----------------+
 | prod_id | prod_price | prod_name      |
 +---------+------------+----------------+
@@ -100,7 +119,11 @@ MariaDB [forta]> SELECT prod_id, prod_price, prod_name FROM products ORDER BY pr
 ```
 
 ```sql
-MariaDB [forta]> SELECT prod_id, prod_price, prod_name FROM products ORDER BY prod_price DESC;
+SELECT prod_id, prod_price, prod_name
+FROM products
+ORDER BY prod_price DESC;
+```
+```
 +---------+------------+----------------+
 | prod_id | prod_price | prod_name      |
 +---------+------------+----------------+
@@ -123,7 +146,11 @@ MariaDB [forta]> SELECT prod_id, prod_price, prod_name FROM products ORDER BY pr
 ```
 
 ```sql
-MariaDB [forta]> SELECT prod_id, prod_price, prod_name FROM products ORDER BY prod_price DESC, prod_name;
+SELECT prod_id, prod_price, prod_name
+FROM products
+ORDER BY prod_price DESC, prod_name;
+```
+```
 +---------+------------+----------------+
 | prod_id | prod_price | prod_name      |
 +---------+------------+----------------+
@@ -147,7 +174,11 @@ MariaDB [forta]> SELECT prod_id, prod_price, prod_name FROM products ORDER BY pr
 
 
 ```sql
-MariaDB [forta]> SELECT prod_price FROM products ORDER BY prod_price DESC LIMIT 1;
+SELECT prod_price
+FROM products
+ORDER BY prod_price DESC LIMIT 1;
+```
+```
 +------------+
 | prod_price |
 +------------+
@@ -157,7 +188,11 @@ MariaDB [forta]> SELECT prod_price FROM products ORDER BY prod_price DESC LIMIT 
 ```
 
 ```sql
-MariaDB [forta]> SELECT prod_name, prod_price FROM products WHERE prod_price = 2.50;
+SELECT prod_name, prod_price
+FROM products
+WHERE prod_price = 2.50;
+```
+```
 +---------------+------------+
 | prod_name     | prod_price |
 +---------------+------------+
@@ -168,7 +203,11 @@ MariaDB [forta]> SELECT prod_name, prod_price FROM products WHERE prod_price = 2
 ```
 
 ```sql
-MariaDB [forta]> SELECT prod_name, prod_price FROM products WHERE prod_name = 'fuses';
+SELECT prod_name, prod_price
+FROM products
+WHERE prod_name = 'fuses';
+```
+```
 +-----------+------------+
 | prod_name | prod_price |
 +-----------+------------+
@@ -178,7 +217,11 @@ MariaDB [forta]> SELECT prod_name, prod_price FROM products WHERE prod_name = 'f
 ```
 
 ```sql
-MariaDB [forta]> SELECT prod_name, prod_price FROM products WHERE prod_price <= 10;
+SELECT prod_name, prod_price
+FROM products
+WHERE prod_price <= 10;
+```
+```
 +----------------+------------+
 | prod_name      | prod_price |
 +----------------+------------+
@@ -196,7 +239,11 @@ MariaDB [forta]> SELECT prod_name, prod_price FROM products WHERE prod_price <= 
 ```
 
 ```sql
-MariaDB [forta]> SELECT vend_id, prod_name FROM products WHERE vend_id <> 1003;
+SELECT vend_id, prod_name
+FROM products
+WHERE vend_id <> 1003;
+```
+```
 +---------+--------------+
 | vend_id | prod_name    |
 +---------+--------------+
@@ -213,7 +260,11 @@ MariaDB [forta]> SELECT vend_id, prod_name FROM products WHERE vend_id <> 1003;
 
 
 ```sql
-MariaDB [forta]> SELECT vend_id, prod_name FROM products WHERE vend_id != 1003;
+SELECT vend_id, prod_name
+FROM products
+WHERE vend_id != 1003;
+```
+```
 +---------+--------------+
 | vend_id | prod_name    |
 +---------+--------------+
@@ -229,7 +280,11 @@ MariaDB [forta]> SELECT vend_id, prod_name FROM products WHERE vend_id != 1003;
 ```
 
 ```sql
-MariaDB [forta]> SELECT prod_name, prod_price FROM products WHERE prod_price BETWEEN 5 and 10;
+SELECT prod_name, prod_price
+FROM products
+WHERE prod_price BETWEEN 5 and 10;
+```
+```
 +----------------+------------+
 | prod_name      | prod_price |
 +----------------+------------+
@@ -243,12 +298,20 @@ MariaDB [forta]> SELECT prod_name, prod_price FROM products WHERE prod_price BET
 ```
 
 ```sql
-MariaDB [forta]> SELECT prod_name FROM products WHERE prod_price IS NULL;
+SELECT prod_name
+FROM products
+WHERE prod_price IS NULL;
+```
+```
 Empty set (0.00 sec)
 ```
 
 ```sql
-MariaDB [forta]> SELECT cust_id FROM customers WHERE cust_email IS NULL;
+SELECT cust_id
+FROM customers
+WHERE cust_email IS NULL;
+```
+```
 +---------+
 | cust_id |
 +---------+

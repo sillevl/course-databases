@@ -1,10 +1,9 @@
+# MySQL introduction
 
 ```sql
 SHOW DATABASES
 ```
-
-```sql
-MariaDB [employees]> show databases;
+```
 +--------------------+
 | Database           |
 +--------------------+
@@ -18,17 +17,19 @@ MariaDB [employees]> show databases;
 | test               |
 +--------------------+
 8 rows in set (0.00 sec)
-
-MariaDB [employees]>
 ```
 
 ```sql
-MariaDB [employees]> use employees;
+USE employees;
+```
+```
 Database changed
 ```
 
 ```sql
-MariaDB [employees]> show tables;
+SHOW TABLES;
+```
+```
 +----------------------+
 | Tables_in_employees  |
 +----------------------+
@@ -45,7 +46,9 @@ MariaDB [employees]> show tables;
 ```
 
 ```sql
-MariaDB [employees]> show columns from employees;
+SHOW COLUMNS FROM employees;
+```
+```
 +------------+---------------+------+-----+---------+-------+
 | Field      | Type          | Null | Key | Default | Extra |
 +------------+---------------+------+-----+---------+-------+

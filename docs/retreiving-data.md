@@ -1,7 +1,9 @@
-
+# Retreiving data
 
 ```sql
-MariaDB [forta]> select prod_name from products;
+SELECT prod_name FROM products;
+```
+```
 +----------------+
 | prod_name      |
 +----------------+
@@ -25,7 +27,9 @@ MariaDB [forta]> select prod_name from products;
 
 
 ```sql
-MariaDB [forta]> SELECT prod_id, prod_name, prod_price FROM products;
+SELECT prod_id, prod_name, prod_price FROM products;
+```
+```
 +---------+----------------+------------+
 | prod_id | prod_name      | prod_price |
 +---------+----------------+------------+
@@ -49,7 +53,9 @@ MariaDB [forta]> SELECT prod_id, prod_name, prod_price FROM products;
 
 
 ```sql
-MariaDB [forta]> SELECT * FROM products;
+SELECT * FROM products;
+```
+```
 +---------+---------+----------------+------------+----------------------------------------------------------------+
 | prod_id | vend_id | prod_name      | prod_price | prod_desc                                                      |
 +---------+---------+----------------+------------+----------------------------------------------------------------+
@@ -72,7 +78,9 @@ MariaDB [forta]> SELECT * FROM products;
 ```
 
 ```sql
-MariaDB [forta]> SELECT vend_id FROM products;
+-SELECT vend_id FROM products;
+```
+```
 +---------+
 | vend_id |
 +---------+
@@ -95,7 +103,9 @@ MariaDB [forta]> SELECT vend_id FROM products;
 ```
 
 ```sql
-MariaDB [forta]> SELECT DISTINCT vend_id FROM products;
+SELECT DISTINCT vend_id FROM products;
+```
+```
 +---------+
 | vend_id |
 +---------+

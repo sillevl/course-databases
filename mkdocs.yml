@@ -1,5 +1,13 @@
 site_name: Databases
+site_url: http://sillevl.github.io/course-databases/
+repo_url: https://github.com/sillevl/course-databases
+repo_name: GitHub
+site_athor: Sille Van Landschoot
 theme: readthedocs
+markdown_extensions:
+ - admonition
+ - attr_list
+ - def_list
 pages:
   - Home: index.md
   - MySQL introduction: mysql-introduction.md
@@ -8,6 +16,7 @@ pages:
   - Filtering data: filtering-data.md
   - Searching using Regular Expressions: searching-using-regular-expressions.md
   - Calculated fields: calculated-fields.md
+  - Data manipulation: data-manipulation.md
   - Summarizing data: summarizing-data.md
   - Grouping data: grouping-data.md
   - Working with subqueries: subqueries.md
@@ -23,5 +32,6 @@ pages:
   - Using triggers: triggers.md
   - Managing transaction processing: transactions.md
   - Globalization and localization: globalization-and-localization.md
-  - Managing Security: security.md
+  - Managing database users: database-users.md
   - Database maintenance: database-maintenance.md
+  - Storing passwords: passwords.md
