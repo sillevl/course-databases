@@ -22,7 +22,9 @@ We can now access a user via :
 mysql -u username -p -h 10.177.33.192;
 ```
 -p specifies that the user requires a password to be filled in
+
 -h specifies that the user wants to access a database on another host in the same network
+
 10.177.33.192 is the IP address where the database is allocated
 
 Securing users by providing them with a password is done via :
