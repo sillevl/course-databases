@@ -2,7 +2,7 @@ site_name: Databases
 site_url: http://sillevl.github.io/course-databases/
 repo_url: https://github.com/sillevl/course-databases
 repo_name: GitHub
-site_athor: Sille Van Landschoot
+site_author: Sille Van Landschoot
 theme: readthedocs
 markdown_extensions:
  - admonition
@@ -34,4 +34,7 @@ pages:
   - Globalization and localization: globalization-and-localization.md
   - Managing database users: database-users.md
   - Database maintenance: database-maintenance.md
+  - Concurrency: concurrency.md
   - Storing passwords: passwords.md
+  - PHP PDO's: php-pdo.md
+  - Testdocument: test.md
