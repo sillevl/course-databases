@@ -172,7 +172,7 @@
         },
         {
             "location": "/grouping-data/",
-            "text": "Grouping data\n\n\nCreating groups",
+            "text": "Grouping data\n\n\nCreating groups\n\n\nSELECT vend_id, COUNT(*) AS num_prods FROM products GROUP BY vend_id;\n+---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1001 |         3 |\n|    1002 |         2 |\n|    1003 |         7 |\n|    1005 |         2 |\n+---------+-----------+\n\n\nFiltering groups\n\n\nSELECT cust_id, COUNT(\n) AS orders FROM orders GROUP BY cust_id HAVING COUNT(\n) >= 2;\n+---------+--------+\n| cust_id | orders |\n+---------+--------+\n|   10001 |      2 |\n+---------+--------+\n\n\nSELECT vend_id, COUNT(\n) AS num_prods FROM products WHERE prod_price >= 10 GROUP BY vend_id HAVING COUNT(\n) >= 2;\n+---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1003 |         4 |\n|    1005 |         2 |\n+---------+-----------+",
             "title": "Grouping data"
         },
         {
@@ -182,8 +182,13 @@
         },
         {
             "location": "/grouping-data/#creating-groups",
-            "text": "",
+            "text": "SELECT vend_id, COUNT(*) AS num_prods FROM products GROUP BY vend_id;\n+---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1001 |         3 |\n|    1002 |         2 |\n|    1003 |         7 |\n|    1005 |         2 |\n+---------+-----------+",
             "title": "Creating groups"
+        },
+        {
+            "location": "/grouping-data/#filtering-groups",
+            "text": "SELECT cust_id, COUNT( ) AS orders FROM orders GROUP BY cust_id HAVING COUNT( ) >= 2;\n+---------+--------+\n| cust_id | orders |\n+---------+--------+\n|   10001 |      2 |\n+---------+--------+  SELECT vend_id, COUNT( ) AS num_prods FROM products WHERE prod_price >= 10 GROUP BY vend_id HAVING COUNT( ) >= 2;\n+---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1003 |         4 |\n|    1005 |         2 |\n+---------+-----------+",
+            "title": "Filtering groups"
         },
         {
             "location": "/subqueries/",
@@ -336,6 +341,11 @@
             "title": "Database maintenance"
         },
         {
+            "location": "/concurrency/",
+            "text": "",
+            "title": "Concurrency"
+        },
+        {
             "location": "/passwords/",
             "text": "Passwords",
             "title": "Storing passwords"
@@ -344,6 +354,116 @@
             "location": "/passwords/#passwords",
             "text": "",
             "title": "Passwords"
+        },
+        {
+            "location": "/php-pdo/",
+            "text": "PHP PDO\n\n\nPHP database extensions\n\n\nThere are several ways to interface with MySQL (or other database management systems). PHP provides 3 extensions.\n\n\nMySQL \u2013 MySQL extension\n\n\n\n\nIncluded in PHP 3.x, 4.x, 5.x\n\n\nDoes not take advantage of the new features of MySQL 4.1.3 and later\n\n\nNot under active development\n\n\nRemoved in PHP 7.0\n\n\n\n\nMySQLi \u2013 MySQL extension improved\n\n\n\n\nObject oriented AND procedural\n\n\nTakes full advantage of all the features of MySQL 4.1.3 and later\n\n\nMySQL Only!\n\n\nRemoved in PHP 7.0\n\n\n\n\nPDO \u2013 PHP Data Object\n\n\n\n\nSince PHP 5.1\n\n\nConsistent object-oriented interface\n\n\nMultiple database support (12): MySQL, MsSql, Sqlite, Oracle, IBM, Posgresql,\u2026\n\n\nPortable\n\n\nDoesn\u2019t take full advantage of all the features of MySQL 4.1.3 and later\n\n\n\n\nPHP Data Objects provide an database abstraction layer. PDO is the \nmethod of choice\n when interfacing a database in PHP.\n\n\nPDO: PHP Data Object\n\n\nPDO provides a database access layer enabling a uniform method of access to multiple databases. Changing database type does not change the PDO code. This enables switching database types without rewriting any code.\n\n\n\n\nTo get all available drivers you can use the \ngetAvailableDrivers()\n function:\n\n\nprint_r(PDO::getAvailableDrivers());\n\n\n\n\nPHP Data Objects supports the following drivers:\n\n\n\n\n\n\n\n\nDriver name\n\n\nSupported databases\n\n\n\n\n\n\n\n\n\n\nPDO_CUBRID\n\n\nCubrid\n\n\n\n\n\n\nPDO_DBLIB\n\n\nFreeTDS / Microsoft SQL Server / Sybase\n\n\n\n\n\n\nPDO_FIREBIRD\n\n\nFirebird\n\n\n\n\n\n\nPDO_IBM\n\n\nIBM DB2\n\n\n\n\n\n\nPDO_INFORMIX\n\n\nIBM Informix Dynamic Server\n\n\n\n\n\n\nPDO_MYSQL\n\n\nMySQL 3.x/4.x/5.x\n\n\n\n\n\n\nPDO_OCI\n\n\nOracle Call Interface\n\n\n\n\n\n\nPDO_ODBC\n\n\nODBC v3 (IBM DB2, unixODBC and win32 ODBC)\n\n\n\n\n\n\nPDO_PGSQL\n\n\nPostgreSQL\n\n\n\n\n\n\nPDO_SQLITE\n\n\nSQLite 3 and SQLite 2\n\n\n\n\n\n\nPDO_SQLSRV\n\n\nMicrosoft SQL Server / SQL Azure\n\n\n\n\n\n\nPDO_4D\n\n\n4D\n\n\n\n\n\n\n\n\nConnection strings\n\n\nOpening and closing connections\n\n\nExceptions\n\n\nError modes\n\n\nError handling\n\n\nInserting and updating data\n\n\nInserting and updating data follows a \ntwo-step process\n:\n\n\n\n\nPrepare\n\n\nExecute\n\n\n\n\n# STH means \"Statement Handle\"\n$STH = $DBH->prepare(\n   \"INSERT INTO folks ( first_name ) values ( 'Cathy' )\"\n);\n$STH->execute();\n\n\n\n\nAn additional 'bind' step can be added by using prepared statements.\n\n\n\n\nPrepared statements\n\n\nPrepared statements make use of \nprecompiled SQL statements\n.\nThese statements can be \nexecuted multiple times\n.\nPrepared statements have the benefit of automatically making data \u201csafe\u201d by\n\nprotecting against SQL injection\n. This is accomplished by making use of \nplaceholders\n.\n\n\nPHP Data Objects support two types of placeholders. Named and unnamed placeholders.\n\n\n\n\nUnsafe data\n\n\nAll data inserted by the user of an website (eg: filling in a form, search text,\nor anything other that is not hard-coded into PHP) is considered unsafe!\n\n\n\n\n# no placeholders - ripe for SQL Injection!\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) values ($name, $addr, $city)\");\n\n# unnamed placeholders\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) values (?, ?, ?)\u201d;\n\n# named placeholders\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) value (:name, :addr, :city)\");\n\n\n\n\nUnnamed placeholders\n\n\nWrite queries just like before, but instead of inserting the \"unsafe\" data as parts\nof the query string, place a question mark sign \n?\n as placeholder for the data.\nThe unsafe data is then passed to the \nexecute()\n method as an array. The indexes of\nthe array must correspond with the place of the question mark.\nThe array MUST be indexed in the right order.\n\n\nStatements can be reused by passing in other arrays with different data with\nthe \nexecute()\n method.\n\n\n# the data we want to insert\n$data = array('Cathy', '9 Dark and Twisty Road', 'Cardiff');\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) values (?, ?, ?);\n$STH->execute($data);\n\n\n\n\nNamed placeholders\n\n\nInstead of using question marks as placeholder, a named placeholder is used.\nA placeholder starts with an colon sign: \n:\n followed by an name. When passing\nthe data array to the \nexecute()\n method, an associative array must be used.\nThe associative indexes of the array must then correspond with the names of the\nplaceholders.\nThe advantage is that the array indexes can be out of order.\n\n\n# the data we want to insert\n$data = array(\n   'name' => 'Cathy', 'addr' => '9 Dark and Twisty', 'city' => 'Cardiff'\n);\n\n# the shortcut!\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city)\n   value (:name, :addr, :city)\");\n$STH->execute($data);\n\n\n\n\nSelecting data\n\n\nPHP Data Objects enable to select and retrieve results in different ways.\nResults can be fetched as:\n\n\n\n\nAssociative array\n\n\nObjects of type stdClass\n\n\nObjects of a predefined class\n\n\n...\n\n\n\n\nThe fetch mode can be set with the \nsetFetchMode()\n function:\n\n\n// Fetch results as an associative array\n$STH->setFetchMode(PDO::FETCH_ASSOC);\n\n// Fetch results as objects of type stdClass\n$STH->setFetchMode(PDO::FETCH_OBJ);\n\n// Fetch results as objects of type MyClass\n$STH->setFetchMode(PDO::FETCH_CLASS, 'MyClass');\n\n\n\n\n\n\nstdClass\n\n\nstdClass is PHP's generic empty class, kind of like Object in Java or object in Python.\nstdClass is not used as universal base class like Object in Java.\n\n\n\n\nFetch as associative array\n\n\nReturn results in an associative array\nIndexed by column name\n\n\nPDO::FETCH_ASSOC\n\n\n# using the shortcut ->query() method here since there\n# are no variable values in the select statement.\n$STH = $DBH->query('SELECT name, addr, city from folks');\n\n# setting the fetch mode\n$STH->setFetchMode(PDO::FETCH_ASSOC);\nwhile($row = $STH->fetch()) {\n   echo $row['name'] . \"\\n\";\n   echo $row['addr'] . \"\\n\";\n   echo $row['city'] . \"\\n\";\n}\n\n\n\n\nFetch as object of type stdClass\n\n\nReturn results in an object of std class for each row of fetched data\n\n\n# creating the statement\n$STH = $DBH->query('SELECT name, addr, city from folks');\n\n# setting the fetch mode\n$STH->setFetchMode(PDO::FETCH_OBJ);\n# showing the results while($row = $STH->fetch()) {\n   echo $row->name . \"\\n\";\n   echo $row->addr . \"\\n\";\n   echo $row->city . \"\\n\";\n}\n\n\n\n\nFetch as object of a predefined class\n\n\nFetch data directly into a class of choosing\nProperties are set before the constructor is called\nProperty names will match column names\nIf property does not match it will be created\n\n\n$STH->setFetchMode(PDO::FETCH_CLASS, \u2018classname');\n\n\n\n\n$STH->setFetchMode(\u000b   PDO::FETCH_CLASS, 'secret_person', array('stuff'));\n\n\n\n\nclass secret_person {\n   public $name;\n   public $addr;\n   public $city;\n   public $other_data;\n   function __construct($other = '') {\n      $this->address = preg_replace('/[a-z]/', 'x', $this->address);\n      $this->other_data = $other;\n   }\n}\n\n\n\n\n$STH = $DBH->query('SELECT name, addr, city from folks');\n$STH->setFetchMode(PDO::FETCH_CLASS, 'secret_person');\nwhile($obj = $STH->fetch()) {\n   echo $obj->addr;\n}\n\n\n\n\nHelpful methods",
+            "title": "PHP PDO's"
+        },
+        {
+            "location": "/php-pdo/#php-pdo",
+            "text": "",
+            "title": "PHP PDO"
+        },
+        {
+            "location": "/php-pdo/#php-database-extensions",
+            "text": "There are several ways to interface with MySQL (or other database management systems). PHP provides 3 extensions.",
+            "title": "PHP database extensions"
+        },
+        {
+            "location": "/php-pdo/#mysql-mysql-extension",
+            "text": "Included in PHP 3.x, 4.x, 5.x  Does not take advantage of the new features of MySQL 4.1.3 and later  Not under active development  Removed in PHP 7.0",
+            "title": "MySQL \u2013 MySQL extension"
+        },
+        {
+            "location": "/php-pdo/#mysqli-mysql-extension-improved",
+            "text": "Object oriented AND procedural  Takes full advantage of all the features of MySQL 4.1.3 and later  MySQL Only!  Removed in PHP 7.0",
+            "title": "MySQLi \u2013 MySQL extension improved"
+        },
+        {
+            "location": "/php-pdo/#pdo-php-data-object",
+            "text": "Since PHP 5.1  Consistent object-oriented interface  Multiple database support (12): MySQL, MsSql, Sqlite, Oracle, IBM, Posgresql,\u2026  Portable  Doesn\u2019t take full advantage of all the features of MySQL 4.1.3 and later   PHP Data Objects provide an database abstraction layer. PDO is the  method of choice  when interfacing a database in PHP.",
+            "title": "PDO \u2013 PHP Data Object"
+        },
+        {
+            "location": "/php-pdo/#pdo-php-data-object_1",
+            "text": "PDO provides a database access layer enabling a uniform method of access to multiple databases. Changing database type does not change the PDO code. This enables switching database types without rewriting any code.   To get all available drivers you can use the  getAvailableDrivers()  function:  print_r(PDO::getAvailableDrivers());  PHP Data Objects supports the following drivers:     Driver name  Supported databases      PDO_CUBRID  Cubrid    PDO_DBLIB  FreeTDS / Microsoft SQL Server / Sybase    PDO_FIREBIRD  Firebird    PDO_IBM  IBM DB2    PDO_INFORMIX  IBM Informix Dynamic Server    PDO_MYSQL  MySQL 3.x/4.x/5.x    PDO_OCI  Oracle Call Interface    PDO_ODBC  ODBC v3 (IBM DB2, unixODBC and win32 ODBC)    PDO_PGSQL  PostgreSQL    PDO_SQLITE  SQLite 3 and SQLite 2    PDO_SQLSRV  Microsoft SQL Server / SQL Azure    PDO_4D  4D",
+            "title": "PDO: PHP Data Object"
+        },
+        {
+            "location": "/php-pdo/#connection-strings",
+            "text": "",
+            "title": "Connection strings"
+        },
+        {
+            "location": "/php-pdo/#opening-and-closing-connections",
+            "text": "",
+            "title": "Opening and closing connections"
+        },
+        {
+            "location": "/php-pdo/#exceptions",
+            "text": "",
+            "title": "Exceptions"
+        },
+        {
+            "location": "/php-pdo/#error-modes",
+            "text": "",
+            "title": "Error modes"
+        },
+        {
+            "location": "/php-pdo/#error-handling",
+            "text": "",
+            "title": "Error handling"
+        },
+        {
+            "location": "/php-pdo/#inserting-and-updating-data",
+            "text": "Inserting and updating data follows a  two-step process :   Prepare  Execute   # STH means \"Statement Handle\"\n$STH = $DBH->prepare(\n   \"INSERT INTO folks ( first_name ) values ( 'Cathy' )\"\n);\n$STH->execute();  An additional 'bind' step can be added by using prepared statements.",
+            "title": "Inserting and updating data"
+        },
+        {
+            "location": "/php-pdo/#prepared-statements",
+            "text": "Prepared statements make use of  precompiled SQL statements .\nThese statements can be  executed multiple times .\nPrepared statements have the benefit of automatically making data \u201csafe\u201d by protecting against SQL injection . This is accomplished by making use of  placeholders .  PHP Data Objects support two types of placeholders. Named and unnamed placeholders.   Unsafe data  All data inserted by the user of an website (eg: filling in a form, search text,\nor anything other that is not hard-coded into PHP) is considered unsafe!   # no placeholders - ripe for SQL Injection!\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) values ($name, $addr, $city)\");\n\n# unnamed placeholders\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) values (?, ?, ?)\u201d;\n\n# named placeholders\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) value (:name, :addr, :city)\");",
+            "title": "Prepared statements"
+        },
+        {
+            "location": "/php-pdo/#unnamed-placeholders",
+            "text": "Write queries just like before, but instead of inserting the \"unsafe\" data as parts\nof the query string, place a question mark sign  ?  as placeholder for the data.\nThe unsafe data is then passed to the  execute()  method as an array. The indexes of\nthe array must correspond with the place of the question mark.\nThe array MUST be indexed in the right order.  Statements can be reused by passing in other arrays with different data with\nthe  execute()  method.  # the data we want to insert\n$data = array('Cathy', '9 Dark and Twisty Road', 'Cardiff');\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) values (?, ?, ?);\n$STH->execute($data);",
+            "title": "Unnamed placeholders"
+        },
+        {
+            "location": "/php-pdo/#named-placeholders",
+            "text": "Instead of using question marks as placeholder, a named placeholder is used.\nA placeholder starts with an colon sign:  :  followed by an name. When passing\nthe data array to the  execute()  method, an associative array must be used.\nThe associative indexes of the array must then correspond with the names of the\nplaceholders.\nThe advantage is that the array indexes can be out of order.  # the data we want to insert\n$data = array(\n   'name' => 'Cathy', 'addr' => '9 Dark and Twisty', 'city' => 'Cardiff'\n);\n\n# the shortcut!\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city)\n   value (:name, :addr, :city)\");\n$STH->execute($data);",
+            "title": "Named placeholders"
+        },
+        {
+            "location": "/php-pdo/#selecting-data",
+            "text": "PHP Data Objects enable to select and retrieve results in different ways.\nResults can be fetched as:   Associative array  Objects of type stdClass  Objects of a predefined class  ...   The fetch mode can be set with the  setFetchMode()  function:  // Fetch results as an associative array\n$STH->setFetchMode(PDO::FETCH_ASSOC);\n\n// Fetch results as objects of type stdClass\n$STH->setFetchMode(PDO::FETCH_OBJ);\n\n// Fetch results as objects of type MyClass\n$STH->setFetchMode(PDO::FETCH_CLASS, 'MyClass');   stdClass  stdClass is PHP's generic empty class, kind of like Object in Java or object in Python.\nstdClass is not used as universal base class like Object in Java.",
+            "title": "Selecting data"
+        },
+        {
+            "location": "/php-pdo/#fetch-as-associative-array",
+            "text": "Return results in an associative array\nIndexed by column name  PDO::FETCH_ASSOC  # using the shortcut ->query() method here since there\n# are no variable values in the select statement.\n$STH = $DBH->query('SELECT name, addr, city from folks');\n\n# setting the fetch mode\n$STH->setFetchMode(PDO::FETCH_ASSOC);\nwhile($row = $STH->fetch()) {\n   echo $row['name'] . \"\\n\";\n   echo $row['addr'] . \"\\n\";\n   echo $row['city'] . \"\\n\";\n}",
+            "title": "Fetch as associative array"
+        },
+        {
+            "location": "/php-pdo/#fetch-as-object-of-type-stdclass",
+            "text": "Return results in an object of std class for each row of fetched data  # creating the statement\n$STH = $DBH->query('SELECT name, addr, city from folks');\n\n# setting the fetch mode\n$STH->setFetchMode(PDO::FETCH_OBJ);\n# showing the results while($row = $STH->fetch()) {\n   echo $row->name . \"\\n\";\n   echo $row->addr . \"\\n\";\n   echo $row->city . \"\\n\";\n}",
+            "title": "Fetch as object of type stdClass"
+        },
+        {
+            "location": "/php-pdo/#fetch-as-object-of-a-predefined-class",
+            "text": "Fetch data directly into a class of choosing\nProperties are set before the constructor is called\nProperty names will match column names\nIf property does not match it will be created  $STH->setFetchMode(PDO::FETCH_CLASS, \u2018classname');  $STH->setFetchMode(\u000b   PDO::FETCH_CLASS, 'secret_person', array('stuff'));  class secret_person {\n   public $name;\n   public $addr;\n   public $city;\n   public $other_data;\n   function __construct($other = '') {\n      $this->address = preg_replace('/[a-z]/', 'x', $this->address);\n      $this->other_data = $other;\n   }\n}  $STH = $DBH->query('SELECT name, addr, city from folks');\n$STH->setFetchMode(PDO::FETCH_CLASS, 'secret_person');\nwhile($obj = $STH->fetch()) {\n   echo $obj->addr;\n}",
+            "title": "Fetch as object of a predefined class"
+        },
+        {
+            "location": "/php-pdo/#helpful-methods",
+            "text": "",
+            "title": "Helpful methods"
+        },
+        {
+            "location": "/test/",
+            "text": "",
+            "title": "Testdocument"
         }
     ]
 }

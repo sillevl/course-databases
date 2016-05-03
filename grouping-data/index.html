@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  
+  <meta name="author" content="Sille Van Landschoot">
   
   <title>Grouping data - Databases</title>
   
@@ -127,6 +127,8 @@
                 
                     <li><a class="toctree-l4" href="#creating-groups">Creating groups</a></li>
                 
+                    <li><a class="toctree-l4" href="#filtering-groups">Filtering groups</a></li>
+                
             
             </ul>
         
@@ -240,7 +242,28 @@
           
             <li>
     <li class="toctree-l1 ">
+        <a class="" href="../concurrency/">Concurrency</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
         <a class="" href="../passwords/">Storing passwords</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../php-pdo/">PHP PDO's</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../test/">Testdocument</a>
         
     </li>
 <li>
@@ -283,6 +306,29 @@
               
                 <h1 id="grouping-data">Grouping data</h1>
 <h2 id="creating-groups">Creating groups</h2>
+<p>SELECT vend_id, COUNT(*) AS num_prods FROM products GROUP BY vend_id;
++---------+-----------+
+| vend_id | num_prods |
++---------+-----------+
+|    1001 |         3 |
+|    1002 |         2 |
+|    1003 |         7 |
+|    1005 |         2 |
++---------+-----------+</p>
+<h2 id="filtering-groups">Filtering groups</h2>
+<p>SELECT cust_id, COUNT(<em>) AS orders FROM orders GROUP BY cust_id HAVING COUNT(</em>) &gt;= 2;
++---------+--------+
+| cust_id | orders |
++---------+--------+
+|   10001 |      2 |
++---------+--------+</p>
+<p>SELECT vend_id, COUNT(<em>) AS num_prods FROM products WHERE prod_price &gt;= 10 GROUP BY vend_id HAVING COUNT(</em>) &gt;= 2;
++---------+-----------+
+| vend_id | num_prods |
++---------+-----------+
+|    1003 |         4 |
+|    1005 |         2 |
++---------+-----------+</p>
               
             </div>
           </div>

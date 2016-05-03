@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Sille Van Landschoot">
+  
+  <title>PHP PDO's - Databases</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "PHP PDO's";
+    var mkdocs_page_input_path = "php-pdo.md";
+    var mkdocs_page_url = "/php-pdo/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Databases</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../mysql-introduction/">MySQL introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../retreiving-data/">Retreiving data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../sorting-retreived-data/">Sorting retreived data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../filtering-data/">Filtering data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../searching-using-regular-expressions/">Searching using Regular Expressions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../calculated-fields/">Calculated fields</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../data-manipulation/">Data manipulation</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../summarizing-data/">Summarizing data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../grouping-data/">Grouping data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../subqueries/">Working with subqueries</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../joins/">Joining tables</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../combining-queries/">Combining queries</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../full-text-searching/">Full-text searching</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../inserting-data/">Inserting data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../update-and-delete/">Updating and deleting data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../creating-and-manipulating-tables/">Creating and manipulating tables</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../views/">Using views</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../stored-procedures/">Stored procedures</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../cursors/">Using cursors</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../triggers/">Using triggers</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../transactions/">Managing transaction processing</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../globalization-and-localization/">Globalization and localization</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../database-users/">Managing database users</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../database-maintenance/">Database maintenance</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../concurrency/">Concurrency</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../passwords/">Storing passwords</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">PHP PDO's</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#php-pdo">PHP PDO</a></li>
+                
+                    <li><a class="toctree-l4" href="#php-database-extensions">PHP database extensions</a></li>
+                
+                    <li><a class="toctree-l4" href="#pdo-php-data-object_1">PDO: PHP Data Object</a></li>
+                
+                    <li><a class="toctree-l4" href="#inserting-and-updating-data">Inserting and updating data</a></li>
+                
+                    <li><a class="toctree-l4" href="#selecting-data">Selecting data</a></li>
+                
+                    <li><a class="toctree-l4" href="#helpful-methods">Helpful methods</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../test/">Testdocument</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Databases</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>PHP PDO's</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/sillevl/course-databases" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="php-pdo">PHP PDO</h1>
+<h2 id="php-database-extensions">PHP database extensions</h2>
+<p>There are several ways to interface with MySQL (or other database management systems). PHP provides 3 extensions.</p>
+<h3 id="mysql-mysql-extension">MySQL – MySQL extension</h3>
+<ul>
+<li>Included in PHP 3.x, 4.x, 5.x</li>
+<li>Does not take advantage of the new features of MySQL 4.1.3 and later</li>
+<li>Not under active development</li>
+<li>Removed in PHP 7.0</li>
+</ul>
+<h3 id="mysqli-mysql-extension-improved">MySQLi – MySQL extension improved</h3>
+<ul>
+<li>Object oriented AND procedural</li>
+<li>Takes full advantage of all the features of MySQL 4.1.3 and later</li>
+<li>MySQL Only!</li>
+<li>Removed in PHP 7.0</li>
+</ul>
+<h3 id="pdo-php-data-object">PDO – PHP Data Object</h3>
+<ul>
+<li>Since PHP 5.1</li>
+<li>Consistent object-oriented interface</li>
+<li>Multiple database support (12): MySQL, MsSql, Sqlite, Oracle, IBM, Posgresql,…</li>
+<li>Portable</li>
+<li>Doesn’t take full advantage of all the features of MySQL 4.1.3 and later</li>
+</ul>
+<p>PHP Data Objects provide an database abstraction layer. PDO is the <strong>method of choice</strong> when interfacing a database in PHP.</p>
+<h2 id="pdo-php-data-object_1">PDO: PHP Data Object</h2>
+<p>PDO provides a database access layer enabling a uniform method of access to multiple databases. Changing database type does not change the PDO code. This enables switching database types without rewriting any code.</p>
+<p><img alt="PDO DBdriver Database" src="../img/pdo-dbdriver-database.png" /></p>
+<p>To get all available drivers you can use the <code>getAvailableDrivers()</code> function:</p>
+<pre><code class="php">print_r(PDO::getAvailableDrivers());
+</code></pre>
+
+<p>PHP Data Objects supports the following drivers:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Driver name</th>
+<th align="left">Supported databases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">PDO_CUBRID</td>
+<td align="left">Cubrid</td>
+</tr>
+<tr>
+<td align="left">PDO_DBLIB</td>
+<td align="left">FreeTDS / Microsoft SQL Server / Sybase</td>
+</tr>
+<tr>
+<td align="left">PDO_FIREBIRD</td>
+<td align="left">Firebird</td>
+</tr>
+<tr>
+<td align="left">PDO_IBM</td>
+<td align="left">IBM DB2</td>
+</tr>
+<tr>
+<td align="left">PDO_INFORMIX</td>
+<td align="left">IBM Informix Dynamic Server</td>
+</tr>
+<tr>
+<td align="left">PDO_MYSQL</td>
+<td align="left">MySQL 3.x/4.x/5.x</td>
+</tr>
+<tr>
+<td align="left">PDO_OCI</td>
+<td align="left">Oracle Call Interface</td>
+</tr>
+<tr>
+<td align="left">PDO_ODBC</td>
+<td align="left">ODBC v3 (IBM DB2, unixODBC and win32 ODBC)</td>
+</tr>
+<tr>
+<td align="left">PDO_PGSQL</td>
+<td align="left">PostgreSQL</td>
+</tr>
+<tr>
+<td align="left">PDO_SQLITE</td>
+<td align="left">SQLite 3 and SQLite 2</td>
+</tr>
+<tr>
+<td align="left">PDO_SQLSRV</td>
+<td align="left">Microsoft SQL Server / SQL Azure</td>
+</tr>
+<tr>
+<td align="left">PDO_4D</td>
+<td align="left">4D</td>
+</tr>
+</tbody>
+</table>
+<h3 id="connection-strings">Connection strings</h3>
+<h3 id="opening-and-closing-connections">Opening and closing connections</h3>
+<h3 id="exceptions">Exceptions</h3>
+<h4 id="error-modes">Error modes</h4>
+<h4 id="error-handling">Error handling</h4>
+<h2 id="inserting-and-updating-data">Inserting and updating data</h2>
+<p>Inserting and updating data follows a <strong>two-step process</strong>:</p>
+<ul>
+<li>Prepare</li>
+<li>Execute</li>
+</ul>
+<pre><code class="php"># STH means &quot;Statement Handle&quot;
+$STH = $DBH-&gt;prepare(
+   &quot;INSERT INTO folks ( first_name ) values ( 'Cathy' )&quot;
+);
+$STH-&gt;execute();
+</code></pre>
+
+<p>An additional 'bind' step can be added by using prepared statements.</p>
+<p><img alt="Prepare bind execute" src="../img/pdo-prepare-bind-execute.png" /></p>
+<h3 id="prepared-statements">Prepared statements</h3>
+<p>Prepared statements make use of <strong>precompiled SQL statements</strong>.
+These statements can be <strong>executed multiple times</strong>.
+Prepared statements have the benefit of automatically making data “safe” by
+<strong>protecting against SQL injection</strong>. This is accomplished by making use of <strong>placeholders</strong>.</p>
+<p>PHP Data Objects support two types of placeholders. Named and unnamed placeholders.</p>
+<div class="admonition note">
+<p class="admonition-title">Unsafe data</p>
+<p>All data inserted by the user of an website (eg: filling in a form, search text,
+or anything other that is not hard-coded into PHP) is considered unsafe!</p>
+</div>
+<pre><code class="php"># no placeholders - ripe for SQL Injection!
+$STH = $DBH-&gt;(&quot;INSERT INTO folks (name, addr, city) values ($name, $addr, $city)&quot;);
+
+# unnamed placeholders
+$STH = $DBH-&gt;(&quot;INSERT INTO folks (name, addr, city) values (?, ?, ?)”;
+
+# named placeholders
+$STH = $DBH-&gt;(&quot;INSERT INTO folks (name, addr, city) value (:name, :addr, :city)&quot;);
+</code></pre>
+
+<h4 id="unnamed-placeholders">Unnamed placeholders</h4>
+<p>Write queries just like before, but instead of inserting the "unsafe" data as parts
+of the query string, place a question mark sign <code>?</code> as placeholder for the data.
+The unsafe data is then passed to the <code>execute()</code> method as an array. The indexes of
+the array must correspond with the place of the question mark.
+The array MUST be indexed in the right order.</p>
+<p>Statements can be reused by passing in other arrays with different data with
+the <code>execute()</code> method.</p>
+<pre><code class="php"># the data we want to insert
+$data = array('Cathy', '9 Dark and Twisty Road', 'Cardiff');
+$STH = $DBH-&gt;(&quot;INSERT INTO folks (name, addr, city) values (?, ?, ?);
+$STH-&gt;execute($data);
+</code></pre>
+
+<h4 id="named-placeholders">Named placeholders</h4>
+<p>Instead of using question marks as placeholder, a named placeholder is used.
+A placeholder starts with an colon sign: <code>:</code> followed by an name. When passing
+the data array to the <code>execute()</code> method, an associative array must be used.
+The associative indexes of the array must then correspond with the names of the
+placeholders.
+The advantage is that the array indexes can be out of order.</p>
+<pre><code class="php"># the data we want to insert
+$data = array(
+   'name' =&gt; 'Cathy', 'addr' =&gt; '9 Dark and Twisty', 'city' =&gt; 'Cardiff'
+);
+
+# the shortcut!
+$STH = $DBH-&gt;(&quot;INSERT INTO folks (name, addr, city)
+   value (:name, :addr, :city)&quot;);
+$STH-&gt;execute($data);
+</code></pre>
+
+<h2 id="selecting-data">Selecting data</h2>
+<p>PHP Data Objects enable to select and retrieve results in different ways.
+Results can be fetched as:</p>
+<ul>
+<li>Associative array</li>
+<li>Objects of type stdClass</li>
+<li>Objects of a predefined class</li>
+<li>...</li>
+</ul>
+<p>The fetch mode can be set with the <code>setFetchMode()</code> function:</p>
+<pre><code class="php">// Fetch results as an associative array
+$STH-&gt;setFetchMode(PDO::FETCH_ASSOC);
+
+// Fetch results as objects of type stdClass
+$STH-&gt;setFetchMode(PDO::FETCH_OBJ);
+
+// Fetch results as objects of type MyClass
+$STH-&gt;setFetchMode(PDO::FETCH_CLASS, 'MyClass');
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">stdClass</p>
+<p>stdClass is PHP's generic empty class, kind of like Object in Java or object in Python.
+stdClass is not used as universal base class like Object in Java.</p>
+</div>
+<h3 id="fetch-as-associative-array">Fetch as associative array</h3>
+<p>Return results in an associative array
+Indexed by column name</p>
+<p><code>PDO::FETCH_ASSOC</code></p>
+<pre><code class="php"># using the shortcut -&gt;query() method here since there
+# are no variable values in the select statement.
+$STH = $DBH-&gt;query('SELECT name, addr, city from folks');
+
+# setting the fetch mode
+$STH-&gt;setFetchMode(PDO::FETCH_ASSOC);
+while($row = $STH-&gt;fetch()) {
+   echo $row['name'] . &quot;\n&quot;;
+   echo $row['addr'] . &quot;\n&quot;;
+   echo $row['city'] . &quot;\n&quot;;
+}
+</code></pre>
+
+<h3 id="fetch-as-object-of-type-stdclass">Fetch as object of type stdClass</h3>
+<p>Return results in an object of std class for each row of fetched data</p>
+<pre><code class="php"># creating the statement
+$STH = $DBH-&gt;query('SELECT name, addr, city from folks');
+
+# setting the fetch mode
+$STH-&gt;setFetchMode(PDO::FETCH_OBJ);
+# showing the results while($row = $STH-&gt;fetch()) {
+   echo $row-&gt;name . &quot;\n&quot;;
+   echo $row-&gt;addr . &quot;\n&quot;;
+   echo $row-&gt;city . &quot;\n&quot;;
+}
+</code></pre>
+
+<h3 id="fetch-as-object-of-a-predefined-class">Fetch as object of a predefined class</h3>
+<p>Fetch data directly into a class of choosing
+Properties are set before the constructor is called
+Property names will match column names
+If property does not match it will be created</p>
+<pre><code class="php">$STH-&gt;setFetchMode(PDO::FETCH_CLASS, ‘classname');
+</code></pre>
+
+<pre><code class="php">$STH-&gt;setFetchMode(   PDO::FETCH_CLASS, 'secret_person', array('stuff'));
+</code></pre>
+
+<pre><code class="php">class secret_person {
+   public $name;
+   public $addr;
+   public $city;
+   public $other_data;
+   function __construct($other = '') {
+      $this-&gt;address = preg_replace('/[a-z]/', 'x', $this-&gt;address);
+      $this-&gt;other_data = $other;
+   }
+}
+</code></pre>
+
+<pre><code class="php">$STH = $DBH-&gt;query('SELECT name, addr, city from folks');
+$STH-&gt;setFetchMode(PDO::FETCH_CLASS, 'secret_person');
+while($obj = $STH-&gt;fetch()) {
+   echo $obj-&gt;addr;
+}
+</code></pre>
+
+<h2 id="helpful-methods">Helpful methods</h2>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../test/" class="btn btn-neutral float-right" title="Testdocument">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../passwords/" class="btn btn-neutral" title="Storing passwords"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/sillevl/course-databases" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../passwords/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../test/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

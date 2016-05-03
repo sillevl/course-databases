@@ -203,7 +203,31 @@
 
     
     <url>
+     <loc>http://sillevl.github.io/course-databases//concurrency/</loc>
+     <lastmod>2016-05-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
      <loc>http://sillevl.github.io/course-databases//passwords/</loc>
+     <lastmod>2016-05-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://sillevl.github.io/course-databases//php-pdo/</loc>
+     <lastmod>2016-05-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://sillevl.github.io/course-databases//test/</loc>
      <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
