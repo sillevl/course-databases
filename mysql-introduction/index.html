@@ -67,6 +67,9 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#mysql-introduction">MySQL introduction</a></li>
+                
+            
             </ul>
         
     </li>
@@ -103,6 +106,13 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="../calculated-fields/">Calculated fields</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../data-manipulation/">Data manipulation</a>
         
     </li>
 <li>
@@ -214,7 +224,7 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../security/">Managing Security</a>
+        <a class="" href="../database-users/">Managing database users</a>
         
     </li>
 <li>
@@ -222,6 +232,13 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="../database-maintenance/">Database maintenance</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../passwords/">Storing passwords</a>
         
     </li>
 <li>
@@ -251,6 +268,10 @@
     <li>MySQL introduction</li>
     <li class="wy-breadcrumbs-aside">
       
+        
+          <a href="https://github.com/sillevl/course-databases" class="icon icon-github"> Edit on GitHub</a>
+        
+      
     </li>
   </ul>
   <hr/>
@@ -258,11 +279,11 @@
           <div role="main">
             <div class="section">
               
-                <pre><code class="sql">SHOW DATABASES
+                <h1 id="mysql-introduction">MySQL introduction</h1>
+<pre><code class="sql">SHOW DATABASES
 </code></pre>
 
-<pre><code class="sql">MariaDB [employees]&gt; show databases;
-+--------------------+
+<pre><code>+--------------------+
 | Database           |
 +--------------------+
 | demo               |
@@ -275,16 +296,18 @@
 | test               |
 +--------------------+
 8 rows in set (0.00 sec)
-
-MariaDB [employees]&gt;
 </code></pre>
 
-<pre><code class="sql">MariaDB [employees]&gt; use employees;
-Database changed
+<pre><code class="sql">USE employees;
 </code></pre>
 
-<pre><code class="sql">MariaDB [employees]&gt; show tables;
-+----------------------+
+<pre><code>Database changed
+</code></pre>
+
+<pre><code class="sql">SHOW TABLES;
+</code></pre>
+
+<pre><code>+----------------------+
 | Tables_in_employees  |
 +----------------------+
 | current_dept_emp     |
@@ -299,8 +322,10 @@ Database changed
 8 rows in set (0.00 sec)
 </code></pre>
 
-<pre><code class="sql">MariaDB [employees]&gt; show columns from employees;
-+------------+---------------+------+-----+---------+-------+
+<pre><code class="sql">SHOW COLUMNS FROM employees;
+</code></pre>
+
+<pre><code>+------------+---------------+------+-----+---------+-------+
 | Field      | Type          | Null | Key | Default | Extra |
 +------------+---------------+------+-----+---------+-------+
 | emp_no     | int(11)       | NO   | PRI | NULL    |       |
@@ -346,6 +371,8 @@ Database changed
 
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/sillevl/course-databases" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>

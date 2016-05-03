@@ -2,128 +2,348 @@
     "docs": [
         {
             "location": "/",
-            "text": "Databases overview\n\n\n\n\nIntroduction into Databases\n\n\nUnderstanding SQL\n\n\nIntroducing MySQL\n\n\nWorking with MySQL\n\n\nRetrieving data\n\n\nSorting retreived Databases\n\n\nFiltering data\n\n\nAdvanced data filtering",
+            "text": "Databases overview\n\n\n\n\n\n\nDatabases overview",
             "title": "Home"
         },
         {
             "location": "/#databases-overview",
-            "text": "Introduction into Databases  Understanding SQL  Introducing MySQL  Working with MySQL  Retrieving data  Sorting retreived Databases  Filtering data  Advanced data filtering",
+            "text": "Databases overview",
             "title": "Databases overview"
         },
         {
             "location": "/mysql-introduction/",
-            "text": "SHOW DATABASES\n\n\n\n\nMariaDB [employees]> show databases;\n+--------------------+\n| Database           |\n+--------------------+\n| demo               |\n| employees          |\n| information_schema |\n| mydb               |\n| mysql              |\n| performance_schema |\n| phpmyadmin         |\n| test               |\n+--------------------+\n8 rows in set (0.00 sec)\n\nMariaDB [employees]>\n\n\n\n\nMariaDB [employees]> use employees;\nDatabase changed\n\n\n\n\nMariaDB [employees]> show tables;\n+----------------------+\n| Tables_in_employees  |\n+----------------------+\n| current_dept_emp     |\n| departments          |\n| dept_emp             |\n| dept_emp_latest_date |\n| dept_manager         |\n| employees            |\n| salaries             |\n| titles               |\n+----------------------+\n8 rows in set (0.00 sec)\n\n\n\n\nMariaDB [employees]> show columns from employees;\n+------------+---------------+------+-----+---------+-------+\n| Field      | Type          | Null | Key | Default | Extra |\n+------------+---------------+------+-----+---------+-------+\n| emp_no     | int(11)       | NO   | PRI | NULL    |       |\n| birth_date | date          | NO   |     | NULL    |       |\n| first_name | varchar(14)   | NO   |     | NULL    |       |\n| last_name  | varchar(16)   | NO   |     | NULL    |       |\n| gender     | enum('M','F') | NO   |     | NULL    |       |\n| hire_date  | date          | NO   |     | NULL    |       |\n+------------+---------------+------+-----+---------+-------+\n6 rows in set (0.01 sec)",
+            "text": "MySQL introduction\n\n\nSHOW DATABASES\n\n\n\n\n+--------------------+\n| Database           |\n+--------------------+\n| demo               |\n| employees          |\n| information_schema |\n| mydb               |\n| mysql              |\n| performance_schema |\n| phpmyadmin         |\n| test               |\n+--------------------+\n8 rows in set (0.00 sec)\n\n\n\n\nUSE employees;\n\n\n\n\nDatabase changed\n\n\n\n\nSHOW TABLES;\n\n\n\n\n+----------------------+\n| Tables_in_employees  |\n+----------------------+\n| current_dept_emp     |\n| departments          |\n| dept_emp             |\n| dept_emp_latest_date |\n| dept_manager         |\n| employees            |\n| salaries             |\n| titles               |\n+----------------------+\n8 rows in set (0.00 sec)\n\n\n\n\nSHOW COLUMNS FROM employees;\n\n\n\n\n+------------+---------------+------+-----+---------+-------+\n| Field      | Type          | Null | Key | Default | Extra |\n+------------+---------------+------+-----+---------+-------+\n| emp_no     | int(11)       | NO   | PRI | NULL    |       |\n| birth_date | date          | NO   |     | NULL    |       |\n| first_name | varchar(14)   | NO   |     | NULL    |       |\n| last_name  | varchar(16)   | NO   |     | NULL    |       |\n| gender     | enum('M','F') | NO   |     | NULL    |       |\n| hire_date  | date          | NO   |     | NULL    |       |\n+------------+---------------+------+-----+---------+-------+\n6 rows in set (0.01 sec)",
+            "title": "MySQL introduction"
+        },
+        {
+            "location": "/mysql-introduction/#mysql-introduction",
+            "text": "SHOW DATABASES  +--------------------+\n| Database           |\n+--------------------+\n| demo               |\n| employees          |\n| information_schema |\n| mydb               |\n| mysql              |\n| performance_schema |\n| phpmyadmin         |\n| test               |\n+--------------------+\n8 rows in set (0.00 sec)  USE employees;  Database changed  SHOW TABLES;  +----------------------+\n| Tables_in_employees  |\n+----------------------+\n| current_dept_emp     |\n| departments          |\n| dept_emp             |\n| dept_emp_latest_date |\n| dept_manager         |\n| employees            |\n| salaries             |\n| titles               |\n+----------------------+\n8 rows in set (0.00 sec)  SHOW COLUMNS FROM employees;  +------------+---------------+------+-----+---------+-------+\n| Field      | Type          | Null | Key | Default | Extra |\n+------------+---------------+------+-----+---------+-------+\n| emp_no     | int(11)       | NO   | PRI | NULL    |       |\n| birth_date | date          | NO   |     | NULL    |       |\n| first_name | varchar(14)   | NO   |     | NULL    |       |\n| last_name  | varchar(16)   | NO   |     | NULL    |       |\n| gender     | enum('M','F') | NO   |     | NULL    |       |\n| hire_date  | date          | NO   |     | NULL    |       |\n+------------+---------------+------+-----+---------+-------+\n6 rows in set (0.01 sec)",
             "title": "MySQL introduction"
         },
         {
             "location": "/retreiving-data/",
-            "text": "MariaDB [forta]> select prod_name from products;\n+----------------+\n| prod_name      |\n+----------------+\n| .5 ton anvil   |\n| 1 ton anvil    |\n| 2 ton anvil    |\n| Detonator      |\n| Bird seed      |\n| Carrots        |\n| Fuses          |\n| JetPack 1000   |\n| JetPack 2000   |\n| Oil can        |\n| Safe           |\n| Sling          |\n| TNT (1 stick)  |\n| TNT (5 sticks) |\n+----------------+\n14 rows in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT prod_id, prod_name, prod_price FROM products;\n+---------+----------------+------------+\n| prod_id | prod_name      | prod_price |\n+---------+----------------+------------+\n| ANV01   | .5 ton anvil   |       5.99 |\n| ANV02   | 1 ton anvil    |       9.99 |\n| ANV03   | 2 ton anvil    |      14.99 |\n| DTNTR   | Detonator      |      13.00 |\n| FB      | Bird seed      |      10.00 |\n| FC      | Carrots        |       2.50 |\n| FU1     | Fuses          |       3.42 |\n| JP1000  | JetPack 1000   |      35.00 |\n| JP2000  | JetPack 2000   |      55.00 |\n| OL1     | Oil can        |       8.99 |\n| SAFE    | Safe           |      50.00 |\n| SLING   | Sling          |       4.49 |\n| TNT1    | TNT (1 stick)  |       2.50 |\n| TNT2    | TNT (5 sticks) |      10.00 |\n+---------+----------------+------------+\n14 rows in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT * FROM products;\n+---------+---------+----------------+------------+----------------------------------------------------------------+\n| prod_id | vend_id | prod_name      | prod_price | prod_desc                                                      |\n+---------+---------+----------------+------------+----------------------------------------------------------------+\n| ANV01   |    1001 | .5 ton anvil   |       5.99 | .5 ton anvil, black, complete with handy hook                  |\n| ANV02   |    1001 | 1 ton anvil    |       9.99 | 1 ton anvil, black, complete with handy hook and carrying case |\n| ANV03   |    1001 | 2 ton anvil    |      14.99 | 2 ton anvil, black, complete with handy hook and carrying case |\n| DTNTR   |    1003 | Detonator      |      13.00 | Detonator (plunger powered), fuses not included                |\n| FB      |    1003 | Bird seed      |      10.00 | Large bag (suitable for road runners)                          |\n| FC      |    1003 | Carrots        |       2.50 | Carrots (rabbit hunting season only)                           |\n| FU1     |    1002 | Fuses          |       3.42 | 1 dozen, extra long                                            |\n| JP1000  |    1005 | JetPack 1000   |      35.00 | JetPack 1000, intended for single use                          |\n| JP2000  |    1005 | JetPack 2000   |      55.00 | JetPack 2000, multi-use                                        |\n| OL1     |    1002 | Oil can        |       8.99 | Oil can, red                                                   |\n| SAFE    |    1003 | Safe           |      50.00 | Safe with combination lock                                     |\n| SLING   |    1003 | Sling          |       4.49 | Sling, one size fits all                                       |\n| TNT1    |    1003 | TNT (1 stick)  |       2.50 | TNT, red, single stick                                         |\n| TNT2    |    1003 | TNT (5 sticks) |      10.00 | TNT, red, pack of 10 sticks                                    |\n+---------+---------+----------------+------------+----------------------------------------------------------------+\n14 rows in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT vend_id FROM products;\n+---------+\n| vend_id |\n+---------+\n|    1001 |\n|    1001 |\n|    1001 |\n|    1002 |\n|    1002 |\n|    1003 |\n|    1003 |\n|    1003 |\n|    1003 |\n|    1003 |\n|    1003 |\n|    1003 |\n|    1005 |\n|    1005 |\n+---------+\n14 rows in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT DISTINCT vend_id FROM products;\n+---------+\n| vend_id |\n+---------+\n|    1001 |\n|    1002 |\n|    1003 |\n|    1005 |\n+---------+\n4 rows in set (0.00 sec)",
+            "text": "Retreiving data\n\n\nSELECT prod_name FROM products;\n\n\n\n\n+----------------+\n| prod_name      |\n+----------------+\n| .5 ton anvil   |\n| 1 ton anvil    |\n| 2 ton anvil    |\n| Detonator      |\n| Bird seed      |\n| Carrots        |\n| Fuses          |\n| JetPack 1000   |\n| JetPack 2000   |\n| Oil can        |\n| Safe           |\n| Sling          |\n| TNT (1 stick)  |\n| TNT (5 sticks) |\n+----------------+\n14 rows in set (0.00 sec)\n\n\n\n\nSELECT prod_id, prod_name, prod_price FROM products;\n\n\n\n\n+---------+----------------+------------+\n| prod_id | prod_name      | prod_price |\n+---------+----------------+------------+\n| ANV01   | .5 ton anvil   |       5.99 |\n| ANV02   | 1 ton anvil    |       9.99 |\n| ANV03   | 2 ton anvil    |      14.99 |\n| DTNTR   | Detonator      |      13.00 |\n| FB      | Bird seed      |      10.00 |\n| FC      | Carrots        |       2.50 |\n| FU1     | Fuses          |       3.42 |\n| JP1000  | JetPack 1000   |      35.00 |\n| JP2000  | JetPack 2000   |      55.00 |\n| OL1     | Oil can        |       8.99 |\n| SAFE    | Safe           |      50.00 |\n| SLING   | Sling          |       4.49 |\n| TNT1    | TNT (1 stick)  |       2.50 |\n| TNT2    | TNT (5 sticks) |      10.00 |\n+---------+----------------+------------+\n14 rows in set (0.00 sec)\n\n\n\n\nSELECT * FROM products;\n\n\n\n\n+---------+---------+----------------+------------+----------------------------------------------------------------+\n| prod_id | vend_id | prod_name      | prod_price | prod_desc                                                      |\n+---------+---------+----------------+------------+----------------------------------------------------------------+\n| ANV01   |    1001 | .5 ton anvil   |       5.99 | .5 ton anvil, black, complete with handy hook                  |\n| ANV02   |    1001 | 1 ton anvil    |       9.99 | 1 ton anvil, black, complete with handy hook and carrying case |\n| ANV03   |    1001 | 2 ton anvil    |      14.99 | 2 ton anvil, black, complete with handy hook and carrying case |\n| DTNTR   |    1003 | Detonator      |      13.00 | Detonator (plunger powered), fuses not included                |\n| FB      |    1003 | Bird seed      |      10.00 | Large bag (suitable for road runners)                          |\n| FC      |    1003 | Carrots        |       2.50 | Carrots (rabbit hunting season only)                           |\n| FU1     |    1002 | Fuses          |       3.42 | 1 dozen, extra long                                            |\n| JP1000  |    1005 | JetPack 1000   |      35.00 | JetPack 1000, intended for single use                          |\n| JP2000  |    1005 | JetPack 2000   |      55.00 | JetPack 2000, multi-use                                        |\n| OL1     |    1002 | Oil can        |       8.99 | Oil can, red                                                   |\n| SAFE    |    1003 | Safe           |      50.00 | Safe with combination lock                                     |\n| SLING   |    1003 | Sling          |       4.49 | Sling, one size fits all                                       |\n| TNT1    |    1003 | TNT (1 stick)  |       2.50 | TNT, red, single stick                                         |\n| TNT2    |    1003 | TNT (5 sticks) |      10.00 | TNT, red, pack of 10 sticks                                    |\n+---------+---------+----------------+------------+----------------------------------------------------------------+\n14 rows in set (0.00 sec)\n\n\n\n\n-SELECT vend_id FROM products;\n\n\n\n\n+---------+\n| vend_id |\n+---------+\n|    1001 |\n|    1001 |\n|    1001 |\n|    1002 |\n|    1002 |\n|    1003 |\n|    1003 |\n|    1003 |\n|    1003 |\n|    1003 |\n|    1003 |\n|    1003 |\n|    1005 |\n|    1005 |\n+---------+\n14 rows in set (0.00 sec)\n\n\n\n\nSELECT DISTINCT vend_id FROM products;\n\n\n\n\n+---------+\n| vend_id |\n+---------+\n|    1001 |\n|    1002 |\n|    1003 |\n|    1005 |\n+---------+\n4 rows in set (0.00 sec)",
+            "title": "Retreiving data"
+        },
+        {
+            "location": "/retreiving-data/#retreiving-data",
+            "text": "SELECT prod_name FROM products;  +----------------+\n| prod_name      |\n+----------------+\n| .5 ton anvil   |\n| 1 ton anvil    |\n| 2 ton anvil    |\n| Detonator      |\n| Bird seed      |\n| Carrots        |\n| Fuses          |\n| JetPack 1000   |\n| JetPack 2000   |\n| Oil can        |\n| Safe           |\n| Sling          |\n| TNT (1 stick)  |\n| TNT (5 sticks) |\n+----------------+\n14 rows in set (0.00 sec)  SELECT prod_id, prod_name, prod_price FROM products;  +---------+----------------+------------+\n| prod_id | prod_name      | prod_price |\n+---------+----------------+------------+\n| ANV01   | .5 ton anvil   |       5.99 |\n| ANV02   | 1 ton anvil    |       9.99 |\n| ANV03   | 2 ton anvil    |      14.99 |\n| DTNTR   | Detonator      |      13.00 |\n| FB      | Bird seed      |      10.00 |\n| FC      | Carrots        |       2.50 |\n| FU1     | Fuses          |       3.42 |\n| JP1000  | JetPack 1000   |      35.00 |\n| JP2000  | JetPack 2000   |      55.00 |\n| OL1     | Oil can        |       8.99 |\n| SAFE    | Safe           |      50.00 |\n| SLING   | Sling          |       4.49 |\n| TNT1    | TNT (1 stick)  |       2.50 |\n| TNT2    | TNT (5 sticks) |      10.00 |\n+---------+----------------+------------+\n14 rows in set (0.00 sec)  SELECT * FROM products;  +---------+---------+----------------+------------+----------------------------------------------------------------+\n| prod_id | vend_id | prod_name      | prod_price | prod_desc                                                      |\n+---------+---------+----------------+------------+----------------------------------------------------------------+\n| ANV01   |    1001 | .5 ton anvil   |       5.99 | .5 ton anvil, black, complete with handy hook                  |\n| ANV02   |    1001 | 1 ton anvil    |       9.99 | 1 ton anvil, black, complete with handy hook and carrying case |\n| ANV03   |    1001 | 2 ton anvil    |      14.99 | 2 ton anvil, black, complete with handy hook and carrying case |\n| DTNTR   |    1003 | Detonator      |      13.00 | Detonator (plunger powered), fuses not included                |\n| FB      |    1003 | Bird seed      |      10.00 | Large bag (suitable for road runners)                          |\n| FC      |    1003 | Carrots        |       2.50 | Carrots (rabbit hunting season only)                           |\n| FU1     |    1002 | Fuses          |       3.42 | 1 dozen, extra long                                            |\n| JP1000  |    1005 | JetPack 1000   |      35.00 | JetPack 1000, intended for single use                          |\n| JP2000  |    1005 | JetPack 2000   |      55.00 | JetPack 2000, multi-use                                        |\n| OL1     |    1002 | Oil can        |       8.99 | Oil can, red                                                   |\n| SAFE    |    1003 | Safe           |      50.00 | Safe with combination lock                                     |\n| SLING   |    1003 | Sling          |       4.49 | Sling, one size fits all                                       |\n| TNT1    |    1003 | TNT (1 stick)  |       2.50 | TNT, red, single stick                                         |\n| TNT2    |    1003 | TNT (5 sticks) |      10.00 | TNT, red, pack of 10 sticks                                    |\n+---------+---------+----------------+------------+----------------------------------------------------------------+\n14 rows in set (0.00 sec)  -SELECT vend_id FROM products;  +---------+\n| vend_id |\n+---------+\n|    1001 |\n|    1001 |\n|    1001 |\n|    1002 |\n|    1002 |\n|    1003 |\n|    1003 |\n|    1003 |\n|    1003 |\n|    1003 |\n|    1003 |\n|    1003 |\n|    1005 |\n|    1005 |\n+---------+\n14 rows in set (0.00 sec)  SELECT DISTINCT vend_id FROM products;  +---------+\n| vend_id |\n+---------+\n|    1001 |\n|    1002 |\n|    1003 |\n|    1005 |\n+---------+\n4 rows in set (0.00 sec)",
             "title": "Retreiving data"
         },
         {
             "location": "/sorting-retreived-data/",
-            "text": "MariaDB [forta]> SELECT prod_name FROM products LIMIT 5;\n+--------------+\n| prod_name    |\n+--------------+\n| .5 ton anvil |\n| 1 ton anvil  |\n| 2 ton anvil  |\n| Detonator    |\n| Bird seed    |\n+--------------+\n5 rows in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT prod_name FROM products LIMIT 5, 5;\n+--------------+\n| prod_name    |\n+--------------+\n| Carrots      |\n| Fuses        |\n| JetPack 1000 |\n| JetPack 2000 |\n| Oil can      |\n+--------------+\n5 rows in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT products.prod_name FROM products;\n+----------------+\n| prod_name      |\n+----------------+\n| .5 ton anvil   |\n| 1 ton anvil    |\n| 2 ton anvil    |\n| Detonator      |\n| Bird seed      |\n| Carrots        |\n| Fuses          |\n| JetPack 1000   |\n| JetPack 2000   |\n| Oil can        |\n| Safe           |\n| Sling          |\n| TNT (1 stick)  |\n| TNT (5 sticks) |\n+----------------+\n14 rows in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT prod_name FROM products ORDER BY prod_name;\n+----------------+\n| prod_name      |\n+----------------+\n| .5 ton anvil   |\n| 1 ton anvil    |\n| 2 ton anvil    |\n| Bird seed      |\n| Carrots        |\n| Detonator      |\n| Fuses          |\n| JetPack 1000   |\n| JetPack 2000   |\n| Oil can        |\n| Safe           |\n| Sling          |\n| TNT (1 stick)  |\n| TNT (5 sticks) |\n+----------------+\n14 rows in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT prod_id, prod_price, prod_name FROM products ORDER BY prod_price, prod_name;\n+---------+------------+----------------+\n| prod_id | prod_price | prod_name      |\n+---------+------------+----------------+\n| FC      |       2.50 | Carrots        |\n| TNT1    |       2.50 | TNT (1 stick)  |\n| FU1     |       3.42 | Fuses          |\n| SLING   |       4.49 | Sling          |\n| ANV01   |       5.99 | .5 ton anvil   |\n| OL1     |       8.99 | Oil can        |\n| ANV02   |       9.99 | 1 ton anvil    |\n| FB      |      10.00 | Bird seed      |\n| TNT2    |      10.00 | TNT (5 sticks) |\n| DTNTR   |      13.00 | Detonator      |\n| ANV03   |      14.99 | 2 ton anvil    |\n| JP1000  |      35.00 | JetPack 1000   |\n| SAFE    |      50.00 | Safe           |\n| JP2000  |      55.00 | JetPack 2000   |\n+---------+------------+----------------+\n14 rows in set (0.03 sec)\n\n\n\n\nMariaDB [forta]> SELECT prod_id, prod_price, prod_name FROM products ORDER BY prod_price DESC;\n+---------+------------+----------------+\n| prod_id | prod_price | prod_name      |\n+---------+------------+----------------+\n| JP2000  |      55.00 | JetPack 2000   |\n| SAFE    |      50.00 | Safe           |\n| JP1000  |      35.00 | JetPack 1000   |\n| ANV03   |      14.99 | 2 ton anvil    |\n| DTNTR   |      13.00 | Detonator      |\n| TNT2    |      10.00 | TNT (5 sticks) |\n| FB      |      10.00 | Bird seed      |\n| ANV02   |       9.99 | 1 ton anvil    |\n| OL1     |       8.99 | Oil can        |\n| ANV01   |       5.99 | .5 ton anvil   |\n| SLING   |       4.49 | Sling          |\n| FU1     |       3.42 | Fuses          |\n| FC      |       2.50 | Carrots        |\n| TNT1    |       2.50 | TNT (1 stick)  |\n+---------+------------+----------------+\n14 rows in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT prod_id, prod_price, prod_name FROM products ORDER BY prod_price DESC, prod_name;\n+---------+------------+----------------+\n| prod_id | prod_price | prod_name      |\n+---------+------------+----------------+\n| JP2000  |      55.00 | JetPack 2000   |\n| SAFE    |      50.00 | Safe           |\n| JP1000  |      35.00 | JetPack 1000   |\n| ANV03   |      14.99 | 2 ton anvil    |\n| DTNTR   |      13.00 | Detonator      |\n| FB      |      10.00 | Bird seed      |\n| TNT2    |      10.00 | TNT (5 sticks) |\n| ANV02   |       9.99 | 1 ton anvil    |\n| OL1     |       8.99 | Oil can        |\n| ANV01   |       5.99 | .5 ton anvil   |\n| SLING   |       4.49 | Sling          |\n| FU1     |       3.42 | Fuses          |\n| FC      |       2.50 | Carrots        |\n| TNT1    |       2.50 | TNT (1 stick)  |\n+---------+------------+----------------+\n14 rows in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT prod_price FROM products ORDER BY prod_price DESC LIMIT 1;\n+------------+\n| prod_price |\n+------------+\n|      55.00 |\n+------------+\n1 row in set (0.00 sec)",
+            "text": "Sorting retreived data",
+            "title": "Sorting retreived data"
+        },
+        {
+            "location": "/sorting-retreived-data/#sorting-retreived-data",
+            "text": "",
             "title": "Sorting retreived data"
         },
         {
             "location": "/filtering-data/",
-            "text": "MariaDB [forta]> SELECT prod_name, prod_price FROM products WHERE prod_price = 2.50;\n+---------------+------------+\n| prod_name     | prod_price |\n+---------------+------------+\n| Carrots       |       2.50 |\n| TNT (1 stick) |       2.50 |\n+---------------+------------+\n2 rows in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT prod_name, prod_price FROM products WHERE prod_name = 'fuses';\n+-----------+------------+\n| prod_name | prod_price |\n+-----------+------------+\n| Fuses     |       3.42 |\n+-----------+------------+\n1 row in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT prod_name, prod_price FROM products WHERE prod_price <= 10;\n+----------------+------------+\n| prod_name      | prod_price |\n+----------------+------------+\n| .5 ton anvil   |       5.99 |\n| 1 ton anvil    |       9.99 |\n| Bird seed      |      10.00 |\n| Carrots        |       2.50 |\n| Fuses          |       3.42 |\n| Oil can        |       8.99 |\n| Sling          |       4.49 |\n| TNT (1 stick)  |       2.50 |\n| TNT (5 sticks) |      10.00 |\n+----------------+------------+\n9 rows in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT vend_id, prod_name FROM products WHERE vend_id <> 1003;\n+---------+--------------+\n| vend_id | prod_name    |\n+---------+--------------+\n|    1001 | .5 ton anvil |\n|    1001 | 1 ton anvil  |\n|    1001 | 2 ton anvil  |\n|    1002 | Fuses        |\n|    1005 | JetPack 1000 |\n|    1005 | JetPack 2000 |\n|    1002 | Oil can      |\n+---------+--------------+\n7 rows in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT vend_id, prod_name FROM products WHERE vend_id != 1003;\n+---------+--------------+\n| vend_id | prod_name    |\n+---------+--------------+\n|    1001 | .5 ton anvil |\n|    1001 | 1 ton anvil  |\n|    1001 | 2 ton anvil  |\n|    1002 | Fuses        |\n|    1005 | JetPack 1000 |\n|    1005 | JetPack 2000 |\n|    1002 | Oil can      |\n+---------+--------------+\n7 rows in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT prod_name, prod_price FROM products WHERE prod_price BETWEEN 5 and 10;\n+----------------+------------+\n| prod_name      | prod_price |\n+----------------+------------+\n| .5 ton anvil   |       5.99 |\n| 1 ton anvil    |       9.99 |\n| Bird seed      |      10.00 |\n| Oil can        |       8.99 |\n| TNT (5 sticks) |      10.00 |\n+----------------+------------+\n5 rows in set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT prod_name FROM products WHERE prod_price IS NULL;\nEmpty set (0.00 sec)\n\n\n\n\nMariaDB [forta]> SELECT cust_id FROM customers WHERE cust_email IS NULL;\n+---------+\n| cust_id |\n+---------+\n|   10002 |\n|   10005 |\n+---------+\n2 rows in set (0.00 sec)",
+            "text": "Filtering data\n\n\nSELECT prod_name\nFROM products\nLIMIT 5;\n\n\n\n\n+--------------+\n| prod_name    |\n+--------------+\n| .5 ton anvil |\n| 1 ton anvil  |\n| 2 ton anvil  |\n| Detonator    |\n| Bird seed    |\n+--------------+\n5 rows in set (0.00 sec)\n\n\n\n\nSELECT prod_name\nFROM products\nLIMIT 5, 5;\n\n\n\n\n+--------------+\n| prod_name    |\n+--------------+\n| Carrots      |\n| Fuses        |\n| JetPack 1000 |\n| JetPack 2000 |\n| Oil can      |\n+--------------+\n5 rows in set (0.00 sec)\n\n\n\n\nSELECT products.prod_name\nFROM products;\n\n\n\n\n+----------------+\n| prod_name      |\n+----------------+\n| .5 ton anvil   |\n| 1 ton anvil    |\n| 2 ton anvil    |\n| Detonator      |\n| Bird seed      |\n| Carrots        |\n| Fuses          |\n| JetPack 1000   |\n| JetPack 2000   |\n| Oil can        |\n| Safe           |\n| Sling          |\n| TNT (1 stick)  |\n| TNT (5 sticks) |\n+----------------+\n14 rows in set (0.00 sec)\n\n\n\n\nSELECT prod_name\nFROM products\nORDER BY prod_name;\n\n\n\n\n+----------------+\n| prod_name      |\n+----------------+\n| .5 ton anvil   |\n| 1 ton anvil    |\n| 2 ton anvil    |\n| Bird seed      |\n| Carrots        |\n| Detonator      |\n| Fuses          |\n| JetPack 1000   |\n| JetPack 2000   |\n| Oil can        |\n| Safe           |\n| Sling          |\n| TNT (1 stick)  |\n| TNT (5 sticks) |\n+----------------+\n14 rows in set (0.00 sec)\n\n\n\n\nSELECT prod_id, prod_price, prod_name\nFROM products\nORDER BY prod_price, prod_name;\n\n\n\n\n+---------+------------+----------------+\n| prod_id | prod_price | prod_name      |\n+---------+------------+----------------+\n| FC      |       2.50 | Carrots        |\n| TNT1    |       2.50 | TNT (1 stick)  |\n| FU1     |       3.42 | Fuses          |\n| SLING   |       4.49 | Sling          |\n| ANV01   |       5.99 | .5 ton anvil   |\n| OL1     |       8.99 | Oil can        |\n| ANV02   |       9.99 | 1 ton anvil    |\n| FB      |      10.00 | Bird seed      |\n| TNT2    |      10.00 | TNT (5 sticks) |\n| DTNTR   |      13.00 | Detonator      |\n| ANV03   |      14.99 | 2 ton anvil    |\n| JP1000  |      35.00 | JetPack 1000   |\n| SAFE    |      50.00 | Safe           |\n| JP2000  |      55.00 | JetPack 2000   |\n+---------+------------+----------------+\n14 rows in set (0.03 sec)\n\n\n\n\nSELECT prod_id, prod_price, prod_name\nFROM products\nORDER BY prod_price DESC;\n\n\n\n\n+---------+------------+----------------+\n| prod_id | prod_price | prod_name      |\n+---------+------------+----------------+\n| JP2000  |      55.00 | JetPack 2000   |\n| SAFE    |      50.00 | Safe           |\n| JP1000  |      35.00 | JetPack 1000   |\n| ANV03   |      14.99 | 2 ton anvil    |\n| DTNTR   |      13.00 | Detonator      |\n| TNT2    |      10.00 | TNT (5 sticks) |\n| FB      |      10.00 | Bird seed      |\n| ANV02   |       9.99 | 1 ton anvil    |\n| OL1     |       8.99 | Oil can        |\n| ANV01   |       5.99 | .5 ton anvil   |\n| SLING   |       4.49 | Sling          |\n| FU1     |       3.42 | Fuses          |\n| FC      |       2.50 | Carrots        |\n| TNT1    |       2.50 | TNT (1 stick)  |\n+---------+------------+----------------+\n14 rows in set (0.00 sec)\n\n\n\n\nSELECT prod_id, prod_price, prod_name\nFROM products\nORDER BY prod_price DESC, prod_name;\n\n\n\n\n+---------+------------+----------------+\n| prod_id | prod_price | prod_name      |\n+---------+------------+----------------+\n| JP2000  |      55.00 | JetPack 2000   |\n| SAFE    |      50.00 | Safe           |\n| JP1000  |      35.00 | JetPack 1000   |\n| ANV03   |      14.99 | 2 ton anvil    |\n| DTNTR   |      13.00 | Detonator      |\n| FB      |      10.00 | Bird seed      |\n| TNT2    |      10.00 | TNT (5 sticks) |\n| ANV02   |       9.99 | 1 ton anvil    |\n| OL1     |       8.99 | Oil can        |\n| ANV01   |       5.99 | .5 ton anvil   |\n| SLING   |       4.49 | Sling          |\n| FU1     |       3.42 | Fuses          |\n| FC      |       2.50 | Carrots        |\n| TNT1    |       2.50 | TNT (1 stick)  |\n+---------+------------+----------------+\n14 rows in set (0.00 sec)\n\n\n\n\nSELECT prod_price\nFROM products\nORDER BY prod_price DESC LIMIT 1;\n\n\n\n\n+------------+\n| prod_price |\n+------------+\n|      55.00 |\n+------------+\n1 row in set (0.00 sec)\n\n\n\n\nSELECT prod_name, prod_price\nFROM products\nWHERE prod_price = 2.50;\n\n\n\n\n+---------------+------------+\n| prod_name     | prod_price |\n+---------------+------------+\n| Carrots       |       2.50 |\n| TNT (1 stick) |       2.50 |\n+---------------+------------+\n2 rows in set (0.00 sec)\n\n\n\n\nSELECT prod_name, prod_price\nFROM products\nWHERE prod_name = 'fuses';\n\n\n\n\n+-----------+------------+\n| prod_name | prod_price |\n+-----------+------------+\n| Fuses     |       3.42 |\n+-----------+------------+\n1 row in set (0.00 sec)\n\n\n\n\nSELECT prod_name, prod_price\nFROM products\nWHERE prod_price <= 10;\n\n\n\n\n+----------------+------------+\n| prod_name      | prod_price |\n+----------------+------------+\n| .5 ton anvil   |       5.99 |\n| 1 ton anvil    |       9.99 |\n| Bird seed      |      10.00 |\n| Carrots        |       2.50 |\n| Fuses          |       3.42 |\n| Oil can        |       8.99 |\n| Sling          |       4.49 |\n| TNT (1 stick)  |       2.50 |\n| TNT (5 sticks) |      10.00 |\n+----------------+------------+\n9 rows in set (0.00 sec)\n\n\n\n\nSELECT vend_id, prod_name\nFROM products\nWHERE vend_id <> 1003;\n\n\n\n\n+---------+--------------+\n| vend_id | prod_name    |\n+---------+--------------+\n|    1001 | .5 ton anvil |\n|    1001 | 1 ton anvil  |\n|    1001 | 2 ton anvil  |\n|    1002 | Fuses        |\n|    1005 | JetPack 1000 |\n|    1005 | JetPack 2000 |\n|    1002 | Oil can      |\n+---------+--------------+\n7 rows in set (0.00 sec)\n\n\n\n\nSELECT vend_id, prod_name\nFROM products\nWHERE vend_id != 1003;\n\n\n\n\n+---------+--------------+\n| vend_id | prod_name    |\n+---------+--------------+\n|    1001 | .5 ton anvil |\n|    1001 | 1 ton anvil  |\n|    1001 | 2 ton anvil  |\n|    1002 | Fuses        |\n|    1005 | JetPack 1000 |\n|    1005 | JetPack 2000 |\n|    1002 | Oil can      |\n+---------+--------------+\n7 rows in set (0.00 sec)\n\n\n\n\nSELECT prod_name, prod_price\nFROM products\nWHERE prod_price BETWEEN 5 and 10;\n\n\n\n\n+----------------+------------+\n| prod_name      | prod_price |\n+----------------+------------+\n| .5 ton anvil   |       5.99 |\n| 1 ton anvil    |       9.99 |\n| Bird seed      |      10.00 |\n| Oil can        |       8.99 |\n| TNT (5 sticks) |      10.00 |\n+----------------+------------+\n5 rows in set (0.00 sec)\n\n\n\n\nSELECT prod_name\nFROM products\nWHERE prod_price IS NULL;\n\n\n\n\nEmpty set (0.00 sec)\n\n\n\n\nSELECT cust_id\nFROM customers\nWHERE cust_email IS NULL;\n\n\n\n\n+---------+\n| cust_id |\n+---------+\n|   10002 |\n|   10005 |\n+---------+\n2 rows in set (0.00 sec)",
+            "title": "Filtering data"
+        },
+        {
+            "location": "/filtering-data/#filtering-data",
+            "text": "SELECT prod_name\nFROM products\nLIMIT 5;  +--------------+\n| prod_name    |\n+--------------+\n| .5 ton anvil |\n| 1 ton anvil  |\n| 2 ton anvil  |\n| Detonator    |\n| Bird seed    |\n+--------------+\n5 rows in set (0.00 sec)  SELECT prod_name\nFROM products\nLIMIT 5, 5;  +--------------+\n| prod_name    |\n+--------------+\n| Carrots      |\n| Fuses        |\n| JetPack 1000 |\n| JetPack 2000 |\n| Oil can      |\n+--------------+\n5 rows in set (0.00 sec)  SELECT products.prod_name\nFROM products;  +----------------+\n| prod_name      |\n+----------------+\n| .5 ton anvil   |\n| 1 ton anvil    |\n| 2 ton anvil    |\n| Detonator      |\n| Bird seed      |\n| Carrots        |\n| Fuses          |\n| JetPack 1000   |\n| JetPack 2000   |\n| Oil can        |\n| Safe           |\n| Sling          |\n| TNT (1 stick)  |\n| TNT (5 sticks) |\n+----------------+\n14 rows in set (0.00 sec)  SELECT prod_name\nFROM products\nORDER BY prod_name;  +----------------+\n| prod_name      |\n+----------------+\n| .5 ton anvil   |\n| 1 ton anvil    |\n| 2 ton anvil    |\n| Bird seed      |\n| Carrots        |\n| Detonator      |\n| Fuses          |\n| JetPack 1000   |\n| JetPack 2000   |\n| Oil can        |\n| Safe           |\n| Sling          |\n| TNT (1 stick)  |\n| TNT (5 sticks) |\n+----------------+\n14 rows in set (0.00 sec)  SELECT prod_id, prod_price, prod_name\nFROM products\nORDER BY prod_price, prod_name;  +---------+------------+----------------+\n| prod_id | prod_price | prod_name      |\n+---------+------------+----------------+\n| FC      |       2.50 | Carrots        |\n| TNT1    |       2.50 | TNT (1 stick)  |\n| FU1     |       3.42 | Fuses          |\n| SLING   |       4.49 | Sling          |\n| ANV01   |       5.99 | .5 ton anvil   |\n| OL1     |       8.99 | Oil can        |\n| ANV02   |       9.99 | 1 ton anvil    |\n| FB      |      10.00 | Bird seed      |\n| TNT2    |      10.00 | TNT (5 sticks) |\n| DTNTR   |      13.00 | Detonator      |\n| ANV03   |      14.99 | 2 ton anvil    |\n| JP1000  |      35.00 | JetPack 1000   |\n| SAFE    |      50.00 | Safe           |\n| JP2000  |      55.00 | JetPack 2000   |\n+---------+------------+----------------+\n14 rows in set (0.03 sec)  SELECT prod_id, prod_price, prod_name\nFROM products\nORDER BY prod_price DESC;  +---------+------------+----------------+\n| prod_id | prod_price | prod_name      |\n+---------+------------+----------------+\n| JP2000  |      55.00 | JetPack 2000   |\n| SAFE    |      50.00 | Safe           |\n| JP1000  |      35.00 | JetPack 1000   |\n| ANV03   |      14.99 | 2 ton anvil    |\n| DTNTR   |      13.00 | Detonator      |\n| TNT2    |      10.00 | TNT (5 sticks) |\n| FB      |      10.00 | Bird seed      |\n| ANV02   |       9.99 | 1 ton anvil    |\n| OL1     |       8.99 | Oil can        |\n| ANV01   |       5.99 | .5 ton anvil   |\n| SLING   |       4.49 | Sling          |\n| FU1     |       3.42 | Fuses          |\n| FC      |       2.50 | Carrots        |\n| TNT1    |       2.50 | TNT (1 stick)  |\n+---------+------------+----------------+\n14 rows in set (0.00 sec)  SELECT prod_id, prod_price, prod_name\nFROM products\nORDER BY prod_price DESC, prod_name;  +---------+------------+----------------+\n| prod_id | prod_price | prod_name      |\n+---------+------------+----------------+\n| JP2000  |      55.00 | JetPack 2000   |\n| SAFE    |      50.00 | Safe           |\n| JP1000  |      35.00 | JetPack 1000   |\n| ANV03   |      14.99 | 2 ton anvil    |\n| DTNTR   |      13.00 | Detonator      |\n| FB      |      10.00 | Bird seed      |\n| TNT2    |      10.00 | TNT (5 sticks) |\n| ANV02   |       9.99 | 1 ton anvil    |\n| OL1     |       8.99 | Oil can        |\n| ANV01   |       5.99 | .5 ton anvil   |\n| SLING   |       4.49 | Sling          |\n| FU1     |       3.42 | Fuses          |\n| FC      |       2.50 | Carrots        |\n| TNT1    |       2.50 | TNT (1 stick)  |\n+---------+------------+----------------+\n14 rows in set (0.00 sec)  SELECT prod_price\nFROM products\nORDER BY prod_price DESC LIMIT 1;  +------------+\n| prod_price |\n+------------+\n|      55.00 |\n+------------+\n1 row in set (0.00 sec)  SELECT prod_name, prod_price\nFROM products\nWHERE prod_price = 2.50;  +---------------+------------+\n| prod_name     | prod_price |\n+---------------+------------+\n| Carrots       |       2.50 |\n| TNT (1 stick) |       2.50 |\n+---------------+------------+\n2 rows in set (0.00 sec)  SELECT prod_name, prod_price\nFROM products\nWHERE prod_name = 'fuses';  +-----------+------------+\n| prod_name | prod_price |\n+-----------+------------+\n| Fuses     |       3.42 |\n+-----------+------------+\n1 row in set (0.00 sec)  SELECT prod_name, prod_price\nFROM products\nWHERE prod_price <= 10;  +----------------+------------+\n| prod_name      | prod_price |\n+----------------+------------+\n| .5 ton anvil   |       5.99 |\n| 1 ton anvil    |       9.99 |\n| Bird seed      |      10.00 |\n| Carrots        |       2.50 |\n| Fuses          |       3.42 |\n| Oil can        |       8.99 |\n| Sling          |       4.49 |\n| TNT (1 stick)  |       2.50 |\n| TNT (5 sticks) |      10.00 |\n+----------------+------------+\n9 rows in set (0.00 sec)  SELECT vend_id, prod_name\nFROM products\nWHERE vend_id <> 1003;  +---------+--------------+\n| vend_id | prod_name    |\n+---------+--------------+\n|    1001 | .5 ton anvil |\n|    1001 | 1 ton anvil  |\n|    1001 | 2 ton anvil  |\n|    1002 | Fuses        |\n|    1005 | JetPack 1000 |\n|    1005 | JetPack 2000 |\n|    1002 | Oil can      |\n+---------+--------------+\n7 rows in set (0.00 sec)  SELECT vend_id, prod_name\nFROM products\nWHERE vend_id != 1003;  +---------+--------------+\n| vend_id | prod_name    |\n+---------+--------------+\n|    1001 | .5 ton anvil |\n|    1001 | 1 ton anvil  |\n|    1001 | 2 ton anvil  |\n|    1002 | Fuses        |\n|    1005 | JetPack 1000 |\n|    1005 | JetPack 2000 |\n|    1002 | Oil can      |\n+---------+--------------+\n7 rows in set (0.00 sec)  SELECT prod_name, prod_price\nFROM products\nWHERE prod_price BETWEEN 5 and 10;  +----------------+------------+\n| prod_name      | prod_price |\n+----------------+------------+\n| .5 ton anvil   |       5.99 |\n| 1 ton anvil    |       9.99 |\n| Bird seed      |      10.00 |\n| Oil can        |       8.99 |\n| TNT (5 sticks) |      10.00 |\n+----------------+------------+\n5 rows in set (0.00 sec)  SELECT prod_name\nFROM products\nWHERE prod_price IS NULL;  Empty set (0.00 sec)  SELECT cust_id\nFROM customers\nWHERE cust_email IS NULL;  +---------+\n| cust_id |\n+---------+\n|   10002 |\n|   10005 |\n+---------+\n2 rows in set (0.00 sec)",
             "title": "Filtering data"
         },
         {
             "location": "/searching-using-regular-expressions/",
-            "text": "",
+            "text": "Searching using regular expressions\n\n\n\n\nAttention\n\n\nThis chapter is not been seen in class.",
             "title": "Searching using Regular Expressions"
         },
         {
+            "location": "/searching-using-regular-expressions/#searching-using-regular-expressions",
+            "text": "Attention  This chapter is not been seen in class.",
+            "title": "Searching using regular expressions"
+        },
+        {
             "location": "/calculated-fields/",
+            "text": "Calculated fields\n\n\nConcatinating fields\n\n\nSELECT Concat(vend_name, ' (', vend_country, ')')\nFROM vendors\nORDER BY vend_name;\n\n\n\n\n+--------------------------------------------+\n| Concat(vend_name, ' (', vend_country, ')') |\n+--------------------------------------------+\n| ACME (USA)                                 |\n| Anvils R Us (USA)                          |\n| Furball Inc. (USA)                         |\n| Jet Set (England)                          |\n| Jouets Et Ours (France)                    |\n| LT Supplies (USA)                          |\n+--------------------------------------------+\n\n\n\n\nAliases\n\n\nSELECT Concat(RTrim(vend_name), ' (', RTrim(vend_country), ')') AS vend_title\nFROM vendors\nORDER BY vend_name;\n\n\n\n\n+-------------------------+\n| vend_title              |\n+-------------------------+\n| ACME (USA)              |\n| Anvils R Us (USA)       |\n| Furball Inc. (USA)      |\n| Jet Set (England)       |\n| Jouets Et Ours (France) |\n| LT Supplies (USA)       |\n+-------------------------+\n\n\n\n\nMathematical calculations\n\n\nSELECT prod_id, quantity, item_price\nFROM orderitems\nWHERE order_num = 20005;\n\n\n\n\n+---------+----------+------------+\n| prod_id | quantity | item_price |\n+---------+----------+------------+\n| ANV01   |       10 |       5.99 |\n| ANV02   |        3 |       9.99 |\n| TNT2    |        5 |      10.00 |\n| FB      |        1 |      10.00 |\n+---------+----------+------------+\n\n\n\n\nSELECT  prod_id,\n        quantity,\n        item_price,\n        quantity * item_price AS expanded_price\nFROM orderitems\nWHERE order_num = 20005;\n\n\n\n\n+---------+----------+------------+----------------+\n| prod_id | quantity | item_price | expanded_price |\n+---------+----------+------------+----------------+\n| ANV01   |       10 |       5.99 |          59.90 |\n| ANV02   |        3 |       9.99 |          29.97 |\n| TNT2    |        5 |      10.00 |          50.00 |\n| FB      |        1 |      10.00 |          10.00 |\n+---------+----------+------------+----------------+\n\n\n\n\n\n\n\n\n\n\nOperator\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\n+\n\n\nAddition\n\n\n\n\n\n\n-\n\n\nSubtraction\n\n\n\n\n\n\n*\n\n\nMultiplication\n\n\n\n\n\n\n/\n\n\nDivision",
+            "title": "Calculated fields"
+        },
+        {
+            "location": "/calculated-fields/#calculated-fields",
             "text": "",
             "title": "Calculated fields"
         },
         {
+            "location": "/calculated-fields/#concatinating-fields",
+            "text": "SELECT Concat(vend_name, ' (', vend_country, ')')\nFROM vendors\nORDER BY vend_name;  +--------------------------------------------+\n| Concat(vend_name, ' (', vend_country, ')') |\n+--------------------------------------------+\n| ACME (USA)                                 |\n| Anvils R Us (USA)                          |\n| Furball Inc. (USA)                         |\n| Jet Set (England)                          |\n| Jouets Et Ours (France)                    |\n| LT Supplies (USA)                          |\n+--------------------------------------------+",
+            "title": "Concatinating fields"
+        },
+        {
+            "location": "/calculated-fields/#aliases",
+            "text": "SELECT Concat(RTrim(vend_name), ' (', RTrim(vend_country), ')') AS vend_title\nFROM vendors\nORDER BY vend_name;  +-------------------------+\n| vend_title              |\n+-------------------------+\n| ACME (USA)              |\n| Anvils R Us (USA)       |\n| Furball Inc. (USA)      |\n| Jet Set (England)       |\n| Jouets Et Ours (France) |\n| LT Supplies (USA)       |\n+-------------------------+",
+            "title": "Aliases"
+        },
+        {
+            "location": "/calculated-fields/#mathematical-calculations",
+            "text": "SELECT prod_id, quantity, item_price\nFROM orderitems\nWHERE order_num = 20005;  +---------+----------+------------+\n| prod_id | quantity | item_price |\n+---------+----------+------------+\n| ANV01   |       10 |       5.99 |\n| ANV02   |        3 |       9.99 |\n| TNT2    |        5 |      10.00 |\n| FB      |        1 |      10.00 |\n+---------+----------+------------+  SELECT  prod_id,\n        quantity,\n        item_price,\n        quantity * item_price AS expanded_price\nFROM orderitems\nWHERE order_num = 20005;  +---------+----------+------------+----------------+\n| prod_id | quantity | item_price | expanded_price |\n+---------+----------+------------+----------------+\n| ANV01   |       10 |       5.99 |          59.90 |\n| ANV02   |        3 |       9.99 |          29.97 |\n| TNT2    |        5 |      10.00 |          50.00 |\n| FB      |        1 |      10.00 |          10.00 |\n+---------+----------+------------+----------------+     Operator  Description      +  Addition    -  Subtraction    *  Multiplication    /  Division",
+            "title": "Mathematical calculations"
+        },
+        {
+            "location": "/data-manipulation/",
+            "text": "Data manipulation\n\n\nText manipulation functions\n\n\nSELECT vend_name, UPPER(vend_name) AS vend_name_upcase\nFROM vendors\nORDER BY vend_name;\n\n\n\n\n+----------------+------------------+\n| vend_name      | vend_name_upcase |\n+----------------+------------------+\n| ACME           | ACME             |\n| Anvils R Us    | ANVILS R US      |\n| Furball Inc.   | FURBALL INC.     |\n| Jet Set        | JET SET          |\n| Jouets Et Ours | JOUETS ET OURS   |\n| LT Supplies    | LT SUPPLIES      |\n+----------------+------------------+\n\n\n\n\n\n\n\n\n\n\nFunction\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nLeft()\n\n\nReturns characters from left of string\n\n\n\n\n\n\nLenght()\n\n\nReturns the lenght of a string\n\n\n\n\n\n\nLocate()\n\n\nFinds a substring within a string\n\n\n\n\n\n\nLower()\n\n\nConverts string to lowercase\n\n\n\n\n\n\nLTrim()\n\n\nTrims white space from left of string\n\n\n\n\n\n\nRight()\n\n\nReturns chraracters from right of string\n\n\n\n\n\n\nRTrim()\n\n\nTrims white space from right of string\n\n\n\n\n\n\nSoundex()\n\n\nReturns a string's SOUNDEX value\n\n\n\n\n\n\nSubString()\n\n\nReturns characters from within a string\n\n\n\n\n\n\nUpper\n\n\nConverts string to uppercase\n\n\n\n\n\n\n\n\nDate and time manipulation functions\n\n\n\n\n\n\n\n\nFunction\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nAddDate()\n\n\nAdd to a date (days, weeks, and so on)\n\n\n\n\n\n\nAddTime()\n\n\nAdd to a time (hours, minutes, and so on)\n\n\n\n\n\n\nCurDate()\n\n\nReturns the current date\n\n\n\n\n\n\nCurTime()\n\n\nReturns the current time\n\n\n\n\n\n\nDate()\n\n\nReturns the date portion of a date time\n\n\n\n\n\n\nDateDiff()\n\n\nCalculates the difference between two dates\n\n\n\n\n\n\nDate_Add()\n\n\nHighly flexible date arithmetic function\n\n\n\n\n\n\nDate_Format()\n\n\nReturns a formatted date or time string\n\n\n\n\n\n\nDay()\n\n\nReturns the day portion of a date\n\n\n\n\n\n\nDayOfWeek()\n\n\nReturns the day of the week for a date\n\n\n\n\n\n\nHour()\n\n\nReturns the hour portion of a time\n\n\n\n\n\n\nMinute()\n\n\nReturns the minute portion of a time\n\n\n\n\n\n\nMonth()\n\n\nReturns the month portion of a date\n\n\n\n\n\n\nNow()\n\n\nReturns the current date and time\n\n\n\n\n\n\nSecond()\n\n\nReturns the second portion of a time\n\n\n\n\n\n\nTime()\n\n\nReturns the time portion of a date time\n\n\n\n\n\n\nYear()\n\n\nReturns the year portion\n\n\n\n\n\n\n\n\nSelect by date example\n\n\nSELECT cust_id, order_num\nFROM orders\nWHERE Date(order_date) = '2005-09-01';\n\n\n\n\n+---------+-----------+\n| cust_id | order_num |\n+---------+-----------+\n|   10001 |     20005 |\n+---------+-----------+\n1 row in set (0.01 sec)\n\n\n\n\nSelect between two dates example\n\n\nSELECT cust_id, order_num\nFROM orders\nWHERE Date(order_date) BETWEEN '2005-09-01' AND '2005-09-30';\n\n\n\n\n+---------+-----------+\n| cust_id | order_num |\n+---------+-----------+\n|   10001 |     20005 |\n|   10003 |     20006 |\n|   10004 |     20007 |\n+---------+-----------+\n3 rows in set (0.00 sec)\n\n\n\n\nAlternative, but better way to select for years or months.\n\n\nSELECT cust_id, order_num\nFROM orders\nWHERE Year(order_date) = 2005 AND Month(order_date) = 9;\n\n\n\n\n+---------+-----------+\n| cust_id | order_num |\n+---------+-----------+\n|   10001 |     20005 |\n|   10003 |     20006 |\n|   10004 |     20007 |\n+---------+-----------+\n\n\n\n\nNumeric manipulation functions\n\n\n\n\n\n\n\n\nFunction\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nAbs()\n\n\nReturns a nuber's absolute value\n\n\n\n\n\n\nCos()\n\n\nReturns the trigonometric cosine of a specified angle\n\n\n\n\n\n\nExp()\n\n\nReturns the exponential value of a specific number\n\n\n\n\n\n\nMod()\n\n\nReturns the remainder of a division operation\n\n\n\n\n\n\nPi()\n\n\nReturns the value of pi\n\n\n\n\n\n\nRand()\n\n\nReturns a random number\n\n\n\n\n\n\nSin()\n\n\nRetunrs the trigonometric sine of a specified angle\n\n\n\n\n\n\nSqrt()\n\n\nReturns the square root of a specied number\n\n\n\n\n\n\nTan()\n\n\nReturns the trigonometric tangent of a specified angle",
+            "title": "Data manipulation"
+        },
+        {
+            "location": "/data-manipulation/#data-manipulation",
+            "text": "",
+            "title": "Data manipulation"
+        },
+        {
+            "location": "/data-manipulation/#text-manipulation-functions",
+            "text": "SELECT vend_name, UPPER(vend_name) AS vend_name_upcase\nFROM vendors\nORDER BY vend_name;  +----------------+------------------+\n| vend_name      | vend_name_upcase |\n+----------------+------------------+\n| ACME           | ACME             |\n| Anvils R Us    | ANVILS R US      |\n| Furball Inc.   | FURBALL INC.     |\n| Jet Set        | JET SET          |\n| Jouets Et Ours | JOUETS ET OURS   |\n| LT Supplies    | LT SUPPLIES      |\n+----------------+------------------+     Function  Description      Left()  Returns characters from left of string    Lenght()  Returns the lenght of a string    Locate()  Finds a substring within a string    Lower()  Converts string to lowercase    LTrim()  Trims white space from left of string    Right()  Returns chraracters from right of string    RTrim()  Trims white space from right of string    Soundex()  Returns a string's SOUNDEX value    SubString()  Returns characters from within a string    Upper  Converts string to uppercase",
+            "title": "Text manipulation functions"
+        },
+        {
+            "location": "/data-manipulation/#date-and-time-manipulation-functions",
+            "text": "Function  Description      AddDate()  Add to a date (days, weeks, and so on)    AddTime()  Add to a time (hours, minutes, and so on)    CurDate()  Returns the current date    CurTime()  Returns the current time    Date()  Returns the date portion of a date time    DateDiff()  Calculates the difference between two dates    Date_Add()  Highly flexible date arithmetic function    Date_Format()  Returns a formatted date or time string    Day()  Returns the day portion of a date    DayOfWeek()  Returns the day of the week for a date    Hour()  Returns the hour portion of a time    Minute()  Returns the minute portion of a time    Month()  Returns the month portion of a date    Now()  Returns the current date and time    Second()  Returns the second portion of a time    Time()  Returns the time portion of a date time    Year()  Returns the year portion",
+            "title": "Date and time manipulation functions"
+        },
+        {
+            "location": "/data-manipulation/#select-by-date-example",
+            "text": "SELECT cust_id, order_num\nFROM orders\nWHERE Date(order_date) = '2005-09-01';  +---------+-----------+\n| cust_id | order_num |\n+---------+-----------+\n|   10001 |     20005 |\n+---------+-----------+\n1 row in set (0.01 sec)",
+            "title": "Select by date example"
+        },
+        {
+            "location": "/data-manipulation/#select-between-two-dates-example",
+            "text": "SELECT cust_id, order_num\nFROM orders\nWHERE Date(order_date) BETWEEN '2005-09-01' AND '2005-09-30';  +---------+-----------+\n| cust_id | order_num |\n+---------+-----------+\n|   10001 |     20005 |\n|   10003 |     20006 |\n|   10004 |     20007 |\n+---------+-----------+\n3 rows in set (0.00 sec)  Alternative, but better way to select for years or months.  SELECT cust_id, order_num\nFROM orders\nWHERE Year(order_date) = 2005 AND Month(order_date) = 9;  +---------+-----------+\n| cust_id | order_num |\n+---------+-----------+\n|   10001 |     20005 |\n|   10003 |     20006 |\n|   10004 |     20007 |\n+---------+-----------+",
+            "title": "Select between two dates example"
+        },
+        {
+            "location": "/data-manipulation/#numeric-manipulation-functions",
+            "text": "Function  Description      Abs()  Returns a nuber's absolute value    Cos()  Returns the trigonometric cosine of a specified angle    Exp()  Returns the exponential value of a specific number    Mod()  Returns the remainder of a division operation    Pi()  Returns the value of pi    Rand()  Returns a random number    Sin()  Retunrs the trigonometric sine of a specified angle    Sqrt()  Returns the square root of a specied number    Tan()  Returns the trigonometric tangent of a specified angle",
+            "title": "Numeric manipulation functions"
+        },
+        {
             "location": "/summarizing-data/",
+            "text": "Summarizing data\n\n\nUsing aggregate functions\n\n\n\n\n\n\n\n\nFunction\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nAVG()\n\n\nReturns a column's average value\n\n\n\n\n\n\nCOUNT()\n\n\nReturns the number of rows in a column\n\n\n\n\n\n\nMAX()\n\n\nReturns a column's highest value\n\n\n\n\n\n\nMIN()\n\n\nReturns a column's lowest value\n\n\n\n\n\n\nSUM()\n\n\nReturns the sum of a column's value\n\n\n\n\n\n\n\n\nThe AVG() function\n\n\nSELECT AVG(prod_price) AS avg_price\nFROM products;\n\n\n\n\n+-----------+\n| avg_price |\n+-----------+\n| 16.133571 |\n+-----------+\n\n\n\n\nSELECT AVG(prod_price) AS avg_price\nFROM products\nWHERE vend_id = 1003;\n\n\n\n\n+-----------+\n| avg_price |\n+-----------+\n| 13.212857 |\n+-----------+\n\n\n\n\nThe COUNT() function\n\n\nSELECT COUNT(*) AS num_cust\nFROM customers;\n\n\n\n\n+----------+\n| num_cust |\n+----------+\n|        5 |\n+----------+\n\n\n\n\nSELECT COUNT(cust_email) AS num_cust\nFROM customers;\n\n\n\n\n+----------+\n| num_cust |\n+----------+\n|        3 |\n+----------+\n\n\n\n\nThe MAX() function\n\n\nSELECT MAX(prod_price) AS max_price\nFROM products;\n\n\n\n\n+-----------+\n| max_price |\n+-----------+\n|     55.00 |\n+-----------+\n\n\n\n\nThe MIN() function\n\n\nSELECT MIN(prod_price) AS min_price\nFROM products;\n\n\n\n\n+-----------+\n| min_price |\n+-----------+\n|      2.50 |\n+-----------+\n\n\n\n\nThe SUM() function\n\n\nSELECT SUM(quantity) AS items_ordered\nFROM orderitems\nWHERE order_num = 20005;\n\n\n\n\n+---------------+\n| items_ordered |\n+---------------+\n|            19 |\n+---------------+\n\n\n\n\nSELECT SUM(item_price * quantity) AS total_price\nFROM orderitems\nWHERE order_num = 20005;\n\n\n\n\n+-------------+\n| total_price |\n+-------------+\n|      149.87 |\n+-------------+\n\n\n\n\nAggregates on distinct values\n\n\nSELECT AVG(DISTINCT prod_price) AS avg_price\nFROM products\nWHERE vend_id = 1003;\n\n\n\n\n+-----------+\n| avg_price |\n+-----------+\n| 15.998000 |\n+-----------+\n\n\n\n\nCombining aggregate functions\n\n\nSELECT COUNT(*) AS num_items,\n    MIN(prod_price) AS price_min,\n    MAX(prod_price) AS price_max,\n    AVG(prod_price) AS price_avg\nFROM products;\n\n\n\n\n+-----------+-----------+-----------+-----------+\n| num_items | price_min | price_max | price_avg |\n+-----------+-----------+-----------+-----------+\n|        14 |      2.50 |     55.00 | 16.133571 |\n+-----------+-----------+-----------+-----------+",
+            "title": "Summarizing data"
+        },
+        {
+            "location": "/summarizing-data/#summarizing-data",
             "text": "",
             "title": "Summarizing data"
         },
         {
+            "location": "/summarizing-data/#using-aggregate-functions",
+            "text": "Function  Description      AVG()  Returns a column's average value    COUNT()  Returns the number of rows in a column    MAX()  Returns a column's highest value    MIN()  Returns a column's lowest value    SUM()  Returns the sum of a column's value",
+            "title": "Using aggregate functions"
+        },
+        {
+            "location": "/summarizing-data/#the-avg-function",
+            "text": "SELECT AVG(prod_price) AS avg_price\nFROM products;  +-----------+\n| avg_price |\n+-----------+\n| 16.133571 |\n+-----------+  SELECT AVG(prod_price) AS avg_price\nFROM products\nWHERE vend_id = 1003;  +-----------+\n| avg_price |\n+-----------+\n| 13.212857 |\n+-----------+",
+            "title": "The AVG() function"
+        },
+        {
+            "location": "/summarizing-data/#the-count-function",
+            "text": "SELECT COUNT(*) AS num_cust\nFROM customers;  +----------+\n| num_cust |\n+----------+\n|        5 |\n+----------+  SELECT COUNT(cust_email) AS num_cust\nFROM customers;  +----------+\n| num_cust |\n+----------+\n|        3 |\n+----------+",
+            "title": "The COUNT() function"
+        },
+        {
+            "location": "/summarizing-data/#the-max-function",
+            "text": "SELECT MAX(prod_price) AS max_price\nFROM products;  +-----------+\n| max_price |\n+-----------+\n|     55.00 |\n+-----------+",
+            "title": "The MAX() function"
+        },
+        {
+            "location": "/summarizing-data/#the-min-function",
+            "text": "SELECT MIN(prod_price) AS min_price\nFROM products;  +-----------+\n| min_price |\n+-----------+\n|      2.50 |\n+-----------+",
+            "title": "The MIN() function"
+        },
+        {
+            "location": "/summarizing-data/#the-sum-function",
+            "text": "SELECT SUM(quantity) AS items_ordered\nFROM orderitems\nWHERE order_num = 20005;  +---------------+\n| items_ordered |\n+---------------+\n|            19 |\n+---------------+  SELECT SUM(item_price * quantity) AS total_price\nFROM orderitems\nWHERE order_num = 20005;  +-------------+\n| total_price |\n+-------------+\n|      149.87 |\n+-------------+",
+            "title": "The SUM() function"
+        },
+        {
+            "location": "/summarizing-data/#aggregates-on-distinct-values",
+            "text": "SELECT AVG(DISTINCT prod_price) AS avg_price\nFROM products\nWHERE vend_id = 1003;  +-----------+\n| avg_price |\n+-----------+\n| 15.998000 |\n+-----------+",
+            "title": "Aggregates on distinct values"
+        },
+        {
+            "location": "/summarizing-data/#combining-aggregate-functions",
+            "text": "SELECT COUNT(*) AS num_items,\n    MIN(prod_price) AS price_min,\n    MAX(prod_price) AS price_max,\n    AVG(prod_price) AS price_avg\nFROM products;  +-----------+-----------+-----------+-----------+\n| num_items | price_min | price_max | price_avg |\n+-----------+-----------+-----------+-----------+\n|        14 |      2.50 |     55.00 | 16.133571 |\n+-----------+-----------+-----------+-----------+",
+            "title": "Combining aggregate functions"
+        },
+        {
             "location": "/grouping-data/",
+            "text": "Grouping data\n\n\nCreating groups",
+            "title": "Grouping data"
+        },
+        {
+            "location": "/grouping-data/#grouping-data",
             "text": "",
             "title": "Grouping data"
         },
         {
-            "location": "/subqueries/",
+            "location": "/grouping-data/#creating-groups",
             "text": "",
+            "title": "Creating groups"
+        },
+        {
+            "location": "/subqueries/",
+            "text": "Subqueries",
             "title": "Working with subqueries"
         },
         {
-            "location": "/joins/",
+            "location": "/subqueries/#subqueries",
             "text": "",
+            "title": "Subqueries"
+        },
+        {
+            "location": "/joins/",
+            "text": "Joins",
             "title": "Joining tables"
         },
         {
+            "location": "/joins/#joins",
+            "text": "",
+            "title": "Joins"
+        },
+        {
             "location": "/combining-queries/",
+            "text": "Combining queries",
+            "title": "Combining queries"
+        },
+        {
+            "location": "/combining-queries/#combining-queries",
             "text": "",
             "title": "Combining queries"
         },
         {
             "location": "/full-text-searching/",
-            "text": "",
+            "text": "Full-text Searching\n\n\n\n\ntest\n\n\nThis chapter is not been seen in class.",
             "title": "Full-text searching"
         },
         {
+            "location": "/full-text-searching/#full-text-searching",
+            "text": "test  This chapter is not been seen in class.",
+            "title": "Full-text Searching"
+        },
+        {
             "location": "/inserting-data/",
+            "text": "Inserting data",
+            "title": "Inserting data"
+        },
+        {
+            "location": "/inserting-data/#inserting-data",
             "text": "",
             "title": "Inserting data"
         },
         {
             "location": "/update-and-delete/",
+            "text": "Updating and deleting data",
+            "title": "Updating and deleting data"
+        },
+        {
+            "location": "/update-and-delete/#updating-and-deleting-data",
             "text": "",
             "title": "Updating and deleting data"
         },
         {
             "location": "/creating-and-manipulating-tables/",
+            "text": "Creating and manipulating tables",
+            "title": "Creating and manipulating tables"
+        },
+        {
+            "location": "/creating-and-manipulating-tables/#creating-and-manipulating-tables",
             "text": "",
             "title": "Creating and manipulating tables"
         },
         {
             "location": "/views/",
-            "text": "",
+            "text": "Views",
             "title": "Using views"
         },
         {
-            "location": "/stored-procedures/",
+            "location": "/views/#views",
             "text": "",
+            "title": "Views"
+        },
+        {
+            "location": "/stored-procedures/",
+            "text": "Stored procedures\n\n\n\n\nAttention\n\n\nThis chapter is not been seen in class.",
+            "title": "Stored procedures"
+        },
+        {
+            "location": "/stored-procedures/#stored-procedures",
+            "text": "Attention  This chapter is not been seen in class.",
             "title": "Stored procedures"
         },
         {
             "location": "/cursors/",
-            "text": "",
+            "text": "Cursors\n\n\n\n\nAttention\n\n\nThis chapter is not been seen in class.",
             "title": "Using cursors"
         },
         {
+            "location": "/cursors/#cursors",
+            "text": "Attention  This chapter is not been seen in class.",
+            "title": "Cursors"
+        },
+        {
             "location": "/triggers/",
-            "text": "",
+            "text": "Triggers",
             "title": "Using triggers"
         },
         {
-            "location": "/transactions/",
+            "location": "/triggers/#triggers",
             "text": "",
+            "title": "Triggers"
+        },
+        {
+            "location": "/transactions/",
+            "text": "Transactions\n\n\n\n\nAttention\n\n\nThis chapter is not been seen in class.",
             "title": "Managing transaction processing"
         },
         {
+            "location": "/transactions/#transactions",
+            "text": "Attention  This chapter is not been seen in class.",
+            "title": "Transactions"
+        },
+        {
             "location": "/globalization-and-localization/",
-            "text": "",
+            "text": "Globalization and localization\n\n\n\n\nAttention\n\n\nThis chapter is not been seen in class.",
             "title": "Globalization and localization"
         },
         {
-            "location": "/security/",
+            "location": "/globalization-and-localization/#globalization-and-localization",
+            "text": "Attention  This chapter is not been seen in class.",
+            "title": "Globalization and localization"
+        },
+        {
+            "location": "/database-users/",
+            "text": "Database users",
+            "title": "Managing database users"
+        },
+        {
+            "location": "/database-users/#database-users",
             "text": "",
-            "title": "Managing Security"
+            "title": "Database users"
         },
         {
             "location": "/database-maintenance/",
-            "text": "",
+            "text": "Database maintenance\n\n\n\n\nAttention\n\n\nThis chapter is not been seen in class.",
             "title": "Database maintenance"
+        },
+        {
+            "location": "/database-maintenance/#database-maintenance",
+            "text": "Attention  This chapter is not been seen in class.",
+            "title": "Database maintenance"
+        },
+        {
+            "location": "/passwords/",
+            "text": "Passwords",
+            "title": "Storing passwords"
+        },
+        {
+            "location": "/passwords/#passwords",
+            "text": "",
+            "title": "Passwords"
         }
     ]
 }

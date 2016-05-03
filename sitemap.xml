@@ -3,192 +3,208 @@
 
     
     <url>
-     <loc>/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/mysql-introduction/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//mysql-introduction/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/retreiving-data/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//retreiving-data/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/sorting-retreived-data/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//sorting-retreived-data/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/filtering-data/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//filtering-data/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/searching-using-regular-expressions/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//searching-using-regular-expressions/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/calculated-fields/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//calculated-fields/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/summarizing-data/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//data-manipulation/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/grouping-data/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//summarizing-data/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/subqueries/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//grouping-data/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/joins/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//subqueries/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/combining-queries/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//joins/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/full-text-searching/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//combining-queries/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/inserting-data/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//full-text-searching/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/update-and-delete/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//inserting-data/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/creating-and-manipulating-tables/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//update-and-delete/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/views/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//creating-and-manipulating-tables/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/stored-procedures/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//views/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/cursors/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//stored-procedures/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/triggers/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//cursors/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/transactions/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//triggers/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/globalization-and-localization/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//transactions/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/security/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//globalization-and-localization/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/database-maintenance/</loc>
-     <lastmod>2016-04-27</lastmod>
+     <loc>http://sillevl.github.io/course-databases//database-users/</loc>
+     <lastmod>2016-05-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://sillevl.github.io/course-databases//database-maintenance/</loc>
+     <lastmod>2016-05-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://sillevl.github.io/course-databases//passwords/</loc>
+     <lastmod>2016-05-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

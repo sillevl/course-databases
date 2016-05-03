@@ -104,10 +104,26 @@
 <li>
           
             <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../data-manipulation/">Data manipulation</a>
+        
+    </li>
+<li>
+          
+            <li>
     <li class="toctree-l1 current">
         <a class="current" href="./">Summarizing data</a>
         
             <ul>
+            
+                <li class="toctree-l3"><a href="#summarizing-data">Summarizing data</a></li>
+                
+                    <li><a class="toctree-l4" href="#using-aggregate-functions">Using aggregate functions</a></li>
+                
+                    <li><a class="toctree-l4" href="#aggregates-on-distinct-values">Aggregates on distinct values</a></li>
+                
+                    <li><a class="toctree-l4" href="#combining-aggregate-functions">Combining aggregate functions</a></li>
+                
             
             </ul>
         
@@ -214,7 +230,7 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../security/">Managing Security</a>
+        <a class="" href="../database-users/">Managing database users</a>
         
     </li>
 <li>
@@ -222,6 +238,13 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="../database-maintenance/">Database maintenance</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../passwords/">Storing passwords</a>
         
     </li>
 <li>
@@ -251,6 +274,10 @@
     <li>Summarizing data</li>
     <li class="wy-breadcrumbs-aside">
       
+        
+          <a href="https://github.com/sillevl/course-databases" class="icon icon-github"> Edit on GitHub</a>
+        
+      
     </li>
   </ul>
   <hr/>
@@ -258,7 +285,161 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="summarizing-data">Summarizing data</h1>
+<h2 id="using-aggregate-functions">Using aggregate functions</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Function</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">AVG()</td>
+<td align="left">Returns a column's average value</td>
+</tr>
+<tr>
+<td align="left">COUNT()</td>
+<td align="left">Returns the number of rows in a column</td>
+</tr>
+<tr>
+<td align="left">MAX()</td>
+<td align="left">Returns a column's highest value</td>
+</tr>
+<tr>
+<td align="left">MIN()</td>
+<td align="left">Returns a column's lowest value</td>
+</tr>
+<tr>
+<td align="left">SUM()</td>
+<td align="left">Returns the sum of a column's value</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-avg-function">The AVG() function</h3>
+<pre><code class="sql">SELECT AVG(prod_price) AS avg_price
+FROM products;
+</code></pre>
+
+<pre><code>+-----------+
+| avg_price |
++-----------+
+| 16.133571 |
++-----------+
+</code></pre>
+
+<pre><code class="sql">SELECT AVG(prod_price) AS avg_price
+FROM products
+WHERE vend_id = 1003;
+</code></pre>
+
+<pre><code>+-----------+
+| avg_price |
++-----------+
+| 13.212857 |
++-----------+
+</code></pre>
+
+<h3 id="the-count-function">The COUNT() function</h3>
+<pre><code class="sql">SELECT COUNT(*) AS num_cust
+FROM customers;
+</code></pre>
+
+<pre><code>+----------+
+| num_cust |
++----------+
+|        5 |
++----------+
+</code></pre>
+
+<pre><code class="sql">SELECT COUNT(cust_email) AS num_cust
+FROM customers;
+</code></pre>
+
+<pre><code>+----------+
+| num_cust |
++----------+
+|        3 |
++----------+
+</code></pre>
+
+<h3 id="the-max-function">The MAX() function</h3>
+<pre><code class="sql">SELECT MAX(prod_price) AS max_price
+FROM products;
+</code></pre>
+
+<pre><code>+-----------+
+| max_price |
++-----------+
+|     55.00 |
++-----------+
+</code></pre>
+
+<h3 id="the-min-function">The MIN() function</h3>
+<pre><code class="sql">SELECT MIN(prod_price) AS min_price
+FROM products;
+</code></pre>
+
+<pre><code>+-----------+
+| min_price |
++-----------+
+|      2.50 |
++-----------+
+</code></pre>
+
+<h3 id="the-sum-function">The SUM() function</h3>
+<pre><code class="sql">SELECT SUM(quantity) AS items_ordered
+FROM orderitems
+WHERE order_num = 20005;
+</code></pre>
+
+<pre><code>+---------------+
+| items_ordered |
++---------------+
+|            19 |
++---------------+
+</code></pre>
+
+<pre><code class="sql">SELECT SUM(item_price * quantity) AS total_price
+FROM orderitems
+WHERE order_num = 20005;
+</code></pre>
+
+<pre><code>+-------------+
+| total_price |
++-------------+
+|      149.87 |
++-------------+
+</code></pre>
+
+<h2 id="aggregates-on-distinct-values">Aggregates on distinct values</h2>
+<pre><code class="sql">SELECT AVG(DISTINCT prod_price) AS avg_price
+FROM products
+WHERE vend_id = 1003;
+</code></pre>
+
+<pre><code>+-----------+
+| avg_price |
++-----------+
+| 15.998000 |
++-----------+
+</code></pre>
+
+<h2 id="combining-aggregate-functions">Combining aggregate functions</h2>
+<pre><code class="sql">SELECT COUNT(*) AS num_items,
+    MIN(prod_price) AS price_min,
+    MAX(prod_price) AS price_max,
+    AVG(prod_price) AS price_avg
+FROM products;
+</code></pre>
+
+<pre><code>+-----------+-----------+-----------+-----------+
+| num_items | price_min | price_max | price_avg |
++-----------+-----------+-----------+-----------+
+|        14 |      2.50 |     55.00 | 16.133571 |
++-----------+-----------+-----------+-----------+
+</code></pre>
               
             </div>
           </div>
@@ -269,7 +450,7 @@
         <a href="../grouping-data/" class="btn btn-neutral float-right" title="Grouping data">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../calculated-fields/" class="btn btn-neutral" title="Calculated fields"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../data-manipulation/" class="btn btn-neutral" title="Data manipulation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -294,8 +475,10 @@
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
+          <a href="https://github.com/sillevl/course-databases" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
-        <span><a href="../calculated-fields/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+        <span><a href="../data-manipulation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../grouping-data/" style="color: #fcfcfc">Next &raquo;</a></span>

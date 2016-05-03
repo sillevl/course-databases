@@ -74,6 +74,9 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#retreiving-data">Retreiving data</a></li>
+                
+            
             </ul>
         
     </li>
@@ -103,6 +106,13 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="../calculated-fields/">Calculated fields</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../data-manipulation/">Data manipulation</a>
         
     </li>
 <li>
@@ -214,7 +224,7 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../security/">Managing Security</a>
+        <a class="" href="../database-users/">Managing database users</a>
         
     </li>
 <li>
@@ -222,6 +232,13 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="../database-maintenance/">Database maintenance</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../passwords/">Storing passwords</a>
         
     </li>
 <li>
@@ -251,6 +268,10 @@
     <li>Retreiving data</li>
     <li class="wy-breadcrumbs-aside">
       
+        
+          <a href="https://github.com/sillevl/course-databases" class="icon icon-github"> Edit on GitHub</a>
+        
+      
     </li>
   </ul>
   <hr/>
@@ -258,8 +279,11 @@
           <div role="main">
             <div class="section">
               
-                <pre><code class="sql">MariaDB [forta]&gt; select prod_name from products;
-+----------------+
+                <h1 id="retreiving-data">Retreiving data</h1>
+<pre><code class="sql">SELECT prod_name FROM products;
+</code></pre>
+
+<pre><code>+----------------+
 | prod_name      |
 +----------------+
 | .5 ton anvil   |
@@ -280,8 +304,10 @@
 14 rows in set (0.00 sec)
 </code></pre>
 
-<pre><code class="sql">MariaDB [forta]&gt; SELECT prod_id, prod_name, prod_price FROM products;
-+---------+----------------+------------+
+<pre><code class="sql">SELECT prod_id, prod_name, prod_price FROM products;
+</code></pre>
+
+<pre><code>+---------+----------------+------------+
 | prod_id | prod_name      | prod_price |
 +---------+----------------+------------+
 | ANV01   | .5 ton anvil   |       5.99 |
@@ -302,8 +328,10 @@
 14 rows in set (0.00 sec)
 </code></pre>
 
-<pre><code class="sql">MariaDB [forta]&gt; SELECT * FROM products;
-+---------+---------+----------------+------------+----------------------------------------------------------------+
+<pre><code class="sql">SELECT * FROM products;
+</code></pre>
+
+<pre><code>+---------+---------+----------------+------------+----------------------------------------------------------------+
 | prod_id | vend_id | prod_name      | prod_price | prod_desc                                                      |
 +---------+---------+----------------+------------+----------------------------------------------------------------+
 | ANV01   |    1001 | .5 ton anvil   |       5.99 | .5 ton anvil, black, complete with handy hook                  |
@@ -324,8 +352,10 @@
 14 rows in set (0.00 sec)
 </code></pre>
 
-<pre><code class="sql">MariaDB [forta]&gt; SELECT vend_id FROM products;
-+---------+
+<pre><code class="sql">-SELECT vend_id FROM products;
+</code></pre>
+
+<pre><code>+---------+
 | vend_id |
 +---------+
 |    1001 |
@@ -346,8 +376,10 @@
 14 rows in set (0.00 sec)
 </code></pre>
 
-<pre><code class="sql">MariaDB [forta]&gt; SELECT DISTINCT vend_id FROM products;
-+---------+
+<pre><code class="sql">SELECT DISTINCT vend_id FROM products;
+</code></pre>
+
+<pre><code>+---------+
 | vend_id |
 +---------+
 |    1001 |
@@ -391,6 +423,8 @@
 
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/sillevl/course-databases" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../mysql-introduction/" style="color: #fcfcfc;">&laquo; Previous</a></span>
