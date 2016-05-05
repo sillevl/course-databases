@@ -45,7 +45,7 @@ REVOKE UPDATE ON forta.products
 FROM 'thomas'@'localhost'
 ```
 
-### Deleteing users:
+### Deleting users:
 
 When someone stops working at a job and they want to delete his account on the database they can do this with this line.
 It is just like dropping tables.
@@ -58,7 +58,9 @@ DROP USER 'thomas'@'localhost';
 
 Logging into MySQL with a user and password is possible with this method.
 
+```
 mysql -u 'thomas' -p
+```
 
-The -U stands for user, and the -p means that you want to enter a password.
+The -u stands for user, and the -p means that you want to enter a password.
 A little thing that we need to keep in mind is the root user. This users does not have a password and has al rights. When setting up a database don't forget to secure this account or delete it.
