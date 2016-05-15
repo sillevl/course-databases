@@ -2,8 +2,8 @@
 
 Triggers are actions that can be initiated by doing something else. For example updating the stock of an item when an order has been made.
 
+###Different Possibilities:
 
-###Different Posibilities:
 |...|Before|Instead|After|
 |---|---|---|---|
 |Delete|x||x|
@@ -32,7 +32,7 @@ We will create a trigger that archives a row before deleting that row.
 ```sql
 CREATE TRIGGER archive                     
 BEFORE DELETE ON users                        -- Before there is a delete on the table "users"
-FOR EACH ROW 
+FOR EACH ROW
 INSERT INTO usersarch(name, count, updated)   -- Do an insert into the archive table with the values that will be deleted
 VALUES (OLD.name, OLD.count, OLD.updated);    -- OLD. holds these values
 ```
@@ -45,4 +45,3 @@ AFTER UPDATE ON users                          -- Trigger after there has been a
 FOR EACH ROW                                  
 SET @updated = NOW();                          -- change the value of the row that has been updated to NOW() (Current date/time)
 ```
-
