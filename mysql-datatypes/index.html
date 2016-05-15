@@ -8,7 +8,7 @@
   
   <meta name="author" content="Sille Van Landschoot">
   
-  <title>Data manipulation - Databases</title>
+  <title>MySQL datatypes - Databases</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Data manipulation";
-    var mkdocs_page_input_path = "data-manipulation.md";
-    var mkdocs_page_url = "/data-manipulation/";
+    var mkdocs_page_name = "MySQL datatypes";
+    var mkdocs_page_input_path = "mysql-datatypes.md";
+    var mkdocs_page_url = "/mysql-datatypes/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -104,21 +104,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Data manipulation</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#data-manipulation">Data manipulation</a></li>
-                
-                    <li><a class="toctree-l4" href="#text-manipulation-functions">Text manipulation functions</a></li>
-                
-                    <li><a class="toctree-l4" href="#date-and-time-manipulation-functions">Date and time manipulation functions</a></li>
-                
-                    <li><a class="toctree-l4" href="#numeric-manipulation-functions">Numeric manipulation functions</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../data-manipulation/">Data manipulation</a>
         
     </li>
 <li>
@@ -271,8 +258,15 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../mysql-datatypes/">MySQL datatypes</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">MySQL datatypes</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#mysql-datatypes">MySQL datatypes</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -299,7 +293,7 @@
     
       
     
-    <li>Data manipulation</li>
+    <li>MySQL datatypes</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -313,246 +307,26 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="data-manipulation">Data manipulation</h1>
-<h2 id="text-manipulation-functions">Text manipulation functions</h2>
-<pre><code class="sql">SELECT vend_name, UPPER(vend_name) AS vend_name_upcase
-FROM vendors
-ORDER BY vend_name;
+                <h1 id="mysql-datatypes">MySQL datatypes</h1>
+<pre><code>+----------------+---------+
+| prod_name      | prod_id |
++----------------+---------+
+| .5 ton anvil   | ANV01   |
+| 1 ton anvil    | ANV02   |
+| 2 ton anvil    | ANV03   |
+| Detonator      | DTNTR   |
+| Bird seed      | FB      |
+| Carrots        | FC      |
+| Fuses          | FU1     |
+| JetPack 1000   | JP1000  |
+| JetPack 2000   | JP2000  |
+| Oil can        | OL1     |
+| Safe           | SAFE    |
+| Sling          | SLING   |
+| TNT (1 stick)  | TNT1    |
+| TNT (5 sticks) | TNT2    |
++----------------+---------+
 </code></pre>
-
-<pre><code>+----------------+------------------+
-| vend_name      | vend_name_upcase |
-+----------------+------------------+
-| ACME           | ACME             |
-| Anvils R Us    | ANVILS R US      |
-| Furball Inc.   | FURBALL INC.     |
-| Jet Set        | JET SET          |
-| Jouets Et Ours | JOUETS ET OURS   |
-| LT Supplies    | LT SUPPLIES      |
-+----------------+------------------+
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th align="left">Function</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Left()</td>
-<td align="left">Returns characters from left of string</td>
-</tr>
-<tr>
-<td align="left">Lenght()</td>
-<td align="left">Returns the lenght of a string</td>
-</tr>
-<tr>
-<td align="left">Locate()</td>
-<td align="left">Finds a substring within a string</td>
-</tr>
-<tr>
-<td align="left">Lower()</td>
-<td align="left">Converts string to lowercase</td>
-</tr>
-<tr>
-<td align="left">LTrim()</td>
-<td align="left">Trims white space from left of string</td>
-</tr>
-<tr>
-<td align="left">Right()</td>
-<td align="left">Returns chraracters from right of string</td>
-</tr>
-<tr>
-<td align="left">RTrim()</td>
-<td align="left">Trims white space from right of string</td>
-</tr>
-<tr>
-<td align="left">Soundex()</td>
-<td align="left">Returns a string's SOUNDEX value</td>
-</tr>
-<tr>
-<td align="left">SubString()</td>
-<td align="left">Returns characters from within a string</td>
-</tr>
-<tr>
-<td align="left">Upper</td>
-<td align="left">Converts string to uppercase</td>
-</tr>
-</tbody>
-</table>
-<h2 id="date-and-time-manipulation-functions">Date and time manipulation functions</h2>
-<table>
-<thead>
-<tr>
-<th align="left">Function</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">AddDate()</td>
-<td align="left">Add to a date (days, weeks, and so on)</td>
-</tr>
-<tr>
-<td align="left">AddTime()</td>
-<td align="left">Add to a time (hours, minutes, and so on)</td>
-</tr>
-<tr>
-<td align="left">CurDate()</td>
-<td align="left">Returns the current date</td>
-</tr>
-<tr>
-<td align="left">CurTime()</td>
-<td align="left">Returns the current time</td>
-</tr>
-<tr>
-<td align="left">Date()</td>
-<td align="left">Returns the date portion of a date time</td>
-</tr>
-<tr>
-<td align="left">DateDiff()</td>
-<td align="left">Calculates the difference between two dates</td>
-</tr>
-<tr>
-<td align="left">Date_Add()</td>
-<td align="left">Highly flexible date arithmetic function</td>
-</tr>
-<tr>
-<td align="left">Date_Format()</td>
-<td align="left">Returns a formatted date or time string</td>
-</tr>
-<tr>
-<td align="left">Day()</td>
-<td align="left">Returns the day portion of a date</td>
-</tr>
-<tr>
-<td align="left">DayOfWeek()</td>
-<td align="left">Returns the day of the week for a date</td>
-</tr>
-<tr>
-<td align="left">Hour()</td>
-<td align="left">Returns the hour portion of a time</td>
-</tr>
-<tr>
-<td align="left">Minute()</td>
-<td align="left">Returns the minute portion of a time</td>
-</tr>
-<tr>
-<td align="left">Month()</td>
-<td align="left">Returns the month portion of a date</td>
-</tr>
-<tr>
-<td align="left">Now()</td>
-<td align="left">Returns the current date and time</td>
-</tr>
-<tr>
-<td align="left">Second()</td>
-<td align="left">Returns the second portion of a time</td>
-</tr>
-<tr>
-<td align="left">Time()</td>
-<td align="left">Returns the time portion of a date time</td>
-</tr>
-<tr>
-<td align="left">Year()</td>
-<td align="left">Returns the year portion</td>
-</tr>
-</tbody>
-</table>
-<h3 id="select-by-date-example">Select by date example</h3>
-<pre><code class="sql">SELECT cust_id, order_num
-FROM orders
-WHERE Date(order_date) = '2005-09-01';
-</code></pre>
-
-<pre><code>+---------+-----------+
-| cust_id | order_num |
-+---------+-----------+
-|   10001 |     20005 |
-+---------+-----------+
-1 row in set (0.01 sec)
-</code></pre>
-
-<h3 id="select-between-two-dates-example">Select between two dates example</h3>
-<pre><code class="sql">SELECT cust_id, order_num
-FROM orders
-WHERE Date(order_date) BETWEEN '2005-09-01' AND '2005-09-30';
-</code></pre>
-
-<pre><code>+---------+-----------+
-| cust_id | order_num |
-+---------+-----------+
-|   10001 |     20005 |
-|   10003 |     20006 |
-|   10004 |     20007 |
-+---------+-----------+
-3 rows in set (0.00 sec)
-</code></pre>
-
-<p>Alternative, but better way to select for years or months.</p>
-<pre><code class="sql">SELECT cust_id, order_num
-FROM orders
-WHERE Year(order_date) = 2005 AND Month(order_date) = 9;
-</code></pre>
-
-<pre><code>+---------+-----------+
-| cust_id | order_num |
-+---------+-----------+
-|   10001 |     20005 |
-|   10003 |     20006 |
-|   10004 |     20007 |
-+---------+-----------+
-</code></pre>
-
-<h2 id="numeric-manipulation-functions">Numeric manipulation functions</h2>
-<table>
-<thead>
-<tr>
-<th align="left">Function</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Abs()</td>
-<td align="left">Returns a nuber's absolute value</td>
-</tr>
-<tr>
-<td align="left">Cos()</td>
-<td align="left">Returns the trigonometric cosine of a specified angle</td>
-</tr>
-<tr>
-<td align="left">Exp()</td>
-<td align="left">Returns the exponential value of a specific number</td>
-</tr>
-<tr>
-<td align="left">Mod()</td>
-<td align="left">Returns the remainder of a division operation</td>
-</tr>
-<tr>
-<td align="left">Pi()</td>
-<td align="left">Returns the value of pi</td>
-</tr>
-<tr>
-<td align="left">Rand()</td>
-<td align="left">Returns a random number</td>
-</tr>
-<tr>
-<td align="left">Sin()</td>
-<td align="left">Retunrs the trigonometric sine of a specified angle</td>
-</tr>
-<tr>
-<td align="left">Sqrt()</td>
-<td align="left">Returns the square root of a specied number</td>
-</tr>
-<tr>
-<td align="left">Tan()</td>
-<td align="left">Returns the trigonometric tangent of a specified angle</td>
-</tr>
-</tbody>
-</table>
               
             </div>
           </div>
@@ -560,10 +334,8 @@ WHERE Year(order_date) = 2005 AND Month(order_date) = 9;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../summarizing-data/" class="btn btn-neutral float-right" title="Summarizing data">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../calculated-fields/" class="btn btn-neutral" title="Calculated fields"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../er-diagram/" class="btn btn-neutral" title="Entity-Relation Diagram"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -591,10 +363,8 @@ WHERE Year(order_date) = 2005 AND Month(order_date) = 9;
           <a href="https://github.com/sillevl/course-databases" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../calculated-fields/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../er-diagram/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../summarizing-data/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

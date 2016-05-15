@@ -259,7 +259,14 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../test/">Testdocument</a>
+        <a class="" href="../er-diagram/">Entity-Relation Diagram</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../mysql-datatypes/">MySQL datatypes</a>
         
     </li>
 <li>
@@ -301,6 +308,15 @@
             <div class="section">
               
                 <h1 id="combining-queries">Combining queries</h1>
+<p>SELECT
+(SELECT count(<em>) as aantalusers FROM users),
+(SELECT count(</em>) as aantalgames FROM games),
+(SELECT count(*) as aantalreviews FROM reviews);</p>
+<p>+-------------+------------+---------------+
+| aantalusers |aantalgames | aantalreviews |
++-------------+------------+---------------+
+| 75          |       100  |      534      |
++-------------+------------+---------------+</p>
               
             </div>
           </div>

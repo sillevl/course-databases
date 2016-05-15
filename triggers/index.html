@@ -202,6 +202,12 @@
             
                 <li class="toctree-l3"><a href="#triggers">Triggers</a></li>
                 
+                    <li><a class="toctree-l4" href="#different-possibilities">Different Possibilities:</a></li>
+                
+                    <li><a class="toctree-l4" href="#rules">Rules:</a></li>
+                
+                    <li><a class="toctree-l4" href="#example">Example</a></li>
+                
             
             </ul>
         
@@ -259,7 +265,14 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../test/">Testdocument</a>
+        <a class="" href="../er-diagram/">Entity-Relation Diagram</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../mysql-datatypes/">MySQL datatypes</a>
         
     </li>
 <li>
@@ -301,6 +314,66 @@
             <div class="section">
               
                 <h1 id="triggers">Triggers</h1>
+<p>Triggers are actions that can be initiated by doing something else. For example updating the stock of an item when an order has been made.</p>
+<h3 id="different-possibilities">Different Possibilities:</h3>
+<table>
+<thead>
+<tr>
+<th>...</th>
+<th>Before</th>
+<th>Instead</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Delete</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>Insert</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>Update</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>MySQL can only use "Before" and "After".</p>
+<h3 id="rules">Rules:</h3>
+<ul>
+<li>The names have to be unique</li>
+<li>There must be stated on what table the trigger applies to</li>
+<li>Also on what action it triggers on</li>
+<li>And when it triggers</li>
+</ul>
+<pre><code class="sql">CREATE TRIGGER newproduct AFTER INSERT ON products
+FOR EACH ROW
+-- Placeholder for the action
+</code></pre>
+
+<h3 id="example">Example</h3>
+<p>We will create a trigger that archives a row before deleting that row.</p>
+<pre><code class="sql">CREATE TRIGGER archive                     
+BEFORE DELETE ON users                        -- Before there is a delete on the table &quot;users&quot;
+FOR EACH ROW
+INSERT INTO usersarch(name, count, updated)   -- Do an insert into the archive table with the values that will be deleted
+VALUES (OLD.name, OLD.count, OLD.updated);    -- OLD. holds these values
+</code></pre>
+
+<p>With this small example we will update the timestamp in a row with the date when it was last changed.</p>
+<pre><code class="sql">CREATE TRIGGER updatedate
+AFTER UPDATE ON users                          -- Trigger after there has been an update to the table &quot;users&quot;
+FOR EACH ROW                                  
+SET @updated = NOW();                          -- change the value of the row that has been updated to NOW() (Current date/time)
+</code></pre>
               
             </div>
           </div>

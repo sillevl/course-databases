@@ -181,6 +181,10 @@
             
                 <li class="toctree-l3"><a href="#views">Views</a></li>
                 
+                    <li><a class="toctree-l4" href="#rules">Rules:</a></li>
+                
+                    <li><a class="toctree-l4" href="#example">Example:</a></li>
+                
             
             </ul>
         
@@ -259,7 +263,14 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../test/">Testdocument</a>
+        <a class="" href="../er-diagram/">Entity-Relation Diagram</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../mysql-datatypes/">MySQL datatypes</a>
         
     </li>
 <li>
@@ -301,6 +312,25 @@
             <div class="section">
               
                 <h1 id="views">Views</h1>
+<p>A view is known as a "virtual table" where you can query data in.
+It can be used to simplify difficult queries. This way you can reuse SQL statements.
+You can also use this to add a bit of security to your queries (eg. Read only for a normal use)</p>
+<h3 id="rules">Rules:</h3>
+<ul>
+<li>Name has to be unique</li>
+<li>You need enough rights to add these</li>
+<li>You can theoretically make an infinite amount of these</li>
+<li>Views can be nested</li>
+<li>Views should not be indexed, there are also no triggers allowed</li>
+</ul>
+<h3 id="example">Example:</h3>
+<pre><code class="SQL">CREATE VIEW productcustomers AS             -- Create a view called productcustomers
+SELECT cust_name, cust_contact, prod_id     -- These three lines will be executed when you use this view
+FROM customers, orders, orderitems
+WHERE customers.cust_id = orders.cust_id AND orderitems.order_num = orders.order_num;
+
+SELECT * FROM productcustomers;             -- This is how a view can be used
+</code></pre>
               
             </div>
           </div>

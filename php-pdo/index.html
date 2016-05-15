@@ -269,7 +269,14 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../test/">Testdocument</a>
+        <a class="" href="../er-diagram/">Entity-Relation Diagram</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../mysql-datatypes/">MySQL datatypes</a>
         
     </li>
 <li>
@@ -403,10 +410,87 @@
 </tbody>
 </table>
 <h3 id="connection-strings">Connection strings</h3>
+<ul>
+<li>Database handle</li>
+<li>Database type</li>
+<li>Connectionstring<ul>
+<li>Depending on the database type</li>
+</ul>
+</li>
+</ul>
+<pre><code class="php">$DBH = new PDO(&quot;mysql:host=$host;dbname=$dbname&quot;, $user, $pass);
+</code></pre>
+
 <h3 id="opening-and-closing-connections">Opening and closing connections</h3>
+<p>Opening</p>
+<pre><code class="php">try {
+   # MS SQL Server and Sybase with PDO_DBLIB
+   $DBH = new PDO(&quot;mssql:host=$host;dbname=$dbname, $usr, $pw&quot;);
+   $DBH = new PDO(&quot;sybase:host=$host;dbname=$dbname, $usr, $pw&quot;);
+
+   # MySQL with PDO_MYSQL
+   $DBH = new PDO(&quot;mysql:host=$host;dbname=$dbname&quot;, $usr, $pw);
+
+   # SQLite Database
+   $DBH = new PDO(&quot;sqlite:my/database/path/database.db&quot;);
+} catch(PDOException $e) {
+    echo $e-&gt;getMessage();
+}
+</code></pre>
+
+<p>Closing</p>
+<pre><code class="php">$DBH = null;
+</code></pre>
+
 <h3 id="exceptions">Exceptions</h3>
+<ul>
+<li>Handling errors</li>
+<li>Wrap every PDO interaction in a try/catch block</li>
+</ul>
 <h4 id="error-modes">Error modes</h4>
+<ul>
+<li>
+<p>3 error modes</p>
+</li>
+<li>
+<p>PDO::ERRMODE_SILENT
+    Default
+    No action is taken
+    Set errorcodes, available via   PDO::errorCode() and PDO::errorInfo()</p>
+</li>
+<li>PDO::ERRMODE_WARNING
+    Raises E_WARNING
+    Show warning</li>
+<li>PDO::ERRMODE_EXCEPTION
+    Errorcodes will be set
+    Will throw an exception of the PDOException class</li>
+</ul>
+<pre><code class="php">$DBH-&gt;setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT );
+$DBH-&gt;setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+$DBH-&gt;setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+</code></pre>
+
 <h4 id="error-handling">Error handling</h4>
+<ul>
+<li>ErrorMode = PDO::ERRMODE_EXCEPTION</li>
+<li>Always use Try/Catch</li>
+<li>Gracefull error handling<ul>
+<li>Friendly message to the user</li>
+<li>Exception details to an log file</li>
+</ul>
+</li>
+</ul>
+<pre><code class="php">try {
+   $DBH = new PDO(&quot;mysql:host=$host;dbname=$dbname&quot;, $user, $pass);
+   $DBH-&gt;setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+   # UH-OH! Typed DELECT instead of SELECT!
+   $DBH-&gt;prepare('DELECT name FROM people');
+} catch(PDOException $e) {
+   echo &quot;I'm sorry. I'm afraid I can't do that.&quot;;
+   file_put_contents('PDOErrors.txt', $e-&gt;getMessage(), FILE_APPEND);
+}
+</code></pre>
+
 <h2 id="inserting-and-updating-data">Inserting and updating data</h2>
 <p>Inserting and updating data follows a <strong>two-step process</strong>:</p>
 <ul>
@@ -569,7 +653,7 @@ while($obj = $STH-&gt;fetch()) {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../test/" class="btn btn-neutral float-right" title="Testdocument">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../er-diagram/" class="btn btn-neutral float-right" title="Entity-Relation Diagram">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../passwords/" class="btn btn-neutral" title="Storing passwords"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -603,7 +687,7 @@ while($obj = $STH-&gt;fetch()) {
         <span><a href="../passwords/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../test/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../er-diagram/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

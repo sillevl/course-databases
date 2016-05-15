@@ -172,7 +172,7 @@
         },
         {
             "location": "/grouping-data/",
-            "text": "Grouping data\n\n\nCreating groups\n\n\nSELECT vend_id, COUNT(*) AS num_prods FROM products GROUP BY vend_id;\n+---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1001 |         3 |\n|    1002 |         2 |\n|    1003 |         7 |\n|    1005 |         2 |\n+---------+-----------+\n\n\nFiltering groups\n\n\nSELECT cust_id, COUNT(\n) AS orders FROM orders GROUP BY cust_id HAVING COUNT(\n) >= 2;\n+---------+--------+\n| cust_id | orders |\n+---------+--------+\n|   10001 |      2 |\n+---------+--------+\n\n\nSELECT vend_id, COUNT(\n) AS num_prods FROM products WHERE prod_price >= 10 GROUP BY vend_id HAVING COUNT(\n) >= 2;\n+---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1003 |         4 |\n|    1005 |         2 |\n+---------+-----------+",
+            "text": "Grouping data\n\n\nCreating groups\n\n\nSELECT vend_id, COUNT(*) AS num_prods FROM products GROUP BY vend_id;\n\n\n+---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1001 |         3 |\n|    1002 |         2 |\n|    1003 |         7 |\n|    1005 |         2 |\n+---------+-----------+\n\n\n\n\nFiltering groups\n\n\nSELECT cust_id, COUNT(\n) AS orders FROM orders GROUP BY cust_id HAVING COUNT(\n) >= 2;\n\n\n+---------+--------+\n| cust_id | orders |\n+---------+--------+\n|   10001 |      2 |\n+---------+--------+\n\n\n\n\nSELECT vend_id, COUNT(\n) AS num_prods FROM products WHERE prod_price >= 10 GROUP BY vend_id HAVING COUNT(\n) >= 2;\n\n\n+---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1003 |         4 |\n|    1005 |         2 |\n+---------+-----------+",
             "title": "Grouping data"
         },
         {
@@ -182,12 +182,12 @@
         },
         {
             "location": "/grouping-data/#creating-groups",
-            "text": "SELECT vend_id, COUNT(*) AS num_prods FROM products GROUP BY vend_id;\n+---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1001 |         3 |\n|    1002 |         2 |\n|    1003 |         7 |\n|    1005 |         2 |\n+---------+-----------+",
+            "text": "SELECT vend_id, COUNT(*) AS num_prods FROM products GROUP BY vend_id;  +---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1001 |         3 |\n|    1002 |         2 |\n|    1003 |         7 |\n|    1005 |         2 |\n+---------+-----------+",
             "title": "Creating groups"
         },
         {
             "location": "/grouping-data/#filtering-groups",
-            "text": "SELECT cust_id, COUNT( ) AS orders FROM orders GROUP BY cust_id HAVING COUNT( ) >= 2;\n+---------+--------+\n| cust_id | orders |\n+---------+--------+\n|   10001 |      2 |\n+---------+--------+  SELECT vend_id, COUNT( ) AS num_prods FROM products WHERE prod_price >= 10 GROUP BY vend_id HAVING COUNT( ) >= 2;\n+---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1003 |         4 |\n|    1005 |         2 |\n+---------+-----------+",
+            "text": "SELECT cust_id, COUNT( ) AS orders FROM orders GROUP BY cust_id HAVING COUNT( ) >= 2;  +---------+--------+\n| cust_id | orders |\n+---------+--------+\n|   10001 |      2 |\n+---------+--------+  SELECT vend_id, COUNT( ) AS num_prods FROM products WHERE prod_price >= 10 GROUP BY vend_id HAVING COUNT( ) >= 2;  +---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1003 |         4 |\n|    1005 |         2 |\n+---------+-----------+",
             "title": "Filtering groups"
         },
         {
@@ -212,12 +212,12 @@
         },
         {
             "location": "/combining-queries/",
-            "text": "Combining queries",
+            "text": "Combining queries\n\n\nSELECT\n(SELECT count(\n) as aantalusers FROM users),\n(SELECT count(\n) as aantalgames FROM games),\n(SELECT count(*) as aantalreviews FROM reviews);\n\n\n+-------------+------------+---------------+\n| aantalusers |aantalgames | aantalreviews |\n+-------------+------------+---------------+\n| 75          |       100  |      534      |\n+-------------+------------+---------------+",
             "title": "Combining queries"
         },
         {
             "location": "/combining-queries/#combining-queries",
-            "text": "",
+            "text": "SELECT\n(SELECT count( ) as aantalusers FROM users),\n(SELECT count( ) as aantalgames FROM games),\n(SELECT count(*) as aantalreviews FROM reviews);  +-------------+------------+---------------+\n| aantalusers |aantalgames | aantalreviews |\n+-------------+------------+---------------+\n| 75          |       100  |      534      |\n+-------------+------------+---------------+",
             "title": "Combining queries"
         },
         {
@@ -262,13 +262,23 @@
         },
         {
             "location": "/views/",
-            "text": "Views",
+            "text": "Views\n\n\nA view is known as a \"virtual table\" where you can query data in.\nIt can be used to simplify difficult queries. This way you can reuse SQL statements.\nYou can also use this to add a bit of security to your queries (eg. Read only for a normal use)\n\n\nRules:\n\n\n\n\nName has to be unique\n\n\nYou need enough rights to add these\n\n\nYou can theoretically make an infinite amount of these\n\n\nViews can be nested\n\n\nViews should not be indexed, there are also no triggers allowed\n\n\n\n\nExample:\n\n\nCREATE VIEW productcustomers AS             -- Create a view called productcustomers\nSELECT cust_name, cust_contact, prod_id     -- These three lines will be executed when you use this view\nFROM customers, orders, orderitems\nWHERE customers.cust_id = orders.cust_id AND orderitems.order_num = orders.order_num;\n\nSELECT * FROM productcustomers;             -- This is how a view can be used",
             "title": "Using views"
         },
         {
             "location": "/views/#views",
-            "text": "",
+            "text": "A view is known as a \"virtual table\" where you can query data in.\nIt can be used to simplify difficult queries. This way you can reuse SQL statements.\nYou can also use this to add a bit of security to your queries (eg. Read only for a normal use)",
             "title": "Views"
+        },
+        {
+            "location": "/views/#rules",
+            "text": "Name has to be unique  You need enough rights to add these  You can theoretically make an infinite amount of these  Views can be nested  Views should not be indexed, there are also no triggers allowed",
+            "title": "Rules:"
+        },
+        {
+            "location": "/views/#example",
+            "text": "CREATE VIEW productcustomers AS             -- Create a view called productcustomers\nSELECT cust_name, cust_contact, prod_id     -- These three lines will be executed when you use this view\nFROM customers, orders, orderitems\nWHERE customers.cust_id = orders.cust_id AND orderitems.order_num = orders.order_num;\n\nSELECT * FROM productcustomers;             -- This is how a view can be used",
+            "title": "Example:"
         },
         {
             "location": "/stored-procedures/",
@@ -292,13 +302,28 @@
         },
         {
             "location": "/triggers/",
-            "text": "Triggers",
+            "text": "Triggers\n\n\nTriggers are actions that can be initiated by doing something else. For example updating the stock of an item when an order has been made.\n\n\nDifferent Possibilities:\n\n\n\n\n\n\n\n\n...\n\n\nBefore\n\n\nInstead\n\n\nAfter\n\n\n\n\n\n\n\n\n\n\nDelete\n\n\nx\n\n\nx\n\n\n\n\n\n\n\n\nInsert\n\n\nx\n\n\nx\n\n\n\n\n\n\n\n\nUpdate\n\n\nx\n\n\nx\n\n\n\n\n\n\n\n\n\n\nMySQL can only use \"Before\" and \"After\".\n\n\nRules:\n\n\n\n\nThe names have to be unique\n\n\nThere must be stated on what table the trigger applies to\n\n\nAlso on what action it triggers on\n\n\nAnd when it triggers\n\n\n\n\nCREATE TRIGGER newproduct AFTER INSERT ON products\nFOR EACH ROW\n-- Placeholder for the action\n\n\n\n\nExample\n\n\nWe will create a trigger that archives a row before deleting that row.\n\n\nCREATE TRIGGER archive                     \nBEFORE DELETE ON users                        -- Before there is a delete on the table \"users\"\nFOR EACH ROW\nINSERT INTO usersarch(name, count, updated)   -- Do an insert into the archive table with the values that will be deleted\nVALUES (OLD.name, OLD.count, OLD.updated);    -- OLD. holds these values\n\n\n\n\nWith this small example we will update the timestamp in a row with the date when it was last changed.\n\n\nCREATE TRIGGER updatedate\nAFTER UPDATE ON users                          -- Trigger after there has been an update to the table \"users\"\nFOR EACH ROW                                  \nSET @updated = NOW();                          -- change the value of the row that has been updated to NOW() (Current date/time)",
             "title": "Using triggers"
         },
         {
             "location": "/triggers/#triggers",
-            "text": "",
+            "text": "Triggers are actions that can be initiated by doing something else. For example updating the stock of an item when an order has been made.",
             "title": "Triggers"
+        },
+        {
+            "location": "/triggers/#different-possibilities",
+            "text": "...  Before  Instead  After      Delete  x  x     Insert  x  x     Update  x  x      MySQL can only use \"Before\" and \"After\".",
+            "title": "Different Possibilities:"
+        },
+        {
+            "location": "/triggers/#rules",
+            "text": "The names have to be unique  There must be stated on what table the trigger applies to  Also on what action it triggers on  And when it triggers   CREATE TRIGGER newproduct AFTER INSERT ON products\nFOR EACH ROW\n-- Placeholder for the action",
+            "title": "Rules:"
+        },
+        {
+            "location": "/triggers/#example",
+            "text": "We will create a trigger that archives a row before deleting that row.  CREATE TRIGGER archive                     \nBEFORE DELETE ON users                        -- Before there is a delete on the table \"users\"\nFOR EACH ROW\nINSERT INTO usersarch(name, count, updated)   -- Do an insert into the archive table with the values that will be deleted\nVALUES (OLD.name, OLD.count, OLD.updated);    -- OLD. holds these values  With this small example we will update the timestamp in a row with the date when it was last changed.  CREATE TRIGGER updatedate\nAFTER UPDATE ON users                          -- Trigger after there has been an update to the table \"users\"\nFOR EACH ROW                                  \nSET @updated = NOW();                          -- change the value of the row that has been updated to NOW() (Current date/time)",
+            "title": "Example"
         },
         {
             "location": "/transactions/",
@@ -322,13 +347,38 @@
         },
         {
             "location": "/database-users/",
-            "text": "Database users",
+            "text": "Database users\n\n\nBy adding users you can add security to your database. A normal user should not be able to drop tables.\n\n\nBefore we can create a user we'll have to sign in as the root user\n\n\nmysql -u root;\n\n\n\n\nAdding a user:\n\n\nCREATE USER 'thomas' @ 'localhost'\nIDENTIFIED BY 'azerty123';\n\n\n\n\nWith these two lines you have added a new users with username \nthomas\n and password \nazerty123\n. He can only log in from the same computer where the database is running on. This is achieved by typing \nlocalhost\n, you can use this to add another layer of security by only allowing the admin to log in from localhost.\n\n\nNow we need to give this user some rights\n\n\nTo create a user in my MySQL that can access the database from any host:\n\n\nCREATE USER 'username'@'%';\n\n\n\n\n%\n is a wildcard character and specifies that the user can connect from a variable path\n\n\nLogging in:\n\n\nWe can now connect to the database using the credentials of the new user\n\n\nmysql -u username -p -h 10.177.33.192;\n\n\n\n\n-p\n specifies that the user requires a password to be filled in\n\n\n-h\n specifies that the user wants to access a database on another host\n\n\n10.177.33.192\n is the IP address of the machine with the database\n\n\nA little thing that we need to keep in mind is the root user. This users does not have a password and has al rights. When setting up a database don't forget to secure this account with a password or delete it.\n\n\nGiving rights to a user:\n\n\nGRANT ALL PRIVILIGES ON forta.products\nTO 'thomas'@'localhost';\n\n\n\n\nHere we gave the user \nthomas\n all privileges on the table \nproducts\n from the database called \nforta\n. You can replace the table with \n*\n to give access to all tables. Or you also could type \n*.*\n. The two asterisks mean access to everything.\n\n\nHere is a list of things you can place after \nGRANT\n to give only specific rights to a user.\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nALL PRIVILIGES\n\n\nYou can do anything the database allows\n\n\n\n\n\n\nCREATE\n\n\nAllows the user to create new tables or databases\n\n\n\n\n\n\nDROP\n\n\nAllows the user to delete tables or databases\n\n\n\n\n\n\nDELETE\n\n\nAllows the user to delete rows from tables\n\n\n\n\n\n\nINSERT\n\n\nAllows them to insert rows into tables\n\n\n\n\n\n\nSELECT\n\n\nAllows them to use select queries to read data from tables\n\n\n\n\n\n\nUPDATE\n\n\nAllows them to update table rows\n\n\n\n\n\n\nGRANT OPTION\n\n\nAllows them to grant and remove other users' privileges\n\n\n\n\n\n\n\n\nYou can now view the granted privileges with\n\n\nSHOW grants;\n\n\n\n\nRevoking rights of a user:\n\n\nYou can also revoke these rights. When someone abused his power over the database for example.\nThe code to do this is almost identical to that of granting the right.\n\n\nREVOKE UPDATE ON forta.products\nFROM 'thomas'@'localhost'\n\n\n\n\nDeleting users:\n\n\nWhen someone stops working at a job and they want to delete his account on the database they can do this with this line.\nIt is just like dropping tables.\n\n\nDROP USER 'thomas'@'localhost';",
             "title": "Managing database users"
         },
         {
             "location": "/database-users/#database-users",
-            "text": "",
+            "text": "By adding users you can add security to your database. A normal user should not be able to drop tables.  Before we can create a user we'll have to sign in as the root user  mysql -u root;",
             "title": "Database users"
+        },
+        {
+            "location": "/database-users/#adding-a-user",
+            "text": "CREATE USER 'thomas' @ 'localhost'\nIDENTIFIED BY 'azerty123';  With these two lines you have added a new users with username  thomas  and password  azerty123 . He can only log in from the same computer where the database is running on. This is achieved by typing  localhost , you can use this to add another layer of security by only allowing the admin to log in from localhost.  Now we need to give this user some rights  To create a user in my MySQL that can access the database from any host:  CREATE USER 'username'@'%';  %  is a wildcard character and specifies that the user can connect from a variable path",
+            "title": "Adding a user:"
+        },
+        {
+            "location": "/database-users/#logging-in",
+            "text": "We can now connect to the database using the credentials of the new user  mysql -u username -p -h 10.177.33.192;  -p  specifies that the user requires a password to be filled in  -h  specifies that the user wants to access a database on another host  10.177.33.192  is the IP address of the machine with the database  A little thing that we need to keep in mind is the root user. This users does not have a password and has al rights. When setting up a database don't forget to secure this account with a password or delete it.",
+            "title": "Logging in:"
+        },
+        {
+            "location": "/database-users/#giving-rights-to-a-user",
+            "text": "GRANT ALL PRIVILIGES ON forta.products\nTO 'thomas'@'localhost';  Here we gave the user  thomas  all privileges on the table  products  from the database called  forta . You can replace the table with  *  to give access to all tables. Or you also could type  *.* . The two asterisks mean access to everything.  Here is a list of things you can place after  GRANT  to give only specific rights to a user.     Name  Description      ALL PRIVILIGES  You can do anything the database allows    CREATE  Allows the user to create new tables or databases    DROP  Allows the user to delete tables or databases    DELETE  Allows the user to delete rows from tables    INSERT  Allows them to insert rows into tables    SELECT  Allows them to use select queries to read data from tables    UPDATE  Allows them to update table rows    GRANT OPTION  Allows them to grant and remove other users' privileges     You can now view the granted privileges with  SHOW grants;",
+            "title": "Giving rights to a user:"
+        },
+        {
+            "location": "/database-users/#revoking-rights-of-a-user",
+            "text": "You can also revoke these rights. When someone abused his power over the database for example.\nThe code to do this is almost identical to that of granting the right.  REVOKE UPDATE ON forta.products\nFROM 'thomas'@'localhost'",
+            "title": "Revoking rights of a user:"
+        },
+        {
+            "location": "/database-users/#deleting-users",
+            "text": "When someone stops working at a job and they want to delete his account on the database they can do this with this line.\nIt is just like dropping tables.  DROP USER 'thomas'@'localhost';",
+            "title": "Deleting users:"
         },
         {
             "location": "/database-maintenance/",
@@ -357,7 +407,7 @@
         },
         {
             "location": "/php-pdo/",
-            "text": "PHP PDO\n\n\nPHP database extensions\n\n\nThere are several ways to interface with MySQL (or other database management systems). PHP provides 3 extensions.\n\n\nMySQL \u2013 MySQL extension\n\n\n\n\nIncluded in PHP 3.x, 4.x, 5.x\n\n\nDoes not take advantage of the new features of MySQL 4.1.3 and later\n\n\nNot under active development\n\n\nRemoved in PHP 7.0\n\n\n\n\nMySQLi \u2013 MySQL extension improved\n\n\n\n\nObject oriented AND procedural\n\n\nTakes full advantage of all the features of MySQL 4.1.3 and later\n\n\nMySQL Only!\n\n\nRemoved in PHP 7.0\n\n\n\n\nPDO \u2013 PHP Data Object\n\n\n\n\nSince PHP 5.1\n\n\nConsistent object-oriented interface\n\n\nMultiple database support (12): MySQL, MsSql, Sqlite, Oracle, IBM, Posgresql,\u2026\n\n\nPortable\n\n\nDoesn\u2019t take full advantage of all the features of MySQL 4.1.3 and later\n\n\n\n\nPHP Data Objects provide an database abstraction layer. PDO is the \nmethod of choice\n when interfacing a database in PHP.\n\n\nPDO: PHP Data Object\n\n\nPDO provides a database access layer enabling a uniform method of access to multiple databases. Changing database type does not change the PDO code. This enables switching database types without rewriting any code.\n\n\n\n\nTo get all available drivers you can use the \ngetAvailableDrivers()\n function:\n\n\nprint_r(PDO::getAvailableDrivers());\n\n\n\n\nPHP Data Objects supports the following drivers:\n\n\n\n\n\n\n\n\nDriver name\n\n\nSupported databases\n\n\n\n\n\n\n\n\n\n\nPDO_CUBRID\n\n\nCubrid\n\n\n\n\n\n\nPDO_DBLIB\n\n\nFreeTDS / Microsoft SQL Server / Sybase\n\n\n\n\n\n\nPDO_FIREBIRD\n\n\nFirebird\n\n\n\n\n\n\nPDO_IBM\n\n\nIBM DB2\n\n\n\n\n\n\nPDO_INFORMIX\n\n\nIBM Informix Dynamic Server\n\n\n\n\n\n\nPDO_MYSQL\n\n\nMySQL 3.x/4.x/5.x\n\n\n\n\n\n\nPDO_OCI\n\n\nOracle Call Interface\n\n\n\n\n\n\nPDO_ODBC\n\n\nODBC v3 (IBM DB2, unixODBC and win32 ODBC)\n\n\n\n\n\n\nPDO_PGSQL\n\n\nPostgreSQL\n\n\n\n\n\n\nPDO_SQLITE\n\n\nSQLite 3 and SQLite 2\n\n\n\n\n\n\nPDO_SQLSRV\n\n\nMicrosoft SQL Server / SQL Azure\n\n\n\n\n\n\nPDO_4D\n\n\n4D\n\n\n\n\n\n\n\n\nConnection strings\n\n\nOpening and closing connections\n\n\nExceptions\n\n\nError modes\n\n\nError handling\n\n\nInserting and updating data\n\n\nInserting and updating data follows a \ntwo-step process\n:\n\n\n\n\nPrepare\n\n\nExecute\n\n\n\n\n# STH means \"Statement Handle\"\n$STH = $DBH->prepare(\n   \"INSERT INTO folks ( first_name ) values ( 'Cathy' )\"\n);\n$STH->execute();\n\n\n\n\nAn additional 'bind' step can be added by using prepared statements.\n\n\n\n\nPrepared statements\n\n\nPrepared statements make use of \nprecompiled SQL statements\n.\nThese statements can be \nexecuted multiple times\n.\nPrepared statements have the benefit of automatically making data \u201csafe\u201d by\n\nprotecting against SQL injection\n. This is accomplished by making use of \nplaceholders\n.\n\n\nPHP Data Objects support two types of placeholders. Named and unnamed placeholders.\n\n\n\n\nUnsafe data\n\n\nAll data inserted by the user of an website (eg: filling in a form, search text,\nor anything other that is not hard-coded into PHP) is considered unsafe!\n\n\n\n\n# no placeholders - ripe for SQL Injection!\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) values ($name, $addr, $city)\");\n\n# unnamed placeholders\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) values (?, ?, ?)\u201d;\n\n# named placeholders\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) value (:name, :addr, :city)\");\n\n\n\n\nUnnamed placeholders\n\n\nWrite queries just like before, but instead of inserting the \"unsafe\" data as parts\nof the query string, place a question mark sign \n?\n as placeholder for the data.\nThe unsafe data is then passed to the \nexecute()\n method as an array. The indexes of\nthe array must correspond with the place of the question mark.\nThe array MUST be indexed in the right order.\n\n\nStatements can be reused by passing in other arrays with different data with\nthe \nexecute()\n method.\n\n\n# the data we want to insert\n$data = array('Cathy', '9 Dark and Twisty Road', 'Cardiff');\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) values (?, ?, ?);\n$STH->execute($data);\n\n\n\n\nNamed placeholders\n\n\nInstead of using question marks as placeholder, a named placeholder is used.\nA placeholder starts with an colon sign: \n:\n followed by an name. When passing\nthe data array to the \nexecute()\n method, an associative array must be used.\nThe associative indexes of the array must then correspond with the names of the\nplaceholders.\nThe advantage is that the array indexes can be out of order.\n\n\n# the data we want to insert\n$data = array(\n   'name' => 'Cathy', 'addr' => '9 Dark and Twisty', 'city' => 'Cardiff'\n);\n\n# the shortcut!\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city)\n   value (:name, :addr, :city)\");\n$STH->execute($data);\n\n\n\n\nSelecting data\n\n\nPHP Data Objects enable to select and retrieve results in different ways.\nResults can be fetched as:\n\n\n\n\nAssociative array\n\n\nObjects of type stdClass\n\n\nObjects of a predefined class\n\n\n...\n\n\n\n\nThe fetch mode can be set with the \nsetFetchMode()\n function:\n\n\n// Fetch results as an associative array\n$STH->setFetchMode(PDO::FETCH_ASSOC);\n\n// Fetch results as objects of type stdClass\n$STH->setFetchMode(PDO::FETCH_OBJ);\n\n// Fetch results as objects of type MyClass\n$STH->setFetchMode(PDO::FETCH_CLASS, 'MyClass');\n\n\n\n\n\n\nstdClass\n\n\nstdClass is PHP's generic empty class, kind of like Object in Java or object in Python.\nstdClass is not used as universal base class like Object in Java.\n\n\n\n\nFetch as associative array\n\n\nReturn results in an associative array\nIndexed by column name\n\n\nPDO::FETCH_ASSOC\n\n\n# using the shortcut ->query() method here since there\n# are no variable values in the select statement.\n$STH = $DBH->query('SELECT name, addr, city from folks');\n\n# setting the fetch mode\n$STH->setFetchMode(PDO::FETCH_ASSOC);\nwhile($row = $STH->fetch()) {\n   echo $row['name'] . \"\\n\";\n   echo $row['addr'] . \"\\n\";\n   echo $row['city'] . \"\\n\";\n}\n\n\n\n\nFetch as object of type stdClass\n\n\nReturn results in an object of std class for each row of fetched data\n\n\n# creating the statement\n$STH = $DBH->query('SELECT name, addr, city from folks');\n\n# setting the fetch mode\n$STH->setFetchMode(PDO::FETCH_OBJ);\n# showing the results while($row = $STH->fetch()) {\n   echo $row->name . \"\\n\";\n   echo $row->addr . \"\\n\";\n   echo $row->city . \"\\n\";\n}\n\n\n\n\nFetch as object of a predefined class\n\n\nFetch data directly into a class of choosing\nProperties are set before the constructor is called\nProperty names will match column names\nIf property does not match it will be created\n\n\n$STH->setFetchMode(PDO::FETCH_CLASS, \u2018classname');\n\n\n\n\n$STH->setFetchMode(\u000b   PDO::FETCH_CLASS, 'secret_person', array('stuff'));\n\n\n\n\nclass secret_person {\n   public $name;\n   public $addr;\n   public $city;\n   public $other_data;\n   function __construct($other = '') {\n      $this->address = preg_replace('/[a-z]/', 'x', $this->address);\n      $this->other_data = $other;\n   }\n}\n\n\n\n\n$STH = $DBH->query('SELECT name, addr, city from folks');\n$STH->setFetchMode(PDO::FETCH_CLASS, 'secret_person');\nwhile($obj = $STH->fetch()) {\n   echo $obj->addr;\n}\n\n\n\n\nHelpful methods",
+            "text": "PHP PDO\n\n\nPHP database extensions\n\n\nThere are several ways to interface with MySQL (or other database management systems). PHP provides 3 extensions.\n\n\nMySQL \u2013 MySQL extension\n\n\n\n\nIncluded in PHP 3.x, 4.x, 5.x\n\n\nDoes not take advantage of the new features of MySQL 4.1.3 and later\n\n\nNot under active development\n\n\nRemoved in PHP 7.0\n\n\n\n\nMySQLi \u2013 MySQL extension improved\n\n\n\n\nObject oriented AND procedural\n\n\nTakes full advantage of all the features of MySQL 4.1.3 and later\n\n\nMySQL Only!\n\n\nRemoved in PHP 7.0\n\n\n\n\nPDO \u2013 PHP Data Object\n\n\n\n\nSince PHP 5.1\n\n\nConsistent object-oriented interface\n\n\nMultiple database support (12): MySQL, MsSql, Sqlite, Oracle, IBM, Posgresql,\u2026\n\n\nPortable\n\n\nDoesn\u2019t take full advantage of all the features of MySQL 4.1.3 and later\n\n\n\n\nPHP Data Objects provide an database abstraction layer. PDO is the \nmethod of choice\n when interfacing a database in PHP.\n\n\nPDO: PHP Data Object\n\n\nPDO provides a database access layer enabling a uniform method of access to multiple databases. Changing database type does not change the PDO code. This enables switching database types without rewriting any code.\n\n\n\n\nTo get all available drivers you can use the \ngetAvailableDrivers()\n function:\n\n\nprint_r(PDO::getAvailableDrivers());\n\n\n\n\nPHP Data Objects supports the following drivers:\n\n\n\n\n\n\n\n\nDriver name\n\n\nSupported databases\n\n\n\n\n\n\n\n\n\n\nPDO_CUBRID\n\n\nCubrid\n\n\n\n\n\n\nPDO_DBLIB\n\n\nFreeTDS / Microsoft SQL Server / Sybase\n\n\n\n\n\n\nPDO_FIREBIRD\n\n\nFirebird\n\n\n\n\n\n\nPDO_IBM\n\n\nIBM DB2\n\n\n\n\n\n\nPDO_INFORMIX\n\n\nIBM Informix Dynamic Server\n\n\n\n\n\n\nPDO_MYSQL\n\n\nMySQL 3.x/4.x/5.x\n\n\n\n\n\n\nPDO_OCI\n\n\nOracle Call Interface\n\n\n\n\n\n\nPDO_ODBC\n\n\nODBC v3 (IBM DB2, unixODBC and win32 ODBC)\n\n\n\n\n\n\nPDO_PGSQL\n\n\nPostgreSQL\n\n\n\n\n\n\nPDO_SQLITE\n\n\nSQLite 3 and SQLite 2\n\n\n\n\n\n\nPDO_SQLSRV\n\n\nMicrosoft SQL Server / SQL Azure\n\n\n\n\n\n\nPDO_4D\n\n\n4D\n\n\n\n\n\n\n\n\nConnection strings\n\n\n\n\nDatabase handle\n\n\nDatabase type\n\n\nConnectionstring\n\n\nDepending on the database type\n\n\n\n\n\n\n\n\n$DBH = new PDO(\"mysql:host=$host;dbname=$dbname\", $user, $pass);\n\n\n\n\nOpening and closing connections\n\n\nOpening\n\n\ntry {\n   # MS SQL Server and Sybase with PDO_DBLIB\n   $DBH = new PDO(\"mssql:host=$host;dbname=$dbname, $usr, $pw\");\n   $DBH = new PDO(\"sybase:host=$host;dbname=$dbname, $usr, $pw\");\n\n   # MySQL with PDO_MYSQL\n   $DBH = new PDO(\"mysql:host=$host;dbname=$dbname\", $usr, $pw);\n\n   # SQLite Database\n   $DBH = new PDO(\"sqlite:my/database/path/database.db\");\n} catch(PDOException $e) {\n    echo $e->getMessage();\n}\n\n\n\n\nClosing\n\n\n$DBH = null;\n\n\n\n\nExceptions\n\n\n\n\nHandling errors\n\n\nWrap every PDO interaction in a try/catch block\n\n\n\n\nError modes\n\n\n\n\n\n\n3 error modes\n\n\n\n\n\n\nPDO::ERRMODE_SILENT\n    Default\n    No action is taken\n    Set errorcodes, available via\u000b   PDO::errorCode() and PDO::errorInfo()\n\n\n\n\nPDO::ERRMODE_WARNING\n    Raises E_WARNING\n    Show warning\n\n\nPDO::ERRMODE_EXCEPTION\n    Errorcodes will be set\n    Will throw an exception of the PDOException class\n\n\n\n\n$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT );\n$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );\n$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );\n\n\n\n\nError handling\n\n\n\n\nErrorMode = PDO::ERRMODE_EXCEPTION\n\n\nAlways use Try/Catch\n\n\nGracefull error handling\n\n\nFriendly message to the user\n\n\nException details to an log file\n\n\n\n\n\n\n\n\ntry {\n   $DBH = new PDO(\"mysql:host=$host;dbname=$dbname\", $user, $pass);\n   $DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );\n   # UH-OH! Typed DELECT instead of SELECT!\n   $DBH->prepare('DELECT name FROM people');\n} catch(PDOException $e) {\n   echo \"I'm sorry. I'm afraid I can't do that.\";\n   file_put_contents('PDOErrors.txt', $e->getMessage(), FILE_APPEND);\n}\n\n\n\n\nInserting and updating data\n\n\nInserting and updating data follows a \ntwo-step process\n:\n\n\n\n\nPrepare\n\n\nExecute\n\n\n\n\n# STH means \"Statement Handle\"\n$STH = $DBH->prepare(\n   \"INSERT INTO folks ( first_name ) values ( 'Cathy' )\"\n);\n$STH->execute();\n\n\n\n\nAn additional 'bind' step can be added by using prepared statements.\n\n\n\n\nPrepared statements\n\n\nPrepared statements make use of \nprecompiled SQL statements\n.\nThese statements can be \nexecuted multiple times\n.\nPrepared statements have the benefit of automatically making data \u201csafe\u201d by\n\nprotecting against SQL injection\n. This is accomplished by making use of \nplaceholders\n.\n\n\nPHP Data Objects support two types of placeholders. Named and unnamed placeholders.\n\n\n\n\nUnsafe data\n\n\nAll data inserted by the user of an website (eg: filling in a form, search text,\nor anything other that is not hard-coded into PHP) is considered unsafe!\n\n\n\n\n# no placeholders - ripe for SQL Injection!\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) values ($name, $addr, $city)\");\n\n# unnamed placeholders\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) values (?, ?, ?)\u201d;\n\n# named placeholders\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) value (:name, :addr, :city)\");\n\n\n\n\nUnnamed placeholders\n\n\nWrite queries just like before, but instead of inserting the \"unsafe\" data as parts\nof the query string, place a question mark sign \n?\n as placeholder for the data.\nThe unsafe data is then passed to the \nexecute()\n method as an array. The indexes of\nthe array must correspond with the place of the question mark.\nThe array MUST be indexed in the right order.\n\n\nStatements can be reused by passing in other arrays with different data with\nthe \nexecute()\n method.\n\n\n# the data we want to insert\n$data = array('Cathy', '9 Dark and Twisty Road', 'Cardiff');\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city) values (?, ?, ?);\n$STH->execute($data);\n\n\n\n\nNamed placeholders\n\n\nInstead of using question marks as placeholder, a named placeholder is used.\nA placeholder starts with an colon sign: \n:\n followed by an name. When passing\nthe data array to the \nexecute()\n method, an associative array must be used.\nThe associative indexes of the array must then correspond with the names of the\nplaceholders.\nThe advantage is that the array indexes can be out of order.\n\n\n# the data we want to insert\n$data = array(\n   'name' => 'Cathy', 'addr' => '9 Dark and Twisty', 'city' => 'Cardiff'\n);\n\n# the shortcut!\n$STH = $DBH->(\"INSERT INTO folks (name, addr, city)\n   value (:name, :addr, :city)\");\n$STH->execute($data);\n\n\n\n\nSelecting data\n\n\nPHP Data Objects enable to select and retrieve results in different ways.\nResults can be fetched as:\n\n\n\n\nAssociative array\n\n\nObjects of type stdClass\n\n\nObjects of a predefined class\n\n\n...\n\n\n\n\nThe fetch mode can be set with the \nsetFetchMode()\n function:\n\n\n// Fetch results as an associative array\n$STH->setFetchMode(PDO::FETCH_ASSOC);\n\n// Fetch results as objects of type stdClass\n$STH->setFetchMode(PDO::FETCH_OBJ);\n\n// Fetch results as objects of type MyClass\n$STH->setFetchMode(PDO::FETCH_CLASS, 'MyClass');\n\n\n\n\n\n\nstdClass\n\n\nstdClass is PHP's generic empty class, kind of like Object in Java or object in Python.\nstdClass is not used as universal base class like Object in Java.\n\n\n\n\nFetch as associative array\n\n\nReturn results in an associative array\nIndexed by column name\n\n\nPDO::FETCH_ASSOC\n\n\n# using the shortcut ->query() method here since there\n# are no variable values in the select statement.\n$STH = $DBH->query('SELECT name, addr, city from folks');\n\n# setting the fetch mode\n$STH->setFetchMode(PDO::FETCH_ASSOC);\nwhile($row = $STH->fetch()) {\n   echo $row['name'] . \"\\n\";\n   echo $row['addr'] . \"\\n\";\n   echo $row['city'] . \"\\n\";\n}\n\n\n\n\nFetch as object of type stdClass\n\n\nReturn results in an object of std class for each row of fetched data\n\n\n# creating the statement\n$STH = $DBH->query('SELECT name, addr, city from folks');\n\n# setting the fetch mode\n$STH->setFetchMode(PDO::FETCH_OBJ);\n# showing the results while($row = $STH->fetch()) {\n   echo $row->name . \"\\n\";\n   echo $row->addr . \"\\n\";\n   echo $row->city . \"\\n\";\n}\n\n\n\n\nFetch as object of a predefined class\n\n\nFetch data directly into a class of choosing\nProperties are set before the constructor is called\nProperty names will match column names\nIf property does not match it will be created\n\n\n$STH->setFetchMode(PDO::FETCH_CLASS, \u2018classname');\n\n\n\n\n$STH->setFetchMode(\u000b   PDO::FETCH_CLASS, 'secret_person', array('stuff'));\n\n\n\n\nclass secret_person {\n   public $name;\n   public $addr;\n   public $city;\n   public $other_data;\n   function __construct($other = '') {\n      $this->address = preg_replace('/[a-z]/', 'x', $this->address);\n      $this->other_data = $other;\n   }\n}\n\n\n\n\n$STH = $DBH->query('SELECT name, addr, city from folks');\n$STH->setFetchMode(PDO::FETCH_CLASS, 'secret_person');\nwhile($obj = $STH->fetch()) {\n   echo $obj->addr;\n}\n\n\n\n\nHelpful methods",
             "title": "PHP PDO's"
         },
         {
@@ -392,27 +442,27 @@
         },
         {
             "location": "/php-pdo/#connection-strings",
-            "text": "",
+            "text": "Database handle  Database type  Connectionstring  Depending on the database type     $DBH = new PDO(\"mysql:host=$host;dbname=$dbname\", $user, $pass);",
             "title": "Connection strings"
         },
         {
             "location": "/php-pdo/#opening-and-closing-connections",
-            "text": "",
+            "text": "Opening  try {\n   # MS SQL Server and Sybase with PDO_DBLIB\n   $DBH = new PDO(\"mssql:host=$host;dbname=$dbname, $usr, $pw\");\n   $DBH = new PDO(\"sybase:host=$host;dbname=$dbname, $usr, $pw\");\n\n   # MySQL with PDO_MYSQL\n   $DBH = new PDO(\"mysql:host=$host;dbname=$dbname\", $usr, $pw);\n\n   # SQLite Database\n   $DBH = new PDO(\"sqlite:my/database/path/database.db\");\n} catch(PDOException $e) {\n    echo $e->getMessage();\n}  Closing  $DBH = null;",
             "title": "Opening and closing connections"
         },
         {
             "location": "/php-pdo/#exceptions",
-            "text": "",
+            "text": "Handling errors  Wrap every PDO interaction in a try/catch block",
             "title": "Exceptions"
         },
         {
             "location": "/php-pdo/#error-modes",
-            "text": "",
+            "text": "3 error modes    PDO::ERRMODE_SILENT\n    Default\n    No action is taken\n    Set errorcodes, available via\u000b   PDO::errorCode() and PDO::errorInfo()   PDO::ERRMODE_WARNING\n    Raises E_WARNING\n    Show warning  PDO::ERRMODE_EXCEPTION\n    Errorcodes will be set\n    Will throw an exception of the PDOException class   $DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT );\n$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );\n$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );",
             "title": "Error modes"
         },
         {
             "location": "/php-pdo/#error-handling",
-            "text": "",
+            "text": "ErrorMode = PDO::ERRMODE_EXCEPTION  Always use Try/Catch  Gracefull error handling  Friendly message to the user  Exception details to an log file     try {\n   $DBH = new PDO(\"mysql:host=$host;dbname=$dbname\", $user, $pass);\n   $DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );\n   # UH-OH! Typed DELECT instead of SELECT!\n   $DBH->prepare('DELECT name FROM people');\n} catch(PDOException $e) {\n   echo \"I'm sorry. I'm afraid I can't do that.\";\n   file_put_contents('PDOErrors.txt', $e->getMessage(), FILE_APPEND);\n}",
             "title": "Error handling"
         },
         {
@@ -461,9 +511,24 @@
             "title": "Helpful methods"
         },
         {
-            "location": "/test/",
+            "location": "/er-diagram/",
+            "text": "Entity-Relation Diagrams",
+            "title": "Entity-Relation Diagram"
+        },
+        {
+            "location": "/er-diagram/#entity-relation-diagrams",
             "text": "",
-            "title": "Testdocument"
+            "title": "Entity-Relation Diagrams"
+        },
+        {
+            "location": "/mysql-datatypes/",
+            "text": "MySQL datatypes\n\n\n+----------------+---------+\n| prod_name      | prod_id |\n+----------------+---------+\n| .5 ton anvil   | ANV01   |\n| 1 ton anvil    | ANV02   |\n| 2 ton anvil    | ANV03   |\n| Detonator      | DTNTR   |\n| Bird seed      | FB      |\n| Carrots        | FC      |\n| Fuses          | FU1     |\n| JetPack 1000   | JP1000  |\n| JetPack 2000   | JP2000  |\n| Oil can        | OL1     |\n| Safe           | SAFE    |\n| Sling          | SLING   |\n| TNT (1 stick)  | TNT1    |\n| TNT (5 sticks) | TNT2    |\n+----------------+---------+",
+            "title": "MySQL datatypes"
+        },
+        {
+            "location": "/mysql-datatypes/#mysql-datatypes",
+            "text": "+----------------+---------+\n| prod_name      | prod_id |\n+----------------+---------+\n| .5 ton anvil   | ANV01   |\n| 1 ton anvil    | ANV02   |\n| 2 ton anvil    | ANV03   |\n| Detonator      | DTNTR   |\n| Bird seed      | FB      |\n| Carrots        | FC      |\n| Fuses          | FU1     |\n| JetPack 1000   | JP1000  |\n| JetPack 2000   | JP2000  |\n| Oil can        | OL1     |\n| Safe           | SAFE    |\n| Sling          | SLING   |\n| TNT (1 stick)  | TNT1    |\n| TNT (5 sticks) | TNT2    |\n+----------------+---------+",
+            "title": "MySQL datatypes"
         }
     ]
 }
