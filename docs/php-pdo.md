@@ -54,14 +54,87 @@ PHP Data Objects supports the following drivers:
 
 ### Connection strings
 
+* Database handle
+* Database type
+* Connectionstring
+    * Depending on the database type
+
+```php
+$DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+```
 
 ### Opening and closing connections
 
+Opening
+
+```php
+try {
+   # MS SQL Server and Sybase with PDO_DBLIB
+   $DBH = new PDO("mssql:host=$host;dbname=$dbname, $usr, $pw");
+   $DBH = new PDO("sybase:host=$host;dbname=$dbname, $usr, $pw");
+
+   # MySQL with PDO_MYSQL
+   $DBH = new PDO("mysql:host=$host;dbname=$dbname", $usr, $pw);
+
+   # SQLite Database
+   $DBH = new PDO("sqlite:my/database/path/database.db");
+} catch(PDOException $e) {
+    echo $e->getMessage();
+}
+```
+
+Closing
+
+```php
+$DBH = null;
+```
+
 ### Exceptions
+
+* Handling errors
+* Wrap every PDO interaction in a try/catch block
 
 #### Error modes
 
+* 3 error modes
+
+1. PDO::ERRMODE_SILENT
+    Default
+    No action is taken
+    Set errorcodes, available via   PDO::errorCode() and PDO::errorInfo()
+2. PDO::ERRMODE_WARNING
+    Raises E_WARNING
+    Show warning
+3. PDO::ERRMODE_EXCEPTION
+    Errorcodes will be set
+    Will throw an exception of the PDOException class
+
+
+```php
+$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT );
+$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+```
+
 #### Error handling
+
+* ErrorMode = PDO::ERRMODE_EXCEPTION
+* Always use Try/Catch
+* Gracefull error handling
+    * Friendly message to the user
+    * Exception details to an log file
+
+```php
+try {
+   $DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+   $DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+   # UH-OH! Typed DELECT instead of SELECT!
+   $DBH->prepare('DELECT name FROM people');
+} catch(PDOException $e) {
+   echo "I'm sorry. I'm afraid I can't do that.";
+   file_put_contents('PDOErrors.txt', $e->getMessage(), FILE_APPEND);
+}
+```
 
 ## Inserting and updating data
 
