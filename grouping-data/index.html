@@ -313,7 +313,11 @@
               
                 <h1 id="grouping-data">Grouping data</h1>
 <h2 id="creating-groups">Creating groups</h2>
-<p>SELECT vend_id, COUNT(*) AS num_prods FROM products GROUP BY vend_id;</p>
+<pre><code class="sql">SELECT vend_id, COUNT(*) AS num_prods
+FROM products
+GROUP BY vend_id;
+</code></pre>
+
 <pre><code>+---------+-----------+
 | vend_id | num_prods |
 +---------+-----------+
@@ -325,7 +329,12 @@
 </code></pre>
 
 <h2 id="filtering-groups">Filtering groups</h2>
-<p>SELECT cust_id, COUNT(<em>) AS orders FROM orders GROUP BY cust_id HAVING COUNT(</em>) &gt;= 2;</p>
+<pre><code class="sql">SELECT cust_id, COUNT(*) AS orders
+FROM orders
+GROUP BY cust_id
+HAVING COUNT(*) &gt;= 2;
+</code></pre>
+
 <pre><code>+---------+--------+
 | cust_id | orders |
 +---------+--------+
@@ -333,7 +342,13 @@
 +---------+--------+
 </code></pre>
 
-<p>SELECT vend_id, COUNT(<em>) AS num_prods FROM products WHERE prod_price &gt;= 10 GROUP BY vend_id HAVING COUNT(</em>) &gt;= 2;</p>
+<pre><code class="sql">SELECT vend_id, COUNT(*) AS num_prods
+FROM products
+WHERE prod_price &gt;= 10
+GROUP BY vend_id
+HAVING COUNT(*) &gt;= 2;
+</code></pre>
+
 <pre><code>+---------+-----------+
 | vend_id | num_prods |
 +---------+-----------+

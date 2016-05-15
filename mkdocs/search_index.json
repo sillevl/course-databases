@@ -172,7 +172,7 @@
         },
         {
             "location": "/grouping-data/",
-            "text": "Grouping data\n\n\nCreating groups\n\n\nSELECT vend_id, COUNT(*) AS num_prods FROM products GROUP BY vend_id;\n\n\n+---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1001 |         3 |\n|    1002 |         2 |\n|    1003 |         7 |\n|    1005 |         2 |\n+---------+-----------+\n\n\n\n\nFiltering groups\n\n\nSELECT cust_id, COUNT(\n) AS orders FROM orders GROUP BY cust_id HAVING COUNT(\n) >= 2;\n\n\n+---------+--------+\n| cust_id | orders |\n+---------+--------+\n|   10001 |      2 |\n+---------+--------+\n\n\n\n\nSELECT vend_id, COUNT(\n) AS num_prods FROM products WHERE prod_price >= 10 GROUP BY vend_id HAVING COUNT(\n) >= 2;\n\n\n+---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1003 |         4 |\n|    1005 |         2 |\n+---------+-----------+",
+            "text": "Grouping data\n\n\nCreating groups\n\n\nSELECT vend_id, COUNT(*) AS num_prods\nFROM products\nGROUP BY vend_id;\n\n\n\n\n+---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1001 |         3 |\n|    1002 |         2 |\n|    1003 |         7 |\n|    1005 |         2 |\n+---------+-----------+\n\n\n\n\nFiltering groups\n\n\nSELECT cust_id, COUNT(*) AS orders\nFROM orders\nGROUP BY cust_id\nHAVING COUNT(*) >= 2;\n\n\n\n\n+---------+--------+\n| cust_id | orders |\n+---------+--------+\n|   10001 |      2 |\n+---------+--------+\n\n\n\n\nSELECT vend_id, COUNT(*) AS num_prods\nFROM products\nWHERE prod_price >= 10\nGROUP BY vend_id\nHAVING COUNT(*) >= 2;\n\n\n\n\n+---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1003 |         4 |\n|    1005 |         2 |\n+---------+-----------+",
             "title": "Grouping data"
         },
         {
@@ -182,12 +182,12 @@
         },
         {
             "location": "/grouping-data/#creating-groups",
-            "text": "SELECT vend_id, COUNT(*) AS num_prods FROM products GROUP BY vend_id;  +---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1001 |         3 |\n|    1002 |         2 |\n|    1003 |         7 |\n|    1005 |         2 |\n+---------+-----------+",
+            "text": "SELECT vend_id, COUNT(*) AS num_prods\nFROM products\nGROUP BY vend_id;  +---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1001 |         3 |\n|    1002 |         2 |\n|    1003 |         7 |\n|    1005 |         2 |\n+---------+-----------+",
             "title": "Creating groups"
         },
         {
             "location": "/grouping-data/#filtering-groups",
-            "text": "SELECT cust_id, COUNT( ) AS orders FROM orders GROUP BY cust_id HAVING COUNT( ) >= 2;  +---------+--------+\n| cust_id | orders |\n+---------+--------+\n|   10001 |      2 |\n+---------+--------+  SELECT vend_id, COUNT( ) AS num_prods FROM products WHERE prod_price >= 10 GROUP BY vend_id HAVING COUNT( ) >= 2;  +---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1003 |         4 |\n|    1005 |         2 |\n+---------+-----------+",
+            "text": "SELECT cust_id, COUNT(*) AS orders\nFROM orders\nGROUP BY cust_id\nHAVING COUNT(*) >= 2;  +---------+--------+\n| cust_id | orders |\n+---------+--------+\n|   10001 |      2 |\n+---------+--------+  SELECT vend_id, COUNT(*) AS num_prods\nFROM products\nWHERE prod_price >= 10\nGROUP BY vend_id\nHAVING COUNT(*) >= 2;  +---------+-----------+\n| vend_id | num_prods |\n+---------+-----------+\n|    1003 |         4 |\n|    1005 |         2 |\n+---------+-----------+",
             "title": "Filtering groups"
         },
         {
