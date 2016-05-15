@@ -37,4 +37,5 @@ pages:
   - Concurrency: concurrency.md
   - Storing passwords: passwords.md
   - PHP PDO's: php-pdo.md
-  - Testdocument: test.md
+  - Entity-Relation Diagram: er-diagram.md
+  - MySQL datatypes: mysql-datatypes.md
