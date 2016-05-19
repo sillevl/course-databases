@@ -308,6 +308,18 @@
             <div class="section">
               
                 <h1 id="subqueries">Subqueries</h1>
+<pre><code class="sql">SELECT
+(SELECT count(*) as aantalusers FROM users),
+(SELECT count(*) as aantalgames FROM games),
+(SELECT count(*) as aantalreviews FROM reviews);
+</code></pre>
+
+<pre><code>+-------------+------------+---------------+
+| aantalusers |aantalgames | aantalreviews |
++-------------+------------+---------------+
+| 75          |       100  |      534      |
++-------------+------------+---------------+
+</code></pre>
               
             </div>
           </div>

@@ -192,32 +192,32 @@
         },
         {
             "location": "/subqueries/",
-            "text": "Subqueries",
+            "text": "Subqueries\n\n\nSELECT\n(SELECT count(*) as aantalusers FROM users),\n(SELECT count(*) as aantalgames FROM games),\n(SELECT count(*) as aantalreviews FROM reviews);\n\n\n\n\n+-------------+------------+---------------+\n| aantalusers |aantalgames | aantalreviews |\n+-------------+------------+---------------+\n| 75          |       100  |      534      |\n+-------------+------------+---------------+",
             "title": "Working with subqueries"
         },
         {
             "location": "/subqueries/#subqueries",
-            "text": "",
+            "text": "SELECT\n(SELECT count(*) as aantalusers FROM users),\n(SELECT count(*) as aantalgames FROM games),\n(SELECT count(*) as aantalreviews FROM reviews);  +-------------+------------+---------------+\n| aantalusers |aantalgames | aantalreviews |\n+-------------+------------+---------------+\n| 75          |       100  |      534      |\n+-------------+------------+---------------+",
             "title": "Subqueries"
         },
         {
             "location": "/joins/",
-            "text": "Joins",
+            "text": "Joins\n\n\nAn SQL JOIN clause is used to combine rows from two or more tables, based on a common field between them.\n\n\nWe need the name of the game and the name of the publisher who made the game.\n\n\nselect games.name as name, publishers.name as publisher \nfrom games, publishers \nwhere games.publisher_id=publishers.id limit 10;\n\n\n\n\n+--------------------------------+------------------------------------------------+\n| name                           | publisher                                      |\n+--------------------------------+------------------------------------------------+\n| Resident Evil 4                | Pastel Games                                   |\n| Call of Duty 4: Modern Warfare | Koei Co., Ltd.                                 |\n| Assassin's Creed               | Pluto 13 GmbH                                  |\n| Prototype                      | SunSoft                                        |\n| No More Heroes                 | Black Isle Studios                             |\n| Burnout Paradise               | Shrapnel Games, Inc.                           |\n| Shadow of the Colossus         | Shrapnel Games, Inc.                           |\n| Rock Band                      | Anirog Software                                |\n| Halo 3                         | Virgin Interactive Entertainment (Europe) Ltd. |\n| Crysis                         | Cyan Worlds, Inc.                              |\n+--------------------------------+------------------------------------------------+\n\n\n\n\n\n\n\nWhat does this query do?\nWe need the id, name, description, price, platform, multiplayer, publisher and the user who added the game.\nThe common field between these tables are user_id and publisher_id.\nThey are the foreign keys in the table games, with these foreign keys we can link these tables together.\n\n\nSELECT games.id as id, games.name as name, games.description as description, games.price as price, games.platform as platform, games.multiplayer as multiplayer, games.timestamp as\ntimestamp, users.nickname as username, publishers.name as publisher \nFROM games, users, publishers \nWHERE games.user_id=users.id AND games.publisher_id=publishers.id AND games.id=30088;\n\n\n\n\n-------+-------------+-------------------------------------------------------------------------------------------------\n id    | name        | description   | price | platform   | multiplayer |  timestamp | username    | publisher       |\n-------+-------------+-------------------------------------------------------------------------------------------------\n 30088 | Bulletstorm | Stylish. | 29.76 | XBOX,PS,PC | YES   | 2011-02-22 00:00:00 | Luuk.Dekker | BAP Interactive |\n-------+-------------+-------------------------------------------------------------------------------------------------",
             "title": "Joining tables"
         },
         {
             "location": "/joins/#joins",
-            "text": "",
+            "text": "An SQL JOIN clause is used to combine rows from two or more tables, based on a common field between them.  We need the name of the game and the name of the publisher who made the game.  select games.name as name, publishers.name as publisher \nfrom games, publishers \nwhere games.publisher_id=publishers.id limit 10;  +--------------------------------+------------------------------------------------+\n| name                           | publisher                                      |\n+--------------------------------+------------------------------------------------+\n| Resident Evil 4                | Pastel Games                                   |\n| Call of Duty 4: Modern Warfare | Koei Co., Ltd.                                 |\n| Assassin's Creed               | Pluto 13 GmbH                                  |\n| Prototype                      | SunSoft                                        |\n| No More Heroes                 | Black Isle Studios                             |\n| Burnout Paradise               | Shrapnel Games, Inc.                           |\n| Shadow of the Colossus         | Shrapnel Games, Inc.                           |\n| Rock Band                      | Anirog Software                                |\n| Halo 3                         | Virgin Interactive Entertainment (Europe) Ltd. |\n| Crysis                         | Cyan Worlds, Inc.                              |\n+--------------------------------+------------------------------------------------+  What does this query do?\nWe need the id, name, description, price, platform, multiplayer, publisher and the user who added the game.\nThe common field between these tables are user_id and publisher_id.\nThey are the foreign keys in the table games, with these foreign keys we can link these tables together.  SELECT games.id as id, games.name as name, games.description as description, games.price as price, games.platform as platform, games.multiplayer as multiplayer, games.timestamp as\ntimestamp, users.nickname as username, publishers.name as publisher \nFROM games, users, publishers \nWHERE games.user_id=users.id AND games.publisher_id=publishers.id AND games.id=30088;  -------+-------------+-------------------------------------------------------------------------------------------------\n id    | name        | description   | price | platform   | multiplayer |  timestamp | username    | publisher       |\n-------+-------------+-------------------------------------------------------------------------------------------------\n 30088 | Bulletstorm | Stylish. | 29.76 | XBOX,PS,PC | YES   | 2011-02-22 00:00:00 | Luuk.Dekker | BAP Interactive |\n-------+-------------+-------------------------------------------------------------------------------------------------",
             "title": "Joins"
         },
         {
             "location": "/combining-queries/",
-            "text": "Combining queries\n\n\nSELECT\n(SELECT count(\n) as aantalusers FROM users),\n(SELECT count(\n) as aantalgames FROM games),\n(SELECT count(*) as aantalreviews FROM reviews);\n\n\n+-------------+------------+---------------+\n| aantalusers |aantalgames | aantalreviews |\n+-------------+------------+---------------+\n| 75          |       100  |      534      |\n+-------------+------------+---------------+",
+            "text": "Combining queries\n\n\nSELECT\n(SELECT count(*) as aantalusers FROM users),\n(SELECT count(*) as aantalgames FROM games),\n(SELECT count(*) as aantalreviews FROM reviews);\n\n\n\n\n+-------------+------------+---------------+\n| aantalusers |aantalgames | aantalreviews |\n+-------------+------------+---------------+\n| 75          |       100  |      534      |\n+-------------+------------+---------------+",
             "title": "Combining queries"
         },
         {
             "location": "/combining-queries/#combining-queries",
-            "text": "SELECT\n(SELECT count( ) as aantalusers FROM users),\n(SELECT count( ) as aantalgames FROM games),\n(SELECT count(*) as aantalreviews FROM reviews);  +-------------+------------+---------------+\n| aantalusers |aantalgames | aantalreviews |\n+-------------+------------+---------------+\n| 75          |       100  |      534      |\n+-------------+------------+---------------+",
+            "text": "SELECT\n(SELECT count(*) as aantalusers FROM users),\n(SELECT count(*) as aantalgames FROM games),\n(SELECT count(*) as aantalreviews FROM reviews);  +-------------+------------+---------------+\n| aantalusers |aantalgames | aantalreviews |\n+-------------+------------+---------------+\n| 75          |       100  |      534      |\n+-------------+------------+---------------+",
             "title": "Combining queries"
         },
         {
@@ -232,23 +232,33 @@
         },
         {
             "location": "/inserting-data/",
-            "text": "Inserting data",
+            "text": "Inserting data\n\n\nThe insert into is used to insert new records in a table.\n\n\nINSERT INTO users (name,lastname,nickname,email,password,timestamp)\nVALUES ('Bjorn','Engels','Bjeurn','piraat1997@gmail.com','banaan123','2016-05-18 11:11:50');",
             "title": "Inserting data"
         },
         {
             "location": "/inserting-data/#inserting-data",
-            "text": "",
+            "text": "The insert into is used to insert new records in a table.  INSERT INTO users (name,lastname,nickname,email,password,timestamp)\nVALUES ('Bjorn','Engels','Bjeurn','piraat1997@gmail.com','banaan123','2016-05-18 11:11:50');",
             "title": "Inserting data"
         },
         {
             "location": "/update-and-delete/",
-            "text": "Updating and deleting data",
+            "text": "Updating and deleting data\n\n\nUpdate\n\n\nThis statement is used to update records in a table.\n\n\nupdate users SET nickname='doenerbjoern' where id=154;\nQuery OK, 1 row affected (0.01 sec)\nRows matched: 1  Changed: 1  Warnings: 0\n\n\n\n\nDelete\n\n\nThe DELETE statement is used to delete records from a table.\n\n\ndelete from users where name='Enzo';\nQuery OK, 1 row affected (0.01 sec)",
             "title": "Updating and deleting data"
         },
         {
             "location": "/update-and-delete/#updating-and-deleting-data",
             "text": "",
             "title": "Updating and deleting data"
+        },
+        {
+            "location": "/update-and-delete/#update",
+            "text": "This statement is used to update records in a table.  update users SET nickname='doenerbjoern' where id=154;\nQuery OK, 1 row affected (0.01 sec)\nRows matched: 1  Changed: 1  Warnings: 0",
+            "title": "Update"
+        },
+        {
+            "location": "/update-and-delete/#delete",
+            "text": "The DELETE statement is used to delete records from a table.  delete from users where name='Enzo';\nQuery OK, 1 row affected (0.01 sec)",
+            "title": "Delete"
         },
         {
             "location": "/creating-and-manipulating-tables/",

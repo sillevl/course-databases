@@ -167,6 +167,10 @@
             
                 <li class="toctree-l3"><a href="#updating-and-deleting-data">Updating and deleting data</a></li>
                 
+                    <li><a class="toctree-l4" href="#update">Update</a></li>
+                
+                    <li><a class="toctree-l4" href="#delete">Delete</a></li>
+                
             
             </ul>
         
@@ -308,6 +312,18 @@
             <div class="section">
               
                 <h1 id="updating-and-deleting-data">Updating and deleting data</h1>
+<h2 id="update">Update</h2>
+<p>This statement is used to update records in a table.</p>
+<pre><code class="sql">update users SET nickname='doenerbjoern' where id=154;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+</code></pre>
+
+<h2 id="delete">Delete</h2>
+<p>The DELETE statement is used to delete records from a table.</p>
+<pre><code class="sql">delete from users where name='Enzo';
+Query OK, 1 row affected (0.01 sec)
+</code></pre>
               
             </div>
           </div>
