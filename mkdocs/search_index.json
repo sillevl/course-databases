@@ -212,12 +212,12 @@
         },
         {
             "location": "/combining-queries/",
-            "text": "Combining queries\n\n\nSELECT\n(SELECT count(*) as aantalusers FROM users),\n(SELECT count(*) as aantalgames FROM games),\n(SELECT count(*) as aantalreviews FROM reviews);\n\n\n\n\n+-------------+------------+---------------+\n| aantalusers |aantalgames | aantalreviews |\n+-------------+------------+---------------+\n| 75          |       100  |      534      |\n+-------------+------------+---------------+",
+            "text": "Combining queries",
             "title": "Combining queries"
         },
         {
             "location": "/combining-queries/#combining-queries",
-            "text": "SELECT\n(SELECT count(*) as aantalusers FROM users),\n(SELECT count(*) as aantalgames FROM games),\n(SELECT count(*) as aantalreviews FROM reviews);  +-------------+------------+---------------+\n| aantalusers |aantalgames | aantalreviews |\n+-------------+------------+---------------+\n| 75          |       100  |      534      |\n+-------------+------------+---------------+",
+            "text": "",
             "title": "Combining queries"
         },
         {
