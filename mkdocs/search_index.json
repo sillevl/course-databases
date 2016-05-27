@@ -212,13 +212,23 @@
         },
         {
             "location": "/combining-queries/",
-            "text": "Combining queries",
+            "text": "Combining queries\n\n\nThe UNION operator is used to combine the result-set of two or more SELECT statements.\n\n\nNotice that each SELECT statement within the UNION must have the same number of columns. The columns must also have similar data types. Also, the columns in each SELECT statement must be in the same order.\n\n\nUnion\n\n\nGet all the publishers and all the games and combine them together in 1 result.\nWe use limit because the list would be too long.\n\n\nSELECT vend_id, prod_id, prod_price\nFROM products\nWHERE prod_price <= 5\nUNION\nSELECT vend_id, prod_id, prod_price\nFROM products\nWHERE vend_id IN (1001,1002);\n\n\n\n\n+---------+---------+------------+\n| vend_id | prod_id | prod_price |\n+---------+---------+------------+\n|    1003 | FC      |       2.50 |\n|    1002 | FU1     |       3.42 |\n|    1003 | SLING   |       4.49 |\n|    1003 | TNT1    |       2.50 |\n|    1001 | ANV01   |       5.99 |\n|    1001 | ANV02   |       9.99 |\n|    1001 | ANV03   |      14.99 |\n|    1002 | OL1     |       8.99 |\n+---------+---------+------------+\n\n\n\n\nUnion All\n\n\nSELECT vend_id, prod_id, prod_price\nFROM products\nWHERE prod_price <= 5\nUNION ALL\nSELECT vend_id, prod_id, prod_price\nFROM products\nWHERE vend_id IN (1001,1002);\n\n\n\n\n+---------+---------+------------+\n| vend_id | prod_id | prod_price |\n+---------+---------+------------+\n|    1003 | FC      |       2.50 |\n|    1002 | FU1     |       3.42 |\n|    1003 | SLING   |       4.49 |\n|    1003 | TNT1    |       2.50 |\n|    1001 | ANV01   |       5.99 |\n|    1001 | ANV02   |       9.99 |\n|    1001 | ANV03   |      14.99 |\n|    1002 | FU1     |       3.42 |\n|    1002 | OL1     |       8.99 |\n+---------+---------+------------+",
             "title": "Combining queries"
         },
         {
             "location": "/combining-queries/#combining-queries",
-            "text": "",
+            "text": "The UNION operator is used to combine the result-set of two or more SELECT statements.  Notice that each SELECT statement within the UNION must have the same number of columns. The columns must also have similar data types. Also, the columns in each SELECT statement must be in the same order.",
             "title": "Combining queries"
+        },
+        {
+            "location": "/combining-queries/#union",
+            "text": "Get all the publishers and all the games and combine them together in 1 result.\nWe use limit because the list would be too long.  SELECT vend_id, prod_id, prod_price\nFROM products\nWHERE prod_price <= 5\nUNION\nSELECT vend_id, prod_id, prod_price\nFROM products\nWHERE vend_id IN (1001,1002);  +---------+---------+------------+\n| vend_id | prod_id | prod_price |\n+---------+---------+------------+\n|    1003 | FC      |       2.50 |\n|    1002 | FU1     |       3.42 |\n|    1003 | SLING   |       4.49 |\n|    1003 | TNT1    |       2.50 |\n|    1001 | ANV01   |       5.99 |\n|    1001 | ANV02   |       9.99 |\n|    1001 | ANV03   |      14.99 |\n|    1002 | OL1     |       8.99 |\n+---------+---------+------------+",
+            "title": "Union"
+        },
+        {
+            "location": "/combining-queries/#union-all",
+            "text": "SELECT vend_id, prod_id, prod_price\nFROM products\nWHERE prod_price <= 5\nUNION ALL\nSELECT vend_id, prod_id, prod_price\nFROM products\nWHERE vend_id IN (1001,1002);  +---------+---------+------------+\n| vend_id | prod_id | prod_price |\n+---------+---------+------------+\n|    1003 | FC      |       2.50 |\n|    1002 | FU1     |       3.42 |\n|    1003 | SLING   |       4.49 |\n|    1003 | TNT1    |       2.50 |\n|    1001 | ANV01   |       5.99 |\n|    1001 | ANV02   |       9.99 |\n|    1001 | ANV03   |      14.99 |\n|    1002 | FU1     |       3.42 |\n|    1002 | OL1     |       8.99 |\n+---------+---------+------------+",
+            "title": "Union All"
         },
         {
             "location": "/full-text-searching/",
