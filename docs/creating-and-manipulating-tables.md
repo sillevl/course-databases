@@ -21,3 +21,70 @@ In this case for column1 = `id` int(11) NOT NULL
 - NOT NULL means that the value from your column can't be a null value.
 - Not every new table needs a primary key, a table can also exist with 2 or more foreign keys.
 - Note that when you add a primary key that you don't forget to give an argument: PRIMARY KEY (id)
+ 
+##Manipulating tables
+###Altering tables
+####Adding a table
+```sql
+ALTER TABLE `games`;
+ADD `release` datetime;
+SHOW COLUMNS FROM games;
+```
+```
++--------------+-----------------------+------+-----+---------+----------------+
+| Field        | Type                  | Null | Key | Default | Extra          |
++--------------+-----------------------+------+-----+---------+----------------+
+| id           | int(11)               | NO   | PRI | NULL    | auto_increment |
+| name         | varchar(50)           | NO   |     | NULL    |                |
+| description  | text                  | YES  |     | NULL    |                |
+| price        | decimal(6,2)          | NO   |     | NULL    |                |
+| platform     | set('XBOX','PS','PC') | NO   |     | NULL    |                |
+| multiplayer  | enum('YES','NO')      | NO   |     | NULL    |                |
+| timestamp    | datetime              | NO   |     | NULL    |                |
+| user_id      | int(11)               | NO   |     | NULL    |                |
+| publisher_id | int(11)               | NO   |     | NULL    |                |
+| release      | datetime              | YES  |     | NULL    |                |
++--------------+-----------------------+------+-----+---------+----------------+
+```
+####Removing a table
+```sql
+ALTER TABLE `games`
+DROP COLUMN `release`;
+SHOW COLUMNS FROM games;
+```
+```
++--------------+-----------------------+------+-----+---------+----------------+
+| Field        | Type                  | Null | Key | Default | Extra          |
++--------------+-----------------------+------+-----+---------+----------------+
+| id           | int(11)               | NO   | PRI | NULL    | auto_increment |
+| name         | varchar(50)           | NO   |     | NULL    |                |
+| description  | text                  | YES  |     | NULL    |                |
+| price        | decimal(6,2)          | NO   |     | NULL    |                |
+| platform     | set('XBOX','PS','PC') | NO   |     | NULL    |                |
+| multiplayer  | enum('YES','NO')      | NO   |     | NULL    |                |
+| timestamp    | datetime              | NO   |     | NULL    |                |
+| user_id      | int(11)               | NO   |     | NULL    |                |
+| publisher_id | int(11)               | NO   |     | NULL    |                |
++--------------+-----------------------+------+-----+---------+----------------+
+```
+####Changing a datatype
+```sql
+ALTER TABLE `games`
+MODIFY COLUMN `name` char(50);
+```
+```
++--------------+-----------------------+------+-----+---------+----------------+
+| Field        | Type                  | Null | Key | Default | Extra          |
++--------------+-----------------------+------+-----+---------+----------------+
+| id           | int(11)               | NO   | PRI | NULL    | auto_increment |
+| name         | char(50)              | YES  |     | NULL    |                |
+| description  | text                  | YES  |     | NULL    |                |
+| price        | decimal(6,2)          | NO   |     | NULL    |                |
+| platform     | set('XBOX','PS','PC') | NO   |     | NULL    |                |
+| multiplayer  | enum('YES','NO')      | NO   |     | NULL    |                |
+| timestamp    | datetime              | NO   |     | NULL    |                |
+| user_id      | int(11)               | NO   |     | NULL    |                |
+| publisher_id | int(11)               | NO   |     | NULL    |                |
++--------------+-----------------------+------+-----+---------+----------------+
+```
+Note that the datatype for the field name has been changed from varchar(50) to char(50)
