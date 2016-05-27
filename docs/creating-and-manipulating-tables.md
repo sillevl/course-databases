@@ -3,21 +3,21 @@
 ##Creating a new table
 
 ```sql
-CREATE TABLE `games` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `description` text,
-  `price` decimal(6,2) NOT NULL,
-  `platform` set('XBOX','PS','PC') NOT NULL,
-  `multiplayer` enum('YES','NO') NOT NULL,
-  `timestamp` datetime NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `publisher_id` int(11) NOT NULL,
+CREATE TABLE games (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name varchar(50) NOT NULL,
+  description text,
+  price decimal(6,2) NOT NULL,
+  platform set('XBOX','PS','PC') NOT NULL,
+  multiplayer enum('YES','NO') NOT NULL,
+  timestamp datetime NOT NULL,
+  user_id int(11) NOT NULL,
+  publisher_id int(11) NOT NULL,
   PRIMARY KEY (id)
 );
 ```
-To create a new table use the command CREATE TABLE 'yourTableName'(column1, column2,...);
-In this case for column1 = `id` int(11) NOT NULL
+To create a new table use the command CREATE TABLE yourTableName(column1, column2,...);
+In this case for column1 = id int(11) NOT NULL
 
 * NOT NULL means that it is mandatory to enter a value, so this field can't be empty
 * Note that when you add a primary key that you don't forget to give an argument: PRIMARY KEY (id)
@@ -27,8 +27,9 @@ In this case for column1 = `id` int(11) NOT NULL
 ###Altering tables
 ####Adding a table
 ```sql
-ALTER TABLE `games`;
-ADD `release` datetime;
+ALTER TABLE games
+ADD release datetime;
+
 SHOW COLUMNS FROM games;
 ```
 ```
@@ -49,8 +50,9 @@ SHOW COLUMNS FROM games;
 ```
 ####Removing a table
 ```sql
-ALTER TABLE `games`
-DROP COLUMN `release`;
+ALTER TABLE games
+DROP COLUMN release;
+
 SHOW COLUMNS FROM games;
 ```
 ```
@@ -70,8 +72,8 @@ SHOW COLUMNS FROM games;
 ```
 ####Changing a datatype
 ```sql
-ALTER TABLE `games`
-MODIFY COLUMN `name` char(50);
+ALTER TABLE games
+MODIFY COLUMN name char(50);
 ```
 ```
 +--------------+-----------------------+------+-----+---------+----------------+
