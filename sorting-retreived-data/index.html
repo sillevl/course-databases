@@ -63,6 +63,13 @@
           
             <li>
     <li class="toctree-l1 ">
+        <a class="" href="../creating_forta_database/">Setting up example databases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
         <a class="" href="../mysql-introduction/">MySQL introduction</a>
         
     </li>
@@ -81,7 +88,11 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#sorting-retreived-data">Sorting retreived data</a></li>
+                <li class="toctree-l3"><a href="#sorting-retrieved-data">Sorting retrieved data</a></li>
+                
+                    <li><a class="toctree-l4" href="#ascending-and-descending">Ascending and Descending</a></li>
+                
+                    <li><a class="toctree-l4" href="#multiple-sorting-statements">Multiple sorting statements</a></li>
                 
             
             </ul>
@@ -307,7 +318,72 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="sorting-retreived-data">Sorting retreived data</h1>
+                <h1 id="sorting-retrieved-data">Sorting retrieved data</h1>
+<p>When receiving a lot of data from the database, It can be hard to find what you need.
+For example, when you want a list of all employees with their name. You will get list of the names in a random order. 
+Or so it seems, they are actually sorted by their primary key number.
+You can solve this with the <code>SORT BY</code> statement.</p>
+<pre><code class="sql">SELECT name, surname FROM employees ORDER BY name;
+</code></pre>
+
+<p>Now the results will be returned in alphabetical order. (When placing <code>ORDER BY BINARY</code>, you can force the sorting to be case-sensitive) </p>
+<h3 id="ascending-and-descending">Ascending and Descending</h3>
+<p>You can change if the results will be displayed from A to Z or the other way around. 
+When choosing <code>ASC</code> it will go from A to Z for data with letters. And for numbers it will go from 0 to the highest number there is.
+<code>DESC</code> does the complete opposite. <strong>When you do not state any of these two, it will default to ascending.</strong></p>
+<pre><code class="sql">SELECT name, email FROM employees ORDER BY name DESC;
+</code></pre>
+
+<h3 id="multiple-sorting-statements">Multiple sorting statements</h3>
+<p>When sorting data, the chances are high that you will have the same value for something. For example, you want to sort the names of the employees but the men need to come first in the list and then the women. </p>
+<pre><code class="sql">SELECT name, gender FROM employees ORDER BY gender DESC, name;
+</code></pre>
+
+<p>Here will you get something like this:</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>gender</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>John</td>
+<td>Male</td>
+</tr>
+<tr>
+<td>Sam</td>
+<td>Male</td>
+</tr>
+<tr>
+<td>Steven</td>
+<td>Male</td>
+</tr>
+<tr>
+<td>Tom</td>
+<td>Male</td>
+</tr>
+<tr>
+<td>Anna</td>
+<td>Female</td>
+</tr>
+<tr>
+<td>Ellen</td>
+<td>Female</td>
+</tr>
+<tr>
+<td>Lucy</td>
+<td>Female</td>
+</tr>
+<tr>
+<td>Mary</td>
+<td>Female</td>
+</tr>
+</tbody>
+</table>
+<p>As you can see, the men come first then the women. When these are sorted they are placed alphabetically from A to Z.
+When you take a look at the query you can see I placed <code>DESC</code> behind gender. I did this because the 'F' from female comes earlier then the 'M' from male in the alphabet. This shows that you can choose for every table how they are sorted.</p>
               
             </div>
           </div>

@@ -63,6 +63,13 @@
           
             <li>
     <li class="toctree-l1 ">
+        <a class="" href="../creating_forta_database/">Setting up example databases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
         <a class="" href="../mysql-introduction/">MySQL introduction</a>
         
     </li>
@@ -173,6 +180,10 @@
             <ul>
             
                 <li class="toctree-l3"><a href="#creating-and-manipulating-tables">Creating and manipulating tables</a></li>
+                
+                    <li><a class="toctree-l4" href="#creating-a-new-table">Creating a new table</a></li>
+                
+                    <li><a class="toctree-l4" href="#manipulating-tables">Manipulating tables</a></li>
                 
             
             </ul>
@@ -308,6 +319,92 @@
             <div class="section">
               
                 <h1 id="creating-and-manipulating-tables">Creating and manipulating tables</h1>
+<h2 id="creating-a-new-table">Creating a new table</h2>
+<pre><code class="sql">CREATE TABLE `games` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `description` text,
+  `price` decimal(6,2) NOT NULL,
+  `platform` set('XBOX','PS','PC') NOT NULL,
+  `multiplayer` enum('YES','NO') NOT NULL,
+  `timestamp` datetime NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `publisher_id` int(11) NOT NULL,
+  PRIMARY KEY (id)
+); 
+</code></pre>
+
+<p>To create a new table use the command CREATE TABLE 'yourTableName'(column1, column2,...);
+In this case for column1 = <code>id</code> int(11) NOT NULL
+- NOT NULL means that it is mandatory to enter a value, so this field can't be empty
+- Note that when you add a primary key that you don't forget to give an argument: PRIMARY KEY (id)
+- Every table has max. ONE primary key.</p>
+<h2 id="manipulating-tables">Manipulating tables</h2>
+<h3 id="altering-tables">Altering tables</h3>
+<h4 id="adding-a-table">Adding a table</h4>
+<pre><code class="sql">ALTER TABLE `games`;
+ADD `release` datetime;
+SHOW COLUMNS FROM games;
+</code></pre>
+
+<pre><code>+--------------+-----------------------+------+-----+---------+----------------+
+| Field        | Type                  | Null | Key | Default | Extra          |
++--------------+-----------------------+------+-----+---------+----------------+
+| id           | int(11)               | NO   | PRI | NULL    | auto_increment |
+| name         | varchar(50)           | NO   |     | NULL    |                |
+| description  | text                  | YES  |     | NULL    |                |
+| price        | decimal(6,2)          | NO   |     | NULL    |                |
+| platform     | set('XBOX','PS','PC') | NO   |     | NULL    |                |
+| multiplayer  | enum('YES','NO')      | NO   |     | NULL    |                |
+| timestamp    | datetime              | NO   |     | NULL    |                |
+| user_id      | int(11)               | NO   |     | NULL    |                |
+| publisher_id | int(11)               | NO   |     | NULL    |                |
+| release      | datetime              | YES  |     | NULL    |                |
++--------------+-----------------------+------+-----+---------+----------------+
+</code></pre>
+
+<h4 id="removing-a-table">Removing a table</h4>
+<pre><code class="sql">ALTER TABLE `games`
+DROP COLUMN `release`;
+SHOW COLUMNS FROM games;
+</code></pre>
+
+<pre><code>+--------------+-----------------------+------+-----+---------+----------------+
+| Field        | Type                  | Null | Key | Default | Extra          |
++--------------+-----------------------+------+-----+---------+----------------+
+| id           | int(11)               | NO   | PRI | NULL    | auto_increment |
+| name         | varchar(50)           | NO   |     | NULL    |                |
+| description  | text                  | YES  |     | NULL    |                |
+| price        | decimal(6,2)          | NO   |     | NULL    |                |
+| platform     | set('XBOX','PS','PC') | NO   |     | NULL    |                |
+| multiplayer  | enum('YES','NO')      | NO   |     | NULL    |                |
+| timestamp    | datetime              | NO   |     | NULL    |                |
+| user_id      | int(11)               | NO   |     | NULL    |                |
+| publisher_id | int(11)               | NO   |     | NULL    |                |
++--------------+-----------------------+------+-----+---------+----------------+
+</code></pre>
+
+<h4 id="changing-a-datatype">Changing a datatype</h4>
+<pre><code class="sql">ALTER TABLE `games`
+MODIFY COLUMN `name` char(50);
+</code></pre>
+
+<pre><code>+--------------+-----------------------+------+-----+---------+----------------+
+| Field        | Type                  | Null | Key | Default | Extra          |
++--------------+-----------------------+------+-----+---------+----------------+
+| id           | int(11)               | NO   | PRI | NULL    | auto_increment |
+| name         | char(50)              | YES  |     | NULL    |                |
+| description  | text                  | YES  |     | NULL    |                |
+| price        | decimal(6,2)          | NO   |     | NULL    |                |
+| platform     | set('XBOX','PS','PC') | NO   |     | NULL    |                |
+| multiplayer  | enum('YES','NO')      | NO   |     | NULL    |                |
+| timestamp    | datetime              | NO   |     | NULL    |                |
+| user_id      | int(11)               | NO   |     | NULL    |                |
+| publisher_id | int(11)               | NO   |     | NULL    |                |
++--------------+-----------------------+------+-----+---------+----------------+
+</code></pre>
+
+<p>Note that the datatype for the field name has been changed from varchar(50) to char(50)</p>
               
             </div>
           </div>

@@ -8,7 +8,7 @@
   
   <meta name="author" content="Sille Van Landschoot">
   
-  <title>Retreiving data - Databases</title>
+  <title>Setting up example databases - Databases</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Retreiving data";
-    var mkdocs_page_input_path = "retreiving-data.md";
-    var mkdocs_page_url = "/retreiving-data/";
+    var mkdocs_page_name = "Setting up example databases";
+    var mkdocs_page_input_path = "creating_forta_database.md";
+    var mkdocs_page_url = "/creating_forta_database/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -62,8 +62,21 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../creating_forta_database/">Setting up example databases</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Setting up example databases</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#creating-a-basic-database">creating a basic database</a></li>
+                
+                    <li><a class="toctree-l4" href="#connecting-to-the-database">connecting to the database</a></li>
+                
+                    <li><a class="toctree-l4" href="#creating-the-database">creating the database</a></li>
+                
+                    <li><a class="toctree-l4" href="#filling-the-database">filling the database</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -76,15 +89,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Retreiving data</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#retreiving-data">Retreiving data</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../retreiving-data/">Retreiving data</a>
         
     </li>
 <li>
@@ -300,7 +306,7 @@
     
       
     
-    <li>Retreiving data</li>
+    <li>Setting up example databases</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -314,59 +320,113 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="retreiving-data">Retreiving data</h1>
-<pre><code class="sql">SELECT prod_name FROM products;
+                <h1 id="creating-a-basic-database">creating a basic database</h1>
+<p>In this course we use the forta database. this database is made by Ben Forta (http://forta.com/). 
+On this page we will go step by step how to create this database.</p>
+<p>You will need a mysql server(xampp as set up on previous page) and a mysql client(commandprompt, bash or powershell will do).
+You will also need to download the files <a href="../mysql_scripts.zip">http://forta.com/books/0672327120/mysql_scripts.zip</a> and unzip them.</p>
+<p>EXTRA: In this course we will put all the SQL-code in capitals, this is not necessary but it will make clear to you what is static SQL-code and what are names that you can change.</p>
+<h2 id="connecting-to-the-database">connecting to the database</h2>
+<p>first start up your databaseserver as you learned on the previous page. 
+now open your mysql client in the folder where you unziped the files. you can open the client by typing <code>PowerShell</code> in the adress bar in your windows explorer.
+now type <code>mysql -u root</code> in your client.</p>
+<p><code>mysql</code>: this tells your commandpromp or powerschell to start the mysql client.
+<code>-u root</code>: the -u tells the client to log with the given name, in this case 'root'.
+<code>-p</code>: the -p tells the client to ask for a password after you pressed enter.
+<code>-h 127.0.0.1</code>: this tells the client to connect on ip-adress 127.0.0.1, can be used for connection on remote servers, when not specified it will use localhost.</p>
+<p>you should be connected now and see </p>
+<pre><code>MariaDB [(none)]&gt;
 </code></pre>
 
-<pre><code>+----------------+
-| prod_name      |
-+----------------+
-| .5 ton anvil   |
-| 1 ton anvil    |
-| 2 ton anvil    |
-| Detonator      |
-| Bird seed      |
-| Carrots        |
-| Fuses          |
-| JetPack 1000   |
-| JetPack 2000   |
-| Oil can        |
-| Safe           |
-| Sling          |
-| TNT (1 stick)  |
-| TNT (5 sticks) |
-+----------------+
-14 rows in set (0.00 sec)
+<p>MarioDB is the name of the database server that is used in xampp.
+between the <code>[ ]</code>is the name of the selected database, for the moment we don't have a database selected so it says <code>(none)</code>.</p>
+<p>Before we create a new database, let's see what is already in here with <code>SHOW databases;</code></p>
+<pre><code>+--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
 </code></pre>
 
-<pre><code class="sql">SELECT prod_id, prod_name, prod_price FROM products;
+<p>a database named test, let's look in there.
+Do  <code>USE name;</code> to select the database with that name.
+you see that the name of the selected database now <code>test</code> is.
+Do <code>show tables;</code>do ask the list of tables in the database.
+<code>Empty set (0.00 sec)</code>
+it looks like this database is completely empty, you can leave it or delete it with <code>DROP DATABASE test;</code></p>
+<h2 id="creating-the-database">creating the database</h2>
+<p>First we will create a completly empty database with:</p>
+<pre><code class="sql">CREATE DATABASE forta;
 </code></pre>
 
-<pre><code>+---------+----------------+------------+
-| prod_id | prod_name      | prod_price |
-+---------+----------------+------------+
-| ANV01   | .5 ton anvil   |       5.99 |
-| ANV02   | 1 ton anvil    |       9.99 |
-| ANV03   | 2 ton anvil    |      14.99 |
-| DTNTR   | Detonator      |      13.00 |
-| FB      | Bird seed      |      10.00 |
-| FC      | Carrots        |       2.50 |
-| FU1     | Fuses          |       3.42 |
-| JP1000  | JetPack 1000   |      35.00 |
-| JP2000  | JetPack 2000   |      55.00 |
-| OL1     | Oil can        |       8.99 |
-| SAFE    | Safe           |      50.00 |
-| SLING   | Sling          |       4.49 |
-| TNT1    | TNT (1 stick)  |       2.50 |
-| TNT2    | TNT (5 sticks) |      10.00 |
-+---------+----------------+------------+
-14 rows in set (0.00 sec)
+<p>Now a empty database with name forta has been created and we will now use that database with: </p>
+<pre><code class="sql">USE forta;
 </code></pre>
 
+<p>When you see that the prompt has changed to: <code>MariaDB [forta]&gt;</code> then you can continue.
+We are now gonna create tables and cullomns in those tables but we are not doing it ourself.
+to execute a script, use the command <code>SOURCE scriptname;</code>, 
+we want to execute create.sql that you got from the zipmap first.</p>
+<pre><code class="sql">SOURCE create.sql;
+</code></pre>
+
+<p>if you get</p>
+<pre><code>ERROR: Failed to open file 'create.sql', error: 2
+</code></pre>
+
+<p>Then check if the create.sql file is in the folder where you started you powershell or commandprompt.</p>
+<p>Now wait till the promp is back to his normal state.
+There should be table in this database now, let's check with
+<code>SHOW TABLES;</code>.</p>
+<pre><code>+-----------------+
+| Tables_in_forta |
++-----------------+
+| customers       |
+| orderitems      |
+| orders          |
+| productnotes    |
+| products        |
+| vendors         |
++-----------------+
+</code></pre>
+
+<p>To see how a table was made, use <code>DESC tablename;</code>so let's test it with <code>DESC products;</code></p>
+<pre><code>+------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| prod_id    | char(10)     | NO   | PRI | NULL    |       |
+| vend_id    | int(11)      | NO   | MUL | NULL    |       |
+| prod_name  | char(255)    | NO   |     | NULL    |       |
+| prod_price | decimal(8,2) | NO   |     | NULL    |       |
+| prod_desc  | text         | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+</code></pre>
+
+<p>We can see for every collumn in this table what the name is, what the type is, if it can be empty(Null), if it is a key and what the default vallue is.
+This one don't have any default values so it says NULL.
+To see all info in a table you can always do:</p>
+<pre><code class="sql">SELECT* FROM tablename;
+</code></pre>
+
+<p>(more info on this will come in the next chapter: Retreiving data)
+So we are gonna look in the products table to know what products this firma sells.</p>
 <pre><code class="sql">SELECT * FROM products;
 </code></pre>
 
-<pre><code>+---------+---------+----------------+------------+----------------------------------------------------------------+
+<p>And we get this as answer: <code>Empty set (0.00 sec)</code>.
+This means that they don't have any products yet so let's put some in then.</p>
+<h2 id="filling-the-database">filling the database</h2>
+<p>Again, we are not gonna do this ourself but use the other script for this:</p>
+<pre><code class="sql">SOURCE populate.sql;
+</code></pre>
+
+<p>If we try it again now then we get this:</p>
+<pre><code>MariaDB [forta]&gt; select * from products;
++---------+---------+----------------+------------+----------------------------------------------------------------+
 | prod_id | vend_id | prod_name      | prod_price | prod_desc                                                      |
 +---------+---------+----------------+------------+----------------------------------------------------------------+
 | ANV01   |    1001 | .5 ton anvil   |       5.99 | .5 ton anvil, black, complete with handy hook                  |
@@ -384,46 +444,9 @@
 | TNT1    |    1003 | TNT (1 stick)  |       2.50 | TNT, red, single stick                                         |
 | TNT2    |    1003 | TNT (5 sticks) |      10.00 | TNT, red, pack of 10 sticks                                    |
 +---------+---------+----------------+------------+----------------------------------------------------------------+
-14 rows in set (0.00 sec)
 </code></pre>
 
-<pre><code class="sql">-SELECT vend_id FROM products;
-</code></pre>
-
-<pre><code>+---------+
-| vend_id |
-+---------+
-|    1001 |
-|    1001 |
-|    1001 |
-|    1002 |
-|    1002 |
-|    1003 |
-|    1003 |
-|    1003 |
-|    1003 |
-|    1003 |
-|    1003 |
-|    1003 |
-|    1005 |
-|    1005 |
-+---------+
-14 rows in set (0.00 sec)
-</code></pre>
-
-<pre><code class="sql">SELECT DISTINCT vend_id FROM products;
-</code></pre>
-
-<pre><code>+---------+
-| vend_id |
-+---------+
-|    1001 |
-|    1002 |
-|    1003 |
-|    1005 |
-+---------+
-4 rows in set (0.00 sec)
-</code></pre>
+<p>So now you have a database to test stuff on and you can continue to the next chapter: Retreiving data.</p>
               
             </div>
           </div>
@@ -431,10 +454,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../sorting-retreived-data/" class="btn btn-neutral float-right" title="Sorting retreived data">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../mysql-introduction/" class="btn btn-neutral float-right" title="MySQL introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../mysql-introduction/" class="btn btn-neutral" title="MySQL introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -462,10 +485,10 @@
           <a href="https://github.com/sillevl/course-databases" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../mysql-introduction/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../sorting-retreived-data/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../mysql-introduction/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
