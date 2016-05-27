@@ -18,9 +18,9 @@ CREATE TABLE `games` (
 ```
 To create a new table use the command CREATE TABLE 'yourTableName'(column1, column2,...);
 In this case for column1 = `id` int(11) NOT NULL
-- NOT NULL means that the value from your column can't be a null value.
-- Not every new table needs a primary key, a table can also exist with 2 or more foreign keys.
+- NOT NULL means that it is mandatory to enter a value, so this field can't be empty
 - Note that when you add a primary key that you don't forget to give an argument: PRIMARY KEY (id)
+- Every table has max. ONE primary key.
  
 ##Manipulating tables
 ###Altering tables
