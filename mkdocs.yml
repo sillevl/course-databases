@@ -10,6 +10,7 @@ markdown_extensions:
  - def_list
 pages:
   - Home: index.md
+  - Setting up example databases: creating_forta_database.md
   - MySQL introduction: mysql-introduction.md
   - Retreiving data: retreiving-data.md
   - Sorting retreived data: sorting-retreived-data.md
