@@ -9,6 +9,8 @@ SELECT Concat(vend_name, ' (', vend_country, ')')
 FROM vendors
 ORDER BY vend_name;
 ```
+Using the function <b>Concat()</b> in this example results in: Concat(arg1 , 'String1' , arg2 , 'String2') </br>
+with arg1 = vend_name , String1 = '(' , arg2 = vend_country , String2 = ')'
 ```
 +--------------------------------------------+
 | Concat(vend_name, ' (', vend_country, ')') |
@@ -28,6 +30,8 @@ SELECT Concat(RTrim(vend_name), ' (', RTrim(vend_country), ')') AS vend_title
 FROM vendors
 ORDER BY vend_name;
 ```
+Using the <b>AS 'someName'</b> statement, you can display a sort of 'virtual column' with the name you've given within the statement
+<ul><li>RTRIM() removes the trailing spaces of a string. (empty spaces)</li></ul>
 ```
 +-------------------------+
 | vend_title              |
