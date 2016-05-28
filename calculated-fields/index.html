@@ -327,6 +327,8 @@ FROM vendors
 ORDER BY vend_name;
 </code></pre>
 
+<p>Using the function <b>Concat()</b> in this example results in: Concat(arg1 , 'String1' , arg2 , 'String2') </br>
+with arg1 = vend_name , String1 = '(' , arg2 = vend_country , String2 = ')'</p>
 <pre><code>+--------------------------------------------+
 | Concat(vend_name, ' (', vend_country, ')') |
 +--------------------------------------------+
@@ -345,6 +347,8 @@ FROM vendors
 ORDER BY vend_name;
 </code></pre>
 
+<p>Using the <b>AS 'someName'</b> statement, you can display a sort of 'virtual column' with the name you've given within the statement
+<ul><li>RTRIM() removes the trailing spaces of a string. (empty spaces)</li></ul></p>
 <pre><code>+-------------------------+
 | vend_title              |
 +-------------------------+
