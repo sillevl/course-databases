@@ -320,22 +320,22 @@
               
                 <h1 id="creating-and-manipulating-tables">Creating and manipulating tables</h1>
 <h2 id="creating-a-new-table">Creating a new table</h2>
-<pre><code class="sql">CREATE TABLE `games` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `description` text,
-  `price` decimal(6,2) NOT NULL,
-  `platform` set('XBOX','PS','PC') NOT NULL,
-  `multiplayer` enum('YES','NO') NOT NULL,
-  `timestamp` datetime NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `publisher_id` int(11) NOT NULL,
+<pre><code class="sql">CREATE TABLE games (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name varchar(50) NOT NULL,
+  description text,
+  price decimal(6,2) NOT NULL,
+  platform set('XBOX','PS','PC') NOT NULL,
+  multiplayer enum('YES','NO') NOT NULL,
+  timestamp datetime NOT NULL,
+  user_id int(11) NOT NULL,
+  publisher_id int(11) NOT NULL,
   PRIMARY KEY (id)
 );
 </code></pre>
 
-<p>To create a new table use the command CREATE TABLE 'yourTableName'(column1, column2,...);
-In this case for column1 = <code>id</code> int(11) NOT NULL</p>
+<p>To create a new table use the command CREATE TABLE yourTableName(column1, column2,...);
+In this case for column1 = id int(11) NOT NULL</p>
 <ul>
 <li>NOT NULL means that it is mandatory to enter a value, so this field can't be empty</li>
 <li>Note that when you add a primary key that you don't forget to give an argument: PRIMARY KEY (id)</li>
@@ -344,8 +344,9 @@ In this case for column1 = <code>id</code> int(11) NOT NULL</p>
 <h2 id="manipulating-tables">Manipulating tables</h2>
 <h3 id="altering-tables">Altering tables</h3>
 <h4 id="adding-a-table">Adding a table</h4>
-<pre><code class="sql">ALTER TABLE `games`;
-ADD `release` datetime;
+<pre><code class="sql">ALTER TABLE games
+ADD release datetime;
+
 SHOW COLUMNS FROM games;
 </code></pre>
 
@@ -366,8 +367,9 @@ SHOW COLUMNS FROM games;
 </code></pre>
 
 <h4 id="removing-a-table">Removing a table</h4>
-<pre><code class="sql">ALTER TABLE `games`
-DROP COLUMN `release`;
+<pre><code class="sql">ALTER TABLE games
+DROP COLUMN release;
+
 SHOW COLUMNS FROM games;
 </code></pre>
 
@@ -387,8 +389,8 @@ SHOW COLUMNS FROM games;
 </code></pre>
 
 <h4 id="changing-a-datatype">Changing a datatype</h4>
-<pre><code class="sql">ALTER TABLE `games`
-MODIFY COLUMN `name` char(50);
+<pre><code class="sql">ALTER TABLE games
+MODIFY COLUMN name char(50);
 </code></pre>
 
 <pre><code>+--------------+-----------------------+------+-----+---------+----------------+
