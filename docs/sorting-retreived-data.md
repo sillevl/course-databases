@@ -3,7 +3,7 @@
 When receiving a lot of data from the database, It can be hard to find what you need.
 For example, when you want a list of all employees with their name. You will get list of the names in a random order. 
 Or so it seems, they are actually sorted by their primary key number.
-You can solve this with the `SORT BY` statement.
+You can solve this with the `ORDER BY` statement.
 
 ```sql
 SELECT name, surname FROM employees ORDER BY name;
