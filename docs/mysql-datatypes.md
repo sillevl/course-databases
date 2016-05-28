@@ -24,7 +24,7 @@ SET|Same as an ENUM but holds a lot less items, but you can store more than one 
 
 ### Number Types:
 
- 'size' represents the total number of digits and 'dec' represents the number of digits to the right of the decimal point.
+`size` represents the total number of digits and 'dec' represents the number of digits to the right of the decimal point.
 
 Type|Description|Signed Range|Unsigned Range
 ----|-----------|------------|--------------
