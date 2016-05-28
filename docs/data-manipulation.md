@@ -22,7 +22,7 @@ ORDER BY vend_name;
 | Function    | Description                              |
 |:------------|:-----------------------------------------|
 | Left()      | Returns characters from left of string.  <b>Left('String' , int)</b> </br> with <b>int</b> the amount of left characters |
-| Lenght()    | Returns the lenght of a string           |
+| Length()    | Returns the length of a string           |
 | Locate()    | Finds a substring within a string.    <b>Locate('SubString', 'String')</b> </br> with SubString = the string you are searching for|
 | Lower()     | Converts string to lowercase             |
 | LTrim()     | Trims white space from left of string    |
