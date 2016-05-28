@@ -21,15 +21,15 @@ ORDER BY vend_name;
 
 | Function    | Description                              |
 |:------------|:-----------------------------------------|
-| Left()      | Returns characters from left of string   |
+| Left()      | Returns characters from left of string.  <b>Left('String' , int)</b> </br> with <b>int</b> the amount of left characters |
 | Lenght()    | Returns the lenght of a string           |
-| Locate()    | Finds a substring within a string        |
+| Locate()    | Finds a substring within a string.    <b>Locate('SubString', 'String')</b> </br> with SubString = the string you are searching for|
 | Lower()     | Converts string to lowercase             |
 | LTrim()     | Trims white space from left of string    |
-| Right()     | Returns chraracters from right of string |
+| Right()     | Returns chraracters from right of string. <b>Right('String' , int)</b> </br> with <b>int</b> the amount of right characters |
 | RTrim()     | Trims white space from right of string   |
 | Soundex()   | Returns a string's SOUNDEX value         |
-| SubString() | Returns characters from within a string  |
+| SubString() | Returns characters from within a string. <b>SubString('String', intStart, intLength)</b> example: SubString('w3resource',4,3') returns 'eso' |
 | Upper       | Converts string to uppercase             |
 
 ## Date and time manipulation functions
