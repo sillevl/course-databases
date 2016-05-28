@@ -2,13 +2,10 @@
 ##Update
 This statement is used to update records in a table.
 ```sql
-update users SET nickname='doenerbjoern' where id=154;
-Query OK, 1 row affected (0.01 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
+UPDATE users SET nickname='doenerbjoern' WHERE id=154;
 ```
 ##Delete
-The DELETE statement is used to delete records from a table.
+The `DELETE` statement is used to delete records from a table.
 ```sql
-delete from users where name='Enzo';
-Query OK, 1 row affected (0.01 sec)
+DELETE FROM users WHERE name='Enzo';
 ```
