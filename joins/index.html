@@ -315,11 +315,11 @@
             <div class="section">
               
                 <h1 id="joins">Joins</h1>
-<p>An SQL JOIN clause is used to combine rows from two or more tables, based on a common field between them.</p>
+<p>A SQL JOIN clause is used to combine rows from two or more tables, based on a common field between them.</p>
 <p>We need the name of the game and the name of the publisher who made the game.</p>
-<pre><code class="sql">select games.name as name, publishers.name as publisher 
-from games, publishers 
-where games.publisher_id=publishers.id limit 10;
+<pre><code class="sql">SELECT games.name AS name, publishers.name AS publisher 
+FROM games, publishers 
+WHERE games.publisher_id = publishers.id LIMIT 10;
 </code></pre>
 
 <pre><code>+--------------------------------+------------------------------------------------+
@@ -336,19 +336,17 @@ where games.publisher_id=publishers.id limit 10;
 | Halo 3                         | Virgin Interactive Entertainment (Europe) Ltd. |
 | Crysis                         | Cyan Worlds, Inc.                              |
 +--------------------------------+------------------------------------------------+
-
-
-
 </code></pre>
 
 <p>What does this query do?
 We need the id, name, description, price, platform, multiplayer, publisher and the user who added the game.
 The common field between these tables are user_id and publisher_id.
 They are the foreign keys in the table games, with these foreign keys we can link these tables together.</p>
-<pre><code class="sql">SELECT games.id as id, games.name as name, games.description as description, games.price as price, games.platform as platform, games.multiplayer as multiplayer, games.timestamp as
-timestamp, users.nickname as username, publishers.name as publisher 
+<pre><code class="sql">SELECT games.id AS id, games.name AS name, games.description AS description, games.price AS price, 
+games.platform AS platform, games.multiplayer AS multiplayer, games.timestamp AS timestamp, 
+users.nickname AS username, publishers.name AS publisher 
 FROM games, users, publishers 
-WHERE games.user_id=users.id AND games.publisher_id=publishers.id AND games.id=30088;
+WHERE games.user_id = users.id AND games.publisher_id = publishers.id AND games.id = 30088;
 </code></pre>
 
 <pre><code>-------+-------------+-------------------------------------------------------------------------------------------------

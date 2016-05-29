@@ -321,15 +321,12 @@
                 <h1 id="updating-and-deleting-data">Updating and deleting data</h1>
 <h2 id="update">Update</h2>
 <p>This statement is used to update records in a table.</p>
-<pre><code class="sql">update users SET nickname='doenerbjoern' where id=154;
-Query OK, 1 row affected (0.01 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
+<pre><code class="sql">UPDATE users SET nickname='doenerbjoern' WHERE id=154;
 </code></pre>
 
 <h2 id="delete">Delete</h2>
-<p>The DELETE statement is used to delete records from a table.</p>
-<pre><code class="sql">delete from users where name='Enzo';
-Query OK, 1 row affected (0.01 sec)
+<p>The <code>DELETE</code> statement is used to delete records from a table.</p>
+<pre><code class="sql">DELETE FROM users WHERE name='Enzo';
 </code></pre>
               
             </div>
