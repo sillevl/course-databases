@@ -40,6 +40,8 @@
 - XML
 - YAML
 
+### Other
+
 - [Entity-Relation Diagram](forta/er-diagram.md)
 - [MySQL datatypes](forta/mysql-datatypes.md)
 
