@@ -35,3 +35,9 @@
 - [PHP PDO's](forta/php-pdo.md)
 - [Entity-Relation Diagram](forta/er-diagram.md)
 - [MySQL datatypes](forta/mysql-datatypes.md)
+
+### Data Exchange Formats
+
+- JSON
+- XML
+- YAML
