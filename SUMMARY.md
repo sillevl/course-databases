@@ -31,13 +31,15 @@
 
 ### Database driven PHP webpages
 
-- [Storing passwords](forta/passwords.md)
-- [PHP PDO's](forta/php-pdo.md)
-- [Entity-Relation Diagram](forta/er-diagram.md)
-- [MySQL datatypes](forta/mysql-datatypes.md)
+- [Storing passwords](php/passwords.md)
+- [PHP PDO's](php/php-pdo.md)
 
 ### Data Exchange Formats
 
 - JSON
 - XML
 - YAML
+
+- [Entity-Relation Diagram](forta/er-diagram.md)
+- [MySQL datatypes](forta/mysql-datatypes.md)
+
