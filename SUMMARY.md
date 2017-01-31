@@ -1,5 +1,7 @@
 # Summary
 
+### MySQL
+
 - [Setting up example databases](forta/creating_forta_database.md)
 - [MySQL introduction](forta/mysql-introduction.md)
 - [Retreiving data](forta/retreiving-data.md)
@@ -26,6 +28,9 @@
 - [Managing database users](forta/database-users.md)
 - [Database maintenance](forta/database-maintenance.md)
 - [Concurrency](forta/concurrency.md)
+
+### Database driven PHP webpages
+
 - [Storing passwords](forta/passwords.md)
 - [PHP PDO's](forta/php-pdo.md)
 - [Entity-Relation Diagram](forta/er-diagram.md)
