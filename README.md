@@ -5,7 +5,6 @@ This version is created at {{ file.mtime }}
 ## Objectives
 
 * Introduction in the databases
- 
 * Understanding basic principles of databases
   * Relational databases
   * NoSQL databases
