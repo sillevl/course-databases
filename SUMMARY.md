@@ -3,7 +3,7 @@
 ### Introduction
 
 * [Objectives](README.md)
-* [Introduction](introduction/evaluation.md)
+* [Evaluation](introduction/evaluation.md)
 * [Software](introduction/software.md)
 * [Setting up example databases](forta/creating_forta_database.md)
 
