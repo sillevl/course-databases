@@ -138,8 +138,14 @@ MariaDB [forta]> select * from products;
 
 Some of the examples use a larger testdatabase, a fake database with employees to be exact.
 If you want test on this bigger database then you can get it over [datacharmer/test\_db](https://github.com/datacharmer/test_db) on Github.
-Download the hole respository as zip or using git. go in the folder where you saved it(unziped) and start your mysql client here.
-connect again to your database with `mysql -u root`.
+Download the respository as zip or using `git clone`. go in the folder where you saved it(unziped) and start your mysql client here.
+connect again to your database with the following command:
+
+```mysql
+mysql -u root
+```
+
+
 We don't need to create a database ourself because that is done in the script so we only need to run 
 
 ```sql
