@@ -141,7 +141,7 @@ If you want test on this bigger database then you can get it over [datacharmer/t
 Download the respository as zip or using `git clone`. go in the folder where you saved it(unziped) and start your mysql client here.
 connect again to your database with the following command:
 
-```mysql
+```sql
 mysql -u root
 ```
 
