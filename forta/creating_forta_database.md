@@ -11,6 +11,7 @@ You will also need to download the files [http://forta.com/books/0672327120/mysq
 >
 > In this course we will put all the SQL-code in capitals, this is not necessary but it will make clear to you what is static SQL-code and what are names that you can change.
 
+
 ## Connecting to the database
 
 first start up your databaseserver as you learned on the previous page. 
