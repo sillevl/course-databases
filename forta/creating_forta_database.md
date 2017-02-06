@@ -1,4 +1,4 @@
-#creating a basic database
+# Creating a sample database
 
 In this course we use the forta database. this database is made by Ben Forta (http://forta.com/). 
 On this page we will go step by step how to create this database.
@@ -7,24 +7,29 @@ You will need a mysql server(xampp as set up on previous page) and a mysql clien
 You will also need to download the files [http://forta.com/books/0672327120/mysql_scripts.zip](mysql_scripts.zip) and unzip them.
 
 EXTRA: In this course we will put all the SQL-code in capitals, this is not necessary but it will make clear to you what is static SQL-code and what are names that you can change.
-##connecting to the database
+
+## Connecting to the database
+
 first start up your databaseserver as you learned on the previous page. 
 now open your mysql client in the folder where you unziped the files. you can open the client by typing `PowerShell` in the adress bar in your windows explorer.
 now type `mysql -u root` in your client.
 
-`mysql`: this tells your commandpromp or powerschell to start the mysql client.
-`-u root`: the -u tells the client to log with the given name, in this case 'root'.
-`-p`: the -p tells the client to ask for a password after you pressed enter.
-`-h 127.0.0.1`: this tells the client to connect on ip-adress 127.0.0.1, can be used for connection on remote servers, when not specified it will use localhost.
+* `mysql`: this tells your commandpromp or powerschell to start the mysql client.
+* `-u root`: the -u tells the client to log with the given name, in this case 'root'.
+* `-p`: the -p tells the client to ask for a password after you pressed enter.
+* `-h 127.0.0.1`: this tells the client to connect on ip-adress 127.0.0.1, can be used for connection on remote servers, when not specified it will use localhost.
 
 you should be connected now and see 
+
 ```
 MariaDB [(none)]>
 ```
+
 MarioDB is the name of the database server that is used in xampp.
 between the `[ ]`is the name of the selected database, for the moment we don't have a database selected so it says `(none)`.
 
 Before we create a new database, let's see what is already in here with `SHOW databases;`
+
 ```
 +--------------------+
 | Database           |
@@ -36,6 +41,7 @@ Before we create a new database, let's see what is already in here with `SHOW da
 | test               |
 +--------------------+
 ```
+
 a database named test, let's look in there.
 Do  `USE name;` to select the database with that name.
 you see that the name of the selected database now `test` is.
@@ -43,31 +49,40 @@ Do `show tables;`do ask the list of tables in the database.
 ```Empty set (0.00 sec)```
 it looks like this database is completely empty, you can leave it or delete it with `DROP DATABASE test;`
 
-##creating the database
-First we will create a completly empty database with:
+## Creating the database
+First we will create a completely empty database with:
+
 ```sql
 CREATE DATABASE forta;
 ```
+
 Now a empty database with name forta has been created and we will now use that database with: 
+
 ```sql
 USE forta;
 ```
+
 When you see that the prompt has changed to: `MariaDB [forta]>` then you can continue.
 We are now gonna create tables and cullomns in those tables but we are not doing it ourself.
 to execute a script, use the command `SOURCE scriptname;`, 
 we want to execute create.sql that you got from the zipmap first.
+
 ```sql
 SOURCE create.sql;
 ```
+
 if you get
+
 ```
 ERROR: Failed to open file 'create.sql', error: 2
 ``` 
-Then check if the create.sql file is in the folder where you started you powershell or commandprompt.
+
+Then check if the create.sql file is in the folder where you started you PowerShell or commandprompt.
 
 Now wait till the promp is back to his normal state.
 There should be table in this database now, let's check with
 `SHOW TABLES;`.
+
 ```
 +-----------------+
 | Tables_in_forta |
@@ -80,7 +95,9 @@ There should be table in this database now, let's check with
 | vendors         |
 +-----------------+
 ```
+
 To see how a table was made, use `DESC tablename;`so let's test it with `DESC products;`
+
 ```
 +------------+--------------+------+-----+---------+-------+
 | Field      | Type         | Null | Key | Default | Extra |
@@ -92,26 +109,34 @@ To see how a table was made, use `DESC tablename;`so let's test it with `DESC pr
 | prod_desc  | text         | YES  |     | NULL    |       |
 +------------+--------------+------+-----+---------+-------+
 ```
+
 We can see for every collumn in this table what the name is, what the type is, if it can be empty(Null), if it is a key and what the default vallue is.
 This one don't have any default values so it says NULL.
 To see all info in a table you can always do:
+
 ```sql
 SELECT* FROM tablename;
 ```
+
 (more info on this will come in the next chapter: Retreiving data)
 So we are gonna look in the products table to know what products this firma sells.
+
 ```sql
 SELECT * FROM products;
 ```
+
 And we get this as answer: `Empty set (0.00 sec)`.
 This means that they don't have any products yet so let's put some in then.
 
-##filling the database
+##  Filling the database
 Again, we are not gonna do this ourself but use the other script for this:
+
 ```sql
 SOURCE populate.sql;
 ```
+
 If we try it again now then we get this:
+
 ```
 MariaDB [forta]> select * from products;
 +---------+---------+----------------+------------+----------------------------------------------------------------+
