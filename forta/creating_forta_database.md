@@ -7,7 +7,7 @@ You will need a mysql server (XAMPP) and a mysql client(commandprompt, Bash or P
 
 You will also need to download the files [http://forta.com/books/0672327120/mysql_scripts.zip](mysql_scripts.zip) and unzip them.
 
-> ### Note:SQL Keywords in capital letters
+> #### Note::SQL Keywords in capital letters
 >
 > In this course we will put all the SQL-code in capitals, this is not necessary but it will make clear to you what is static SQL-code and what are names that you can change.
 
