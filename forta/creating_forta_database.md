@@ -37,6 +37,7 @@ Before we create a new database, let's see what is already in here with
 ```sql 
 SHOW databases;
 ```
+
 This will show a list of available databases.
 
 ```
@@ -80,7 +81,7 @@ we want to execute create.sql that you got from the zipmap first.
 SOURCE create.sql;
 ```
 
-if you get
+if you get an error like:
 
 ```
 ERROR: Failed to open file 'create.sql', error: 2
