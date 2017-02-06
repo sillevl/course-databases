@@ -6,6 +6,14 @@
 * [Introduction](introduction/evaluation.md)
 * [Software](introduction/software.md)
 
+### Data Exchange Formats
+
+* Comma Separated Values - CSV
+* JavaScript Object Notation - JSON
+* eXtensible Markup Language - XML
+* Yet Another Markup Language - YAML
+
+
 ### MySQL
 
 - [Setting up example databases](forta/creating_forta_database.md)
@@ -40,11 +48,7 @@
 - [Storing passwords](php/passwords.md)
 - [PHP PDO's](php/php-pdo.md)
 
-### Data Exchange Formats
 
-- JSON
-- XML
-- YAML
 
 ### Other
 
