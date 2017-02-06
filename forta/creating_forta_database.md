@@ -3,10 +3,13 @@
 In this course we use the forta database. this database is made by Ben Forta (http://forta.com/). 
 On this page we will go step by step how to create this database.
 
-You will need a mysql server(xampp as set up on previous page) and a mysql client(commandprompt, bash or powershell will do).
+You will need a mysql server (XAMPP) and a mysql client(commandprompt, Bash or PowerShell will do).
+
 You will also need to download the files [http://forta.com/books/0672327120/mysql_scripts.zip](mysql_scripts.zip) and unzip them.
 
-EXTRA: In this course we will put all the SQL-code in capitals, this is not necessary but it will make clear to you what is static SQL-code and what are names that you can change.
+> ### Note:SQL Keywords in capital letters
+>
+> In this course we will put all the SQL-code in capitals, this is not necessary but it will make clear to you what is static SQL-code and what are names that you can change.
 
 ## Connecting to the database
 
