@@ -32,7 +32,12 @@ MariaDB [(none)]>
 MarioDB is the name of the database server that is used in xampp.
 between the `[ ]`is the name of the selected database, for the moment we don't have a database selected so it says `(none)`.
 
-Before we create a new database, let's see what is already in here with `SHOW databases;`
+Before we create a new database, let's see what is already in here with 
+
+```sql 
+SHOW databases;
+```
+This will show a list of available databases.
 
 ```
 +--------------------+
