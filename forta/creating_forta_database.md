@@ -136,7 +136,7 @@ MariaDB [forta]> select * from products;
 
 ## A larger test database (optional)
 
-Some of the examples use a bigger testdatabase, a fake database with employees to be exact.
+Some of the examples use a larger testdatabase, a fake database with employees to be exact.
 If you want test on this bigger database then you can get it over [here](https://github.com/datacharmer/test_db).
 Download the hole respository as zip or using git. go in the folder where you saved it(unziped) and start your mysql client here.
 connect again to your database with `mysql -u root`.
