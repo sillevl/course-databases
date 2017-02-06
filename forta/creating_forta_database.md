@@ -145,7 +145,6 @@ connect again to your database with the following command:
 mysql -u root
 ```
 
-
 We don't need to create a database ourself because that is done in the script so we only need to run 
 
 ```sql
