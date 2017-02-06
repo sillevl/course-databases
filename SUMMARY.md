@@ -8,10 +8,11 @@
 
 ### Data Exchange Formats
 
-* Comma Separated Values - CSV
-* JavaScript Object Notation - JSON
-* eXtensible Markup Language - XML
-* Yet Another Markup Language - YAML
+* [Introduction](data-exchange-formats/introduction.md)
+* [Comma Separated Values - CSV](data-exchange-formats/csv.md)
+* [JavaScript Object Notation - JSON](data-exchange-formats/json.md)
+* [eXtensible Markup Language - XML](data-exchange-formats/xml.md)
+* [Yet Another Markup Language - YAML](data-exchange-formats/yaml.md)
 
 
 ### MySQL
