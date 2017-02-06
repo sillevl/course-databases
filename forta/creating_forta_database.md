@@ -134,7 +134,7 @@ MariaDB [forta]> select * from products;
 +---------+---------+----------------+------------+----------------------------------------------------------------+
 ```
 
-## A bigger test database (optional)
+## A larger test database (optional)
 
 Some of the examples use a bigger testdatabase, a fake database with employees to be exact.
 If you want test on this bigger database then you can get it over [here](https://github.com/datacharmer/test_db).
