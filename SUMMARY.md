@@ -5,6 +5,8 @@
 * [Objectives](README.md)
 * [Introduction](introduction/evaluation.md)
 * [Software](introduction/software.md)
+* [Setting up example databases](forta/creating_forta_database.md)
+
 
 ### Data Exchange Formats
 
@@ -17,7 +19,6 @@
 
 ### MySQL
 
-- [Setting up example databases](forta/creating_forta_database.md)
 - [MySQL introduction](forta/mysql-introduction.md)
 - [Retreiving data](forta/retreiving-data.md)
 - [Sorting retreived data](forta/sorting-retreived-data.md)
