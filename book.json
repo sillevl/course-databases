@@ -2,7 +2,7 @@
     "plugins": [
         "callouts",
         "richquotes",
-        "copy-code-button"
-    ],
-    "pluginsConfig": {}
+        "copy-code-button",
+        "image-captions"
+    ]
 }
