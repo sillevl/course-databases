@@ -68,6 +68,23 @@ While there are various specifications and implementations for the CSV format, t
    ```
    "aaa","b""bb","ccc"
    ```
+   
+## Examples
+
+```
+name,age,gender
+james,21,m
+lauren,19,f
+simon,57,m
+```
+
+## CSV Validator
+
+https://csvlint.io/
+
+## CSV Schema
+
+http://digital-preservation.github.io/csv-schema/csv-schema-1.0.html
 
 --- 
 
