@@ -8,7 +8,7 @@
 * [Setting up example databases](forta/creating_forta_database.md)
 
 
-### Data Exchange Formats
+### Data Interchange Formats
 
 * [Introduction](data-exchange-formats/introduction.md)
 * [Comma Separated Values - CSV](data-exchange-formats/csv.md)
