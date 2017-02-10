@@ -4,7 +4,7 @@ Instead of Toledo we will be using Git to upload your exercise solutions. For an
 
 ## The Idea
 
-The idea is to use a single repository to track all your NetBeans projects which are solutions to this course.
+The idea is to use a single repository to track all your exercises in this course.
 This allows me as a teacher, to clone the your repository and view your solutions to the exercises all at once. After each lab session you can push the solutions for exercises allowing me to pull them.
 
 For this we will be using the Gitlab service on the *labict* server. You should have received an account from that allows you to login at http://git.labict.be.
@@ -15,15 +15,13 @@ For this we will be using the Gitlab service on the *labict* server. You should 
 
 ### Creating a Project Directory
 
-The first step to take is to create a project directory where we will store all the solutions to the exercises. Standard NetBeans projects are stored in `C:\Users\<your_name>\Documents\NetBeansProjects`. You could for example create a subdirectory called `OOP2` beneath this directory.
-
-You could store it somewhere else but then you will need to navigate to this directory every time you create a new project.
+The first step to take is to create a project directory where we will store all the solutions to the exercises. You can choose the location and name for this directory for you convenience.
 
 ### Creating a local Repository
 
 The next step is to create a local git repository of the main project directory. Do take note that this only has to be done once.
 
-Navigate to your main project directory using Windows Explorer. For example: `C:\Users\<your_name>\Documents\NetBeansProjects\OOP2`.
+Navigate to your main project directory using Windows Explorer. For example: `C:\Users\<your_name>\Databases\Exercises`.
 
 Now in the top of your window, where the path is shown, type `powershell` and hit *Enter*. This launch PowerShell and set the working directory to the current directory.
 
@@ -51,7 +49,7 @@ $ git status
 
 #### README.md
 
-Before continuing we should add a readme to the repository. This allows you to publish some basic information and documentation about the exercises. It is also really handy as it is the page that is shown on Github when you visit a repository page of someone.
+Before continuing we should add a readme file to the repository. This allows you to publish some basic information and documentation about the exercises. It is also really handy as it is the page that is shown on Github when you visit a repository page of someone.
 
 Start by creating a file in the top directory of your repository called `README.md`. Make sure to put the filename in capitals and also make sure that the extension is correct.
 
@@ -60,7 +58,7 @@ Now you can edit the file using a text editor such as Atom (preferred as it will
 Start from the following content:
 
 ```markdown
-# Object Oriented Programming and JavaFX
+# Exercises Databases
 
 This repository belongs to [student_name].
 
@@ -74,50 +72,6 @@ This repository belongs to [student_name].
   * Make sure to document the creative parts that you added.
   * Extras can be: was it too hard or too easy
 ```
-
-#### .gitignore
-
-We do not want all intermediate and temporary files to be tracked in the Git repository. For example source files such `.java` files should of course be tracked, however the compiled `.class` files should not.
-
-For this purpose a `.gitignore` file can be added to the repository which can state which files should be ignored by Git. Inside the Powershell window type exactly:
-
-```shell
-$ touch .gitignore
-```
-
-If you do a `ls` you will see a similar result to the one shown below.
-
-![Creating a .gitignore file](img/touching_gitignore.png)
-
-This should be done using Powershell as Windows Explorer will not allow you to make a file with this name. Files starting with a `.` (dot) are special files on Linux which are hidden. Windows can handle them but does not like you to create them.
-
-Open the file in Atom and put the following content in it:
-
-```gitignore
-#ant specific
-dist/
-build/
-
-#netbeans specific
-core
-nbproject/*
-!nbproject/project.properties
-!nbproject/project.xml
-
-#java specific
-*.class
-
-#general swap/backup files
-*.so
-*.log
-*.out
-*~
-*.swp
-*.DS_Store
-*.lock
-```
-
-Save and close it.
 
 ### Adding and Commiting
 
@@ -134,20 +88,13 @@ $ git add README.md
 $ git commit -m "Add a readme file to the repository as information source for solutions"
 ```
 
-Now let's commit the `.gitignore` file:
-
-```shell
-$ git add .gitignore
-$ git commit -m "Add a gitignore file to ignore temporary netbeans and java files"
-```
-
 ### Creating a Remote Repository
 
-The next step consist of creating a remote repository on the gitlab server.
+The next step consist of creating a remote repository on the [gitlab server](https://git.labict.be).
 
-Goto http://git.labict.be, login using your account and create a new repository by selecting the **New Project** option at the front page. Give the repository a name following this format: `oop2_solutions_your_name` where you `your_name` with your actual name. Make sure to make repository private.
+Goto http://git.labict.be, login using your account and create a new repository by selecting the **New Project** option at the front page. Give the repository a name following this format: `databases`. Make sure to make repository private.
 
-It is also a good idea to provide a description to the repository. For example: 'Contains all the solution of the course Object Oriented Programming with JavaFX'.
+It is also a good idea to provide a description to the repository. For example: 'Contains all the solution of the course Databases'.
 
 ![Creating a remote repository on Gitlab](img/creating_remote.png)
 
@@ -195,27 +142,11 @@ Next type in the name of your teacher and add him/her as a **master** member to 
 
 ### Creating Subdirectories for Chapters
 
-You should create a subdirectory for each chapter before adding projects to it. Go ahead and create a subdirectory `chapter_2_application_structure` beneath the main project directory.
+You should create a subdirectory for each chapter before adding projects to it. Go ahead and create a subdirectory `oef-1` beneath the main project directory.
 
 ![Adding subdirectory for chapter](img/add_chapter_dir.png)
 
-### NetBeans
-
-#### Creating new Projects
-
-When you create a new project in NetBeans make sure to select the correct project location. This means for example: `C:\Users\<your_name>\Documents\NetBeansProjects\OOP2\chapter_2_application_structure` depending on the location of your main project directory and the chapter to which the project belongs to.
-
-![Creating a new project in NetBeans](img/create_project.png)
-
-#### Moving Existing Projects
-
-Make sure you have closed NetBeans. Next navigate to `C:\Users\<your_name>\Documents\NetBeansProjects` using Windows Explorer or wherever the project is located that you want to move inside the repository. Move the project directory to the correct chapter directory in the repository.
-
-If you open NetBeans the project will not be inside your project list anymore. Right click in the project list and select `Open Project`. Navigate to the new location of that project and click *Open project*.
-
-![Opening a project in NetBeans](img/open_project.png)
-
-### README.md per project
+### README.md per project aka Report
 
 Instead of a Word report it is necessary to add a small README.md file per project containing minimalistic information for the teacher. Create this README.md file inside the actual project directory as shown below.
 
@@ -235,7 +166,7 @@ Als extra heb ik de kleur van de achtergrond ingesteld en verandert de knop ook 
 
 After you finished a project and you added a readme file to it, it's time to commit it and push it to the remote.
 
-Open up the main exercises directory using Windows Explorer, for example `C:\Users\<your_name>\Documents\NetBeansProjects\OOP2`.
+Open up the main exercises directory using Windows Explorer, for example `C:\Users\<your_name>\Documents\Databases`.
 
 ![Launching Powershell](img/launching_powershell_again.png)
 
@@ -246,7 +177,7 @@ When you execute `git status` you will see what files have changed.
 First we need to add the files to the staging area:
 
 ```shell
-$ git add chapter_2_application_structure/JavaFX_Keypad/
+$ git add oef-1/
 ```
 
 When you execute `git status` you will see what files have been added for the next commit.
@@ -256,7 +187,7 @@ When you execute `git status` you will see what files have been added for the ne
 Now we need to commit our changes and add a decent commit message.
 
 ```shell
-$ git commit -m "Finished the keypad exercise of chapter 2"
+$ git commit -m "Finished exercise 1"
 ```
 
 ![Git commit after Add](img/git_commit_after_add.png)
@@ -272,14 +203,4 @@ If we check the gitlab service we should see that the changes have been pushed t
 ![Git push to remote](img/git_push_new_project.png)
 
 
-<!-- ### NetBeans
 
-Before we create an actual Git repository we need to create a *Project Group* in NetBeans. This will allow us to group together all the exercises in a single directory.
-
-Open NetBeans and navigate to `File => Project Groups`. Select `New Group`.
-
-* Give the group the name **OOP2**.
-* Select the third option `Folder of Projects` and select a folder where you wish to store the projects (this is the directory you created in the previous example).
-* Click `Create Group`
-
-![Creating a project group in NetBeans](img/create_group.png) -->
