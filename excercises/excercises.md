@@ -77,21 +77,20 @@ The `public` key can be shared between other services or people, the `private` k
 Open your public key file `C:\Users\USER_NAME\.ssh\id_rsa.pub` with atom or notepad. And copy the full content of the file. It should look something like this:
 
 ```
-ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA7LDjWNaCVFewzOw3y0k2
-gITZR3PgbZldy49w/sP+UBDn80IMqPacXsPcqoZOuyysAfxZlnCi79YD
-OTasdcl/zw0+t9xhFk4aN6n/SqDD3/1+LvamokkGATWSFB/cqrqS2XiH
-UUw98zqKn9EkXAY7XVAYX0Ga51sJj+30iba3tOas4yj2bvbabTA9fexE
-AZWjl9pWPfLoSUbsSh++4rbUiYyGwU5Kt9sUexx4Mau3D2wU6o86i4nH
-+vuHK0jIX7ZgYIjnan4vXcp30iyerJTo1Otb6/BucvWRkDPhgH+2TkMo
-+ayOGrd7G80bXNwBf1i2mLqNOvaA9a2yO8Sw57/qIQ== sille@laptop-vives
-
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA7LDjWNaCVFewzOw3y0k2g
+ITZR3PgbZldy49w/sP+UBDn80IMqPacXsPcqoZOuyysAfxZlnCi79YDOT
+asdcl/zw0+t9xhFk4aN6n/SqDD3/1+LvamokkGATWSFB/cqrqS2XiHUUw
+98zqKn9EkXAY7XVAYX0Ga51sJj+30iba3tOas4yj2bvbabTA9fexEAZWj
+l9pWPfLoSUbsSh++4rbUiYyGwU5Kt9sUexx4Mau3D2wU6o86i4nH+vuHK
+0jIX7ZgYIjnan4vXcp30iyerJTo1Otb6/BucvWRkDPhgH+2TkMo+ayOGr
+d7G80bXNwBf1i2mLqNOvaA9a2yO8Sw57/qIQ== sille@laptop-vives
 ```
 
 Now go to your profile page on [http://git.labict.be/profile](git.labict.be/profile). In the menu you should find an option `SSH Keys`. On this page you can add your `public` key using the `+ add SSH key` button.
 
 Paste your key in the 'key' field. In the 'title' field you can state to what user and machine the key belongs to. (Should be the same value a you used with the `ssh-keygen` command)
 
-![Add SSH key to your account](excercises/img/add-ssh-key.png)
+![Add SSH key to your account](img/add-ssh-key.png)
 
 Click on the 'Add key' button and you should be ready to `push` and `pull` using git.
 
