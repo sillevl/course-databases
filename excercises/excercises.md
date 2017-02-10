@@ -6,8 +6,6 @@ Create a repository called `databases` and add a directory for every new exercis
 
 After a couple of exercises your project might look like this:
 
-
-
 ```
 databases
     README.md
