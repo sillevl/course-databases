@@ -7,6 +7,7 @@
 * [Software](introduction/software.md)
 * [Setting up example databases](forta/creating_forta_database.md)
 * [Excercises](excercises/excercises.md)
+    * [Using Git for excercises](excercises/using_git_for_exercises.md)
     * [Gitlab setup](excercises/gitlab-setup.md)
     * [Markdown](excercises/markdown.md)
 
