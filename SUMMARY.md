@@ -6,6 +6,7 @@
 * [Evaluation](introduction/evaluation.md)
 * [Software](introduction/software.md)
 * [Setting up example databases](forta/creating_forta_database.md)
+* [Excercises](excercises/excercises.md)
 
 
 ### Data Interchange Formats

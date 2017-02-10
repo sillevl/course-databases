@@ -20,3 +20,9 @@ databases
         report.md
 ```
 
+## Reports
+
+If an exercise demands a report, it must be written in `Markdown`. A description and examples of Markdown can be found over here: [Markdown](./markdown.md). 
+
+All markdown files should have the `.md` file extension. 
+
