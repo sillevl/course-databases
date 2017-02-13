@@ -1,8 +1,8 @@
 # eXtensible Markup Language - XML
 
-
 XML: Extensible Markup Language
 * 1996 by World Wide Web Consortium
+
 Open technology
 Technology for data storage and exchange
 Portable
@@ -49,7 +49,7 @@ XML comment begins with `<!–-` and ends with `-->`
 Contains text that represents content (data)
 Contains elements that specify structure
 
-```
+```xml
 <firstname>John</firstname> 
 ```
 
@@ -61,7 +61,7 @@ XML delimits an element with start and end tags
 Every document must have exactly one root element
 Root element encompasses all the other elements
 
-```
+```xml
 <player> 
    <firstname>John</firstname> 
    <lastname>Doe</lastname> 
@@ -71,20 +71,24 @@ Root element encompasses all the other elements
 Elements names can be of any length and can contain letters, digits, underscores, hyphens and periods
 * Must begin with a letter or underscore
 * Should not begin with “xml” in any combination (reserved)
+
 Blank lines, white spaces and indentation: help improve readability but are ignored in XML
 
 ### Hierarchy
 
 Container elements
 * Any element that contains other elements
+
 Parent elements
 * Container elements
+
 Child elements
 * Nested elements in container or parent elements
+
 Siblings
 * Child elements that are at the same nesting level
 
-```
+```xml
 <player> 
    <firstname>John</firstname> 
    <lastname>Doe</lastname> 
@@ -111,6 +115,7 @@ XML allows you to assign meaning to what would otherwise be random pieces of dat
 Formatting and displaying is application specific
 Browsers can show XML
 * Brower specific built-in style sheet
+
 Microsoft XML viewer
 Microsoft Excel
 
@@ -143,9 +148,11 @@ DTD=Document Type Definition
 
 ## Namespaces
 
+### Problem
+
 XML carrying HTML table information
 
-```
+```xml
 <table>
    <tr> 
       <td>Intel</td>
@@ -168,7 +175,7 @@ XML carrying information about a table (furniture)
 
 Solution: namespace prefix and colon = XML namespace
 
-```
+```xml
 <html:table>
    <html:tr> 
       <html:td>Intel</html:td>
@@ -178,7 +185,7 @@ Solution: namespace prefix and colon = XML namespace
 ```
 and
 
-```
+```xml
 <furniture:table>
    <furniture:name>Coffee Table</furniture:name> 
    <furniture:width>80</furniture:width>
@@ -198,7 +205,7 @@ URN: Uniform Resource Name `xmlns:image = "urn:vives:imageInfo"`
 URL: Uniform Resource Locator `xmlns:image = “http://vives.be/xmlns-image"`
 
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?> 
 
 <text:directory 
@@ -218,7 +225,7 @@ URL: Uniform Resource Locator `xmlns:image = “http://vives.be/xmlns-image"`
 
 Eliminate the need to place a namespace in each element (xmlns keyword)
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?> 
 
 <directory 
