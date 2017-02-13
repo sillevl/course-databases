@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The comma separated values format (CSV) has been used for exchanging and converting data between various spreadsheet programs for quite some time. Surprisingly, while this format is very common, it has never been formally documented. Additionally, while the IANA MIME registration tree includes a registration for "text/tab-separated-values" type, no MIME types have ever been registered with IANA for CSV. At the same time, various programs and operating systems have begun to use different MIME types for this format. This RFC documents the format of comma separated values (CSV) files.
+The comma separated values format (CSV) has been used for exchanging and converting data between various spreadsheet programs for quite some time. Surprisingly, while this format is very common, it has never been formally documented. 
 
 ## Definition of the CSV Format
 
@@ -24,7 +24,7 @@ While there are various specifications and implementations for the CSV format, t
    zzz,yyy,xxx
    ```
 
-3.  There maybe an optional header line appearing as the first line of the file with the same format as normal record lines.  This header will contain names corresponding to the fields in the file and should contain the same number of fields as the records in the rest of the file (the presence or absence of the header line should be indicated via the optional "header" parameter of this MIME type).  
+3.  There maybe an optional header line appearing as the first line of the file with the same format as normal record lines.  This header will contain names corresponding to the fields in the file and should contain the same number of fields as the records in the rest of the file.  
 
    For example:
 
