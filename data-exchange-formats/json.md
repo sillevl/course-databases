@@ -234,3 +234,5 @@ JSON example of a Widget:
 
 
 ## JSON Schema
+
+TODO
