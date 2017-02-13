@@ -1,18 +1,14 @@
 # YAML - Yet Another Markup Language
 
-YAML stands for "_YAML Ain't Markup Language_" and it is used extensively in Grav for its configuration files, blueprints, and also in page settings.
-
-YAML is to configuration what markdown is to markup. It’s basically a human-readable structured data format. It is less complex and ungainly than XML or JSON, but provides similar capabilities. It essentially allows you to provide powerful configuration settings, without having to learn a more complex code type like CSS, JavaScript, and PHP.
+YAML stands for "_YAML Ain't Markup Language_" YAML is to configuration what markdown is to markup. It’s basically a human-readable structured data format. It is less complex and ungainly than XML or JSON, but provides similar capabilities. It essentially allows you to provide powerful configuration settings, without having to learn a more complex code type like CSS, JavaScript, and PHP.
 
 YAML is built from the ground up to be simple to use. At its core, a YAML file is used to describe data. One of the benefits of using YAML is that the information in a single YAML file can be easily translated to multiple language types.
-
-Basically, the data you enter in a YAML file is used in conjunction with a library to create the pages you see within Grav.
 
 ## YAML Basic Rules
 
 There are some rules that YAML has in place to avoid issues related to ambiguity in relation to various languages and editing programs. These rules make it possible for a single YAML file to be interpreted consistently, regardless of which application and/or library is being used to interpret it.
 
-* YAML files should end in `.yaml` whenever possible.
+* YAML files should end in `.yaml` whenever possible. (Sometimes `.yml` is used as well) 
 * YAML is case sensitive.
 * YAML does not allow the use of tabs. Spaces are used instead as tabs are not universally supported.
 
@@ -36,7 +32,7 @@ boolean: Yes
 ```
 ### Sequences
 
-Here is a simple sequence you might find in Grav. It is a basic list with each item in the list placed in its own line with an opening dash.
+Here is a simple sequence. It is a basic list with each item in the list placed in its own line with an opening dash.
 
 ```yaml
 - Cat
