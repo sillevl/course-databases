@@ -201,8 +201,8 @@ Each namespace prefix is bound to a Uniform Resource Identifier (URI)
 
 xmlns attribute
 Bound to an URI (Uniform Resource Identifier)
-URN: Uniform Resource Name `xmlns:image = "urn:vives:imageInfo"`
-URL: Uniform Resource Locator `xmlns:image = “http://vives.be/xmlns-image"`
+* URN: Uniform Resource Name `xmlns:image = "urn:vives:imageInfo"`
+* URL: Uniform Resource Locator `xmlns:image = “http://vives.be/xmlns-image"`
 
 
 ```xml
