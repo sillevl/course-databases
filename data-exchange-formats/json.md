@@ -1,4 +1,4 @@
-# JavaScript Object Notation - JSON
+# JSON - JavaScript Object Notation
 
 ## JSON Format
 

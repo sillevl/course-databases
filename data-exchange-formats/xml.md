@@ -1,4 +1,4 @@
-# eXtensible Markup Language - XML
+# XML - eXtensible Markup Language
 
 XML: Extensible Markup Language
 * 1996 by World Wide Web Consortium
