@@ -86,3 +86,5 @@ animal: pets
 ---
 
 Source: https://learn.getgrav.org/advanced/yaml
+
+---
