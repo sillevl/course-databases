@@ -15,10 +15,11 @@
 ### Data Interchange Formats
 
 * [Introduction](data-exchange-formats/introduction.md)
-* [Comma Separated Values - CSV](data-exchange-formats/csv.md)
-* [JavaScript Object Notation - JSON](data-exchange-formats/json.md)
-* [eXtensible Markup Language - XML](data-exchange-formats/xml.md)
-* [Yet Another Markup Language - YAML](data-exchange-formats/yaml.md)
+* [CSV - Comma Separated Values](data-exchange-formats/csv.md)
+* [JSON - JavaScript Object Notation](data-exchange-formats/json.md)
+* [YAML - Yet Another Markup Language](data-exchange-formats/yaml.md)
+* [XML - eXtensible Markup Language](data-exchange-formats/xml.md)
+
 
 
 ### MySQL
