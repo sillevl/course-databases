@@ -81,3 +81,8 @@ animal: pets
 - Dog
 - Goldfish
 ```
+
+
+---
+
+Source: https://learn.getgrav.org/advanced/yaml
