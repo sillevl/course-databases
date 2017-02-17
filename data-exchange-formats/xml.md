@@ -1,13 +1,8 @@
 # XML - eXtensible Markup Language
 
-XML: Extensible Markup Language
-* 1996 by World Wide Web Consortium
+XML or Extensible Markup Language is a markup language developed in 1996 by World Wide Web Consortium. XML is an open technology for data storage and exchange. XML is portable and wideley supported by many programming languages and software.
 
-Open technology
-Technology for data storage and exchange
-Portable
-Widely supported
-Standard format for data exchanged over the internet
+XML is next to JSON the standard format for data exchange over the internet.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -17,9 +12,13 @@ Standard format for data exchanged over the internet
 </text>
 ```
 
-Create markup for virtually every type of information
-Enabling to create entirely new markup languages for describing any type of data
-Mathematical formulas, software configuration, music, news, …
+XML enables you to create markup for virtually every type of information.  This enables you to create a new markup language for describing any type of date. XML is used to create data formats for:
+
+* Mathematical formulas
+* Software configuration
+* Music
+* News
+* …
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -33,8 +32,7 @@ Mathematical formulas, software configuration, music, news, …
 
 ## XML Structure
 
-Begins with an optional XML declaration to identify the document as XML document
-Verson attribute specifies the version of XML syntax
+Every XML document begins with an optional XML declaration to identify the document as XML document. A version attribute specifies the version of XML syntax.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -46,14 +44,13 @@ XML comment begins with `<!–-` and ends with `-->`
 <!-- Bassball player structured with XML --> 
 ```
 
-Contains text that represents content (data)
-Contains elements that specify structure
+Just like an HTML document, an XML document is made out of elements that specify the structure and text that represents the content or data.
 
 ```xml
 <firstname>John</firstname> 
 ```
 
-The lines that precede the root element are called the XML prolog
+The lines that precede the root element are called the XML prolog.
 
 XML delimits an element with start and end tags
 * A tag consists of an element name between angle brackets `<` and `>` eg: `<player>`
@@ -68,25 +65,18 @@ Root element encompasses all the other elements
 </player>
 ```
 
-Elements names can be of any length and can contain letters, digits, underscores, hyphens and periods
+Element names can be of any length and can contain letters, digits, underscores, hyphens and periods
 * Must begin with a letter or underscore
-* Should not begin with “xml” in any combination (reserved)
+* Should not begin with `xml` in any combination (reserved)
 
-Blank lines, white spaces and indentation: help improve readability but are ignored in XML
+Blank lines, white spaces and indentation are ignored and can help to improve readability.
 
 ### Hierarchy
 
-Container elements
-* Any element that contains other elements
-
-Parent elements
-* Container elements
-
-Child elements
-* Nested elements in container or parent elements
-
-Siblings
-* Child elements that are at the same nesting level
+* **Container elements**: Any element that contains other elements
+* **Parent elements**: Container elements
+* **Child elements**: Nested elements in container or parent elements
+* **Siblings**: Child elements that are at the same nesting level
 
 ```xml
 <player> 
@@ -98,7 +88,7 @@ Siblings
 
 ## XML Vocabularies
 
-XML based markup languages = vocabulary
+Many XML vocabularies exist. These are all based on the XML markup language.
 * XHTML
 * MathML for mathematic
 * VoiceML for speech
@@ -106,31 +96,28 @@ XML based markup languages = vocabulary
 * XBRL: Extensible Business Reporting Language
 * …
 
-Next generation of web is build on XML foundation, enabling more sophisticated web based applications
-XML allows you to assign meaning to what would otherwise be random pieces of data
+In the past, XHTML was used to build the web enabling more sophisticated web based applications. XML allows you to assign meaning to what would otherwise be random pieces of data.
 
 ## Viewing and editing XML
 
-.xml filename extension
-Formatting and displaying is application specific
-Browsers can show XML
-* Brower specific built-in style sheet
+XML files use the `.xml` filename extension. Formatting and displaying XML files is application specific. XML is mostly parsed in software. Some software exist to browse and display XML.
+* Browsers can show XML, they use a specific built-in style sheet to give 
+* Microsoft XML viewer
+* Microsoft Excel
 
-Microsoft XML viewer
-Microsoft Excel
-
-Tree structure
+Most software packages will display XML in a tree like structure:
 * Like file system
 * Show or collapse
-* container elements
+* Container elements
 
 ## Doctype
 
-`DOCTYPE`
-* Name of the root element that specifies the DTD 
+XML uses a DocType to define the type of the document. The Doctype also contains information about: 
+* The name of the root element that specifies the DTD 
 * SYSTEM keyword, denotating an external DTD
 * DTD filename and location
-DTD=Document Type Definition
+
+DTD = Document Type Definition
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -148,6 +135,8 @@ DTD=Document Type Definition
 
 ## Namespaces
 
+XML can describe any kind of data. This might introduce problems.
+
 ### Problem
 
 XML carrying HTML table information
@@ -156,7 +145,7 @@ XML carrying HTML table information
 <table>
    <tr> 
       <td>Intel</td>
-      <td>ARM</td>
+       <td>ARM</td>
     </tr> 
 </table> 
 ```
@@ -193,17 +182,11 @@ and
 </furniture:table>
 ```
 
-Providing a means for preventing naming collisions
-Each namespace prefix is bound to a Uniform Resource Identifier (URI)
-* Unique identification of the namespace
-* Document authors create their own namespace prefix
-* Any name can be used as prefix (except ‘xml’)
+Namespaces providing a means for preventing naming collisions. Each namespace prefix is bound to a Uniform Resource Identifier (URI). A URI provides a unique identification of the namespace. Document authors can create their own namespace prefix, a can choose any name as prefix (except 'xml')
 
-xmlns attribute
-Bound to an URI (Uniform Resource Identifier)
+The `xmlns` attribute can be used to define the XML namespace and is buund to an URI (Uniform Resource Identifier)
 * URN: Uniform Resource Name `xmlns:image = "urn:vives:imageInfo"`
 * URL: Uniform Resource Locator `xmlns:image = “http://vives.be/xmlns-image"`
-
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -223,7 +206,7 @@ Bound to an URI (Uniform Resource Identifier)
 </text:directory>
 ```
 
-Eliminate the need to place a namespace in each element (xmlns keyword)
+The need to place a namespace can be eliminated in each element by useing the `xmlns` keyword.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?> 
