@@ -79,6 +79,67 @@ Eg: A customer table might store one customer per row
 
 The number of rows in the table is the number of records in it. *Record* and *row* are used interchangeably but row is technically the correct term.
 
+### Primary keys
+
+Every row in a table must have a column (or set of columns) that uniquely identifies it. These column or set of columns are called the primary key. The primary key is used to refer to a specific row.
+
+Without a primary key updating or deleting specific rows in a table becomes extremely difficult. There is no guaranteed safe way to refer to just the rows to be affected.
+
+*Always define primary keys !*
+
+Primary keys are not required, but defining them makes future data manipulation is possible and manageable.
+
+A primary key consisting out of multiple columns is also called a composite key.
+
+Any column can be selected as the primary key as long as it meets the following conditions:
+
+1. No two rows can have the same primary key value (unique)
+1. Every row must have a primary key value (NULL is not allowed)
+
+These rules are enforced by the MySQL. When multiple columns are used, the same rules apply to all columns that make up the primary key. Individual columns need not to have unique values, but the whole key must be unique.
+
+#### Primary key best practices
+
+In addition to the rules that MySQL enforces, there are some best practices when choosing a primary key
+
+- Don't update values in primary key columns
+- Don't reuse values in primary key columns
+- Don't use values that might change in primary key columns
+
+## Definitions
+
+| Term | Definition |
+|---|---|
+| Database | A container (usually a file or a set of files) to store organized data
+ |
+| Table | A structured list of data of a specific type |
+| Schema | Information about database and table layout and properties |
+| Column | A single field in a table. All tables are made up of one or more columns |
+| Datatype | A type of allowed data. Every table column has an associated datatype that restricts (or allows) specific data in that column |
+| Row | A record in a table |
+| Primary Key | A column (or set of columns) whose values uniquely identify every row in a table |
+
+## What is SQL
+
+SQL pronounced as: 
+- Letters: S-Q-L 
+- Or as `sequal`
+
+Stands for Structured Query Language and is a  language that is designed specifically for communicating with databases. Unlike other languages (spoken languages, or programming languages such as Java or C++) SQL is made up of very few words. This is deliberate. SQL is designed to do one thing, and do it very well.
+SQL provides you with a simple and efficient way to read and write data from a database.
+
+### Advantages
+
+SQL is not proprietary. It is not used by specific database vendors. Almost every major DBMS system supports SQL.
+This enables you to interact with just about every database you’ll run into.
+
+SQL is easy to learn. The statements are all made up of descriptive English words (and there aren’t many of them). Despite its apparent simplicity, SQL is actually very powerful. Cleverly using its language elements, you can perform very complex and sophisticated database operations.
+
+### SQL: DDL vs DML
+
+SQL statements can be divided into two categories:
+- **Data definition language (DDL)** statements are used for creating tables, relationships and other structures.
+- **Data manipulation language (DML)** statements are used for queries and data modification.
 
 
 
