@@ -30,6 +30,8 @@ The database is the container that is created and can be manipulated using the D
 A database might be a file on a hard drive, but it might not.
 It is not even significant as you never access a database directly anyway. You always use the DBMS that accesses the database for you.
 
+![Database vs DBMS](/forta/img/dbms.jpg)
+
 
 
 > #### Info::MySQL vs MariaDB
