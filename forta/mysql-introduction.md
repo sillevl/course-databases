@@ -179,6 +179,9 @@ The following features are just some of the available:
 - Listing the available databases
 - Listing the tables from a specific database
 - Listing the columns and there properties from a specific table
+- ...
+
+This can be used to explore the existing databases and getting to know what is available.
 
 ### Listing all available databases
 
