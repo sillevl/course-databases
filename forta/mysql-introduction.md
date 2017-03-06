@@ -166,8 +166,6 @@ MarioDB is the name of the database server that is used in XAMPP.
 between the `[ ]`is the name of the selected database, for the moment we don't have a database selected so it says `(none)`.
 
 
-
-
 > #### Info::MySQL vs MariaDB
 > 
 > To test and use the examples in this chapter, you must follow the [setup for the example]()(forta/creating_forta_database.md) database first.
