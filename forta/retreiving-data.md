@@ -1,5 +1,7 @@
 # Retreiving data
 
+## Selecting a column from a table
+
 ```sql
 SELECT prod_name FROM products;
 ```
@@ -25,6 +27,7 @@ SELECT prod_name FROM products;
 14 rows in set (0.00 sec)
 ```
 
+## Selecting multiple columns form a table
 
 ```sql
 SELECT prod_id, prod_name, prod_price FROM products;
@@ -51,6 +54,7 @@ SELECT prod_id, prod_name, prod_price FROM products;
 14 rows in set (0.00 sec)
 ```
 
+## Selecting all columns from a table
 
 ```sql
 SELECT * FROM products;
@@ -77,6 +81,10 @@ SELECT * FROM products;
 14 rows in set (0.00 sec)
 ```
 
+## Filtering duplicate values
+
+For example take the following query. The result is a single columns with the `vend_id`'s. Some id's are defined in multiple rows. 
+
 ```sql
 -SELECT vend_id FROM products;
 ```
@@ -101,6 +109,8 @@ SELECT * FROM products;
 +---------+
 14 rows in set (0.00 sec)
 ```
+
+If you would like to have a list of all available id's, you are not interested in the duplicate values. With SQL, you can use the `DISTINCT` keyword to filter out the duplicate results.
 
 ```sql
 SELECT DISTINCT vend_id FROM products;
