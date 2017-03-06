@@ -174,6 +174,12 @@ between the `[ ]`is the name of the selected database, for the moment we don't h
 
 MySQL provides some commands to inspect the existing databases, tables, and there structure (columns and properties of those columns).
 
+The following features are just some of the available:
+
+- Listing the available databases
+- Listing the tables from a specific database
+- Listing the columns and there properties from a specific table
+
 ### Listing all available databases
 
 ```sql
