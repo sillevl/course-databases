@@ -1,5 +1,17 @@
 # MySQL introduction
 
+Note: mariadb
+
+> #### Note::MySQL vs MariaDB
+>
+> MySQL is maintained by Oracle. MySQL is free to use but not entirely open source. Some parts are closed source. This was not the vision of the original developers. Therefor they created a fork that replaces the closed source parts with open source alternatives. This fork is called **MariaDB**, and guarantees to stay open source.
+>
+> MariaDB and MySQL are therefor compatible. All MySQL command are compatible with MariaDB and vica versa.
+
+MySQL has become one of the most popular database management systems in the world. It can be used for small development projects to large and prestigious sites on the web. MySQL has proven itself to be solid, reliable, fast and trusted to all sorts of data storage needs
+
+MySQL and MariaDB are open source and free to use. This makes it one of the most popular databases. It is also the best supported and best documented database for web based projects. For example with PHP.
+
 ```sql
 SHOW DATABASES
 ```
