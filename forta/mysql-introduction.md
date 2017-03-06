@@ -170,6 +170,12 @@ between the `[ ]`is the name of the selected database, for the moment we don't h
 > 
 > To test and use the examples in this chapter, you must follow the [setup for the example]()(forta/creating_forta_database.md) database first.
 
+## Inspecting existing databases
+
+MySQL provides some commands to inspect the existing databases, tables, and there structure (columns and properties of those columns).
+
+### Listing all available databases
+
 ```sql
 SHOW DATABASES
 ```
@@ -189,12 +195,18 @@ SHOW DATABASES
 8 rows in set (0.00 sec)
 ```
 
+### Selecting the default database
+
+This will enable us to omit the database name in the queries. This will shorten the queries allot and make it more readable and usable. This will become clear later on.
+
 ```sql
 USE employees;
 ```
 ```
 Database changed
 ```
+
+### Listing the tables in a database
 
 ```sql
 SHOW TABLES;
@@ -214,6 +226,8 @@ SHOW TABLES;
 +----------------------+
 8 rows in set (0.00 sec)
 ```
+
+## Listing all columns from a specific table
 
 ```sql
 SHOW COLUMNS FROM employees;
