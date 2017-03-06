@@ -5,7 +5,7 @@ On this page we will go step by step how to create this database.
 
 You will need a mysql server (XAMPP) and a mysql client(commandprompt, Bash or PowerShell will do).
 
-You will also need to download the files [http://forta.com/books/0672327120/mysql_scripts.zip](mysql_scripts.zip) and unzip them.
+You will also need to download the files [http://forta.com/books/0672327120/mysql_scripts.zip](http://forta.com/books/0672327120/mysql_scripts.zip) and unzip them.
 
 > #### Note::SQL Keywords in capital letters
 >
