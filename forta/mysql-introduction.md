@@ -50,7 +50,7 @@ The name is always unique for a given database.
 
 **Customers table**: 
 
-| Name  | Email  | Address | City| State   |
+| Name  | Email  | Address | City | State   |
 |---|---|---|---|---|
 |   |   |   |   |   |
 |   |   |   |   |   |
@@ -110,8 +110,7 @@ In addition to the rules that MySQL enforces, there are some best practices when
 
 | Term | Definition |
 |---|---|
-| Database | A container (usually a file or a set of files) to store organized data
- |
+| Database | A container (usually a file or a set of files) to store organized data |
 | Table | A structured list of data of a specific type |
 | Schema | Information about database and table layout and properties |
 | Column | A single field in a table. All tables are made up of one or more columns |
@@ -149,7 +148,11 @@ One way to communicate with a DBMS is by using the *command line*. On Windows yo
 
 As we will see later on, MySQL makes use of users. By default a user `root` without password is available to use. To tell the `mysql` command that we want to log in as the user `root` we need to pass the `-u`option followed by the username.
 
-Now type `mysql -u root` in your powershell client.
+To connect to the database you can use the following command:
+
+```
+mysql -u root
+```
 
 * `mysql`: this tells your commandpromp or powerschell to start the mysql client.
 * `-u root`: the -u tells the client to log with the given name, in this case 'root'.
