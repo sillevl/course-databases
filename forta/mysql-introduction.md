@@ -61,6 +61,25 @@ The name is always unique for a given database.
 Tables have characteristics and properties that define how data is stored in them. This includes information about what data may be stored, how it is broken up, how individual pieces of information are named and much more…
 The set of information that describes a table is known as a schema. Schema’s are used to describe specific tables within a database, as well as entire relationships between tables in them.
 
+### Columns and datatypes
+
+Tables are made up of columns. Columns contain a particular piece of information within the table. You can envision database tables as grids (like spreadsheets). Each column on the grid contains a particular piece of information.
+
+Each column in a database has an associated **datatype**. It defines what the type the data the column can contain
+
+Eg: Numeric, date, text, currency,…
+
+Datatypes are very important for a database. They restrict the type of data that can be stored in the column, preventing wrong information to be stored. It can also help sorting the data correctly and efficiently. They play an important role in optimizing disk usage.
+
+### Rows
+
+Data in a table is stored in rows. Each record saved is stored in its own row.
+
+Eg: A customer table might store one customer per row
+
+The number of rows in the table is the number of records in it. *Record* and *row* are used interchangeably but row is technically the correct term.
+
+
 
 
 
