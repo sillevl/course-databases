@@ -32,6 +32,36 @@ It is not even significant as you never access a database directly anyway. You a
 
 ![Database vs DBMS](/forta/img/dbms.jpg)
 
+### Tables
+
+When storing information in a filing cabinet, you don’t just toss it in a drawer. You create files within the cabinet.
+You file related data in specific files.
+
+In the database world, the file is called a table.
+A table is a *structured file* that can store data of a specific type. A table may contain a list of customers, a product catalog or any other list of information.
+
+![Filing cabinet](/forta/img/Ficherosclasicoscatalogo.JPG)
+
+The key is that data stored in a table is of *one type* of data or a list. You should never store a list of customers and a list of orders in the same database table. Technically it is possible, but it would make retrieving information and access very difficult.
+
+A better solution is to create two tables for each list
+Every table in a database has a name that identifies it. 
+The name is always unique for a given database.
+
+**Customers table**: 
+
+| Name  | Email  | Address | City| State   |
+|---|---|---|---|---|
+|   |   |   |   |   |
+|   |   |   |   |   |
+|   |   |   |   |   |
+
+### Schema's
+
+Tables have characteristics and properties that define how data is stored in them. This includes information about what data may be stored, how it is broken up, how individual pieces of information are named and much more…
+The set of information that describes a table is known as a schema. Schema’s are used to describe specific tables within a database, as well as entire relationships between tables in them.
+
+
 
 
 > #### Info::MySQL vs MariaDB
