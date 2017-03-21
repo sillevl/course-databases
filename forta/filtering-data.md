@@ -320,3 +320,17 @@ WHERE cust_email IS NULL;
 +---------+
 2 rows in set (0.00 sec)
 ```
+
+## Advanced Data Filtering
+
+* `AND` operator
+* `OR` operator
+* `IN` operator
+* `NOT` operator
+
+## Wildcard filtering
+
+* `Like` operator
+* `%` wildcard
+* `_` wildcard
+
