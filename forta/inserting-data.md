@@ -58,24 +58,22 @@ This is a safer way to insert data into an table. It is more verbose, but not al
 
 ```sql
 INSERT INTO customers (
-    cust_name,
-    cust_address,
-    cust_city,
+    cust_country,
     cust_state,
-    cust_zip,
-    cust_country
+    cust_address,
+    cust_name,
+    cust_city,
+    cust_zip
 )
 VALUES (
-    'Pep E. LaPew',
-    '100 Main Street', 
-    'Los Angeles',
+    'USA',
     'LA',
-    '90046',
-    'USA'
+    '100 Main Street', 
+    'Pep E. LaPew',
+    'Los Angeles',
+    '90046'
 );
 ```
-
-
 
 ## Inserting multiple rows
 
