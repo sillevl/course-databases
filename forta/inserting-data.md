@@ -77,21 +77,57 @@ VALUES (
 
 ## Inserting multiple rows
 
+Multiple columns can be inserted at once by adding sets of values, each enclosed within parentheses and separated by commas.
+
 ```sql
-
+INSERT INTO customers (
+    cust_name,
+    cust_address,
+    cust_city,
+    cust_state,
+    cust_zip,
+    cust_country
+)
+VALUES (
+    'Pep E. LaPew',
+    '100 Main Street', 
+    'Los Angeles',
+    'LA',
+    '90046',
+    'USA'
+),(
+    'M. Martian',
+    '42 Galaxy Way', 
+    'New York',
+    'NY',
+    '11213',
+    'USA'
+);
 ```
 
-```
-
-```
+This way of inserting multiple rows improves the performance of the database. It is more efficient than separate INSERT statements.
 
 ## Insert the result of a query
 
+Instead of a `VALUES` clause, a `SELECT` clause can be used to insert data from existing data in other tables.
+
 ```sql
-
-```
-
-```
+INSERT INTO customers (
+    cust_name,
+    cust_address,
+    cust_city,
+    cust_state,
+    cust_zip,
+    cust_country
+)
+SELECT 
+    cust_name,
+    cust_address,
+    cust_city,
+    cust_state,
+    cust_zip,
+    cust_country
+FROM custnew;
 
 ```
 
