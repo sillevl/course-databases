@@ -51,10 +51,6 @@ VALUES (
 );
 ```
 
-```
-
-```
-
 ## Inserting multiple rows
 
 ```sql
