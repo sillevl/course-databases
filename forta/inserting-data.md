@@ -31,7 +31,7 @@ This way of inserting rows is not recommended. A clear knowledge of the table st
 
 ## Inserting a single partial row
 
-To insert a partial row, the column names must be stated explicitly. Columns that are not specified will get the *default* value (mostly `NULL`). 
+To insert a partial row, the column names must be stated explicitly. Columns that are not specified will get the *default* value. The default value is specified in the table definition.
 
 Notice that `cust_id` is not specified. It won't receive a `NULL` value, because the `AUTO_INCREMENT`attribute is set for this field. It will use an value that is 1 larger than the last used `cust_id`.
 
