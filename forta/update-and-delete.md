@@ -1,11 +1,42 @@
 # Updating and deleting data
-##Update
-This statement is used to update records in a table.
+
+## Update
+
+### Updating a single field
+
 ```sql
-UPDATE users SET nickname='doenerbjoern' WHERE id=154;
+UPDATE customers
+SET cust_email = 'elmer@fudd.com'
+WHERE cust_id = 10005;
 ```
-##Delete
-The `DELETE` statement is used to delete records from a table.
+
+*DON'T OMIT THE WHERE CLAUSE !* If you omit the `WHERE` clause, all rows in the table will be updated. In most cases, this is not what you want to do.
+
+### Updating multiple fields
+
 ```sql
-DELETE FROM users WHERE name='Enzo';
+UPDATE customers
+SET cust_name = 'The Fudds',
+    cust_email = 'elmer@fudd.com'
+WHERE cust_id = 10005;
+```
+
+### Deleting a value from a row
+
+To delete an existing value, you can update it with the `NULL` value.
+
+```sql
+UPDATE customers
+SET cust_email = NULL
+WHERE cust_id = 10005;
+```
+
+##Delete
+
+To delete a row from a table the `DELETE` clause can be used. It can also be used to delete *all* rows by omitting the `WHERE` clause.
+
+```sql
+DELETE FROM customers
+WHERE cust_id = 10006;
+
 ```
