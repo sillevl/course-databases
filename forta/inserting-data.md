@@ -38,6 +38,7 @@ Notice that `cust_id` is not specified. It won't receive a `NULL` value, because
 ```sql
 INSERT INTO customers (
     cust_name,
+    cust_address,
     cust_city,
     cust_state,
     cust_zip,
@@ -52,6 +53,29 @@ VALUES (
     'USA'
 );
 ```
+
+This is a safer way to insert data into an table. It is more verbose, but not all structure of the table must be known to safely insert any data. It is possible to change the order of fields (columns) independently from the table structure.
+
+```sql
+INSERT INTO customers (
+    cust_name,
+    cust_address,
+    cust_city,
+    cust_state,
+    cust_zip,
+    cust_country
+)
+VALUES (
+    'Pep E. LaPew',
+    '100 Main Street', 
+    'Los Angeles',
+    'LA',
+    '90046',
+    'USA'
+);
+```
+
+
 
 ## Inserting multiple rows
 
