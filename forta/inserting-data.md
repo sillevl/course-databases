@@ -27,6 +27,8 @@ No output is generated for these kind of queries. The client will tell the amoun
 Query OK, 1 row affected (0.01 sec)
 ```
 
+This way of inserting rows is not recommended. A clear knowledge of the table structure is required.
+
 ## Inserting a single partial row
 
 To insert a partial row, the column names must be stated explicitly. Columns that are not specified will get the *default* value (mostly `NULL`). 
