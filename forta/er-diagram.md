@@ -9,7 +9,7 @@ There are different types of ERD. The types are different in the details they pr
 * Logical ERD
 * Physical ERD (all details available, depending on the DBMS)
 
-|_ Feature _|_ Conceptual _|_ Logical _|_ Physical _|
+| Feature | Conceptual | Logical | Physical |
 |---|---|---|---|
 | Entity names  |  x | x  |   |
 | Entity relationships  | x  | x  |   |
