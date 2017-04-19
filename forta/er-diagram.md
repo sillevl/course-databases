@@ -2,10 +2,10 @@
 
 An **ERD** or **Entity-Relation Diagram** displays the *relation* between different *entities* of a database.
 
-## Entity-Relation Diagram Types
+
 There are different types of ERD. The types are different in the details they provide or hide, going from high-level to detailed.
 
-* Conceptual ERD (very abstract, no details, independent from the DBMS)
+* Conceptual ERD 
 * Logical ERD
 * Physical ERD (all details available, depending on the DBMS)
 
@@ -20,9 +20,12 @@ There are different types of ERD. The types are different in the details they pr
 | Column names  |   |   | x  |
 | Column data types  |   |   | x  |
 
+Conceptual ER diagrams show the *concept* and are very abstract. They show no internal details and are thus independent from the DBMS. Logical ER diagrams show the implementation details, but are still independent from the DBMS. Physical ER diagrams are the closest diagram representation that come to the real implementation in the DBMS. They are dependent on the DBMS and show details that are specific for that DBMS.
+
+## Entity-Relation Diagram Types
 
 ### Conceptual ERD
-A conceptual ERD only displays the entities and their relations, the details of each entity is not described here.
+A conceptual ER diagrams are general desciptions and only display the entities and their relations, the details of each entity is not described here.
 ![alt text](https://www.uky.edu/~dsianita/622/t4.gif "Conceptual ERD example")
 
 ### Logical ERD
@@ -35,7 +38,7 @@ A physical ERD displays the relations between the entities, their contents as we
 
 ![alt text](https://images.visual-paradigm.com/docs/vp_user_guide/11/3563/3564/3573/physical_erd_27342.png "Physical ERD example")
 
-
+## ERD Symbols
 
 
 
@@ -68,3 +71,9 @@ There are 2 types of key fields :
 **A foreign key** indicates that field is linked to the primary key of another table.
 
 In data modeling, collections of data elements are grouped into "data tables" which contain groups of data field names called "database attributes". These tables are then linked by "key fields".
+
+
+Sources:
+
+* https://www.lucidchart.com/pages/er-diagrams
+* https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning
