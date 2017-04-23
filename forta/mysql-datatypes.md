@@ -1,7 +1,14 @@
 # MySQL datatypes
 
-Using the right datatype is important when creating a database. This can influence how fast queries are computed. 
-Here are the most important types with their description.
+Datatypes define 'what' can be stored in a column. It also defines 'how' that data is stored. 
+
+Datatypes exist for several reasons:
+
+* **Restriction**: Make sure you can only save data of a wanted typed in your database. This keeps your data valid and prevents mistakes.
+* **Efficiency**: Different datatypes prioritize speed or storage, it depends on the requirements what type you should use for the best results.
+* **Sorting orders**: numeric and text ordering uses different rules. Choosing the right datatype give you control of how to sort your data.
+
+It is very important to choose the right type for your data. Bad decisions can cause really slow queries, or inefficient storage. Changing datatypes of existing populated columns is not a trivial task and should be avoided as much as possible.
 
 MySQL makes use of three different types of datatypes:
 
@@ -30,7 +37,7 @@ SET|Same as an ENUM but holds a lot less items, but you can store more than one 
 
 ### Numeric Types:
 
-`size` represents the total number of digits and 'dec' represents the number of digits to the right of the decimal point.
+`size` represents the total number of digits and `dec` represents the number of digits to the right of the decimal point.
 
 Type|Description|Signed Range|Unsigned Range
 ----|-----------|------------|--------------
