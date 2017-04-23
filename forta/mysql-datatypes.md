@@ -91,3 +91,9 @@ Here we see the result after doing a SELECT all on the table. You can see that t
 
 
 
+## More information:
+
+* [https://dev.mysql.com/doc/refman/5.7/en/data-types.html](https://dev.mysql.com/doc/refman/5.7/en/data-types.html)
+* [http://www.brandonsavage.net/designing-databases-picking-the-right-data-types/](http://www.brandonsavage.net/designing-databases-picking-the-right-data-types/)
+
+
