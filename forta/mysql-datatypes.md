@@ -3,6 +3,12 @@
 Using the right datatype is important when creating a database. This can influence how fast queries are computed. 
 Here are the most important types with their description.
 
+MySQL makes use of three different types of datatypes:
+
+* Text types
+* Numeric types
+* Date types
+
 ---
 
 ### Text types:
@@ -22,7 +28,7 @@ SET|Same as an ENUM but holds a lot less items, but you can store more than one 
 
 ---
 
-### Number Types:
+### Numeric Types:
 
 `size` represents the total number of digits and 'dec' represents the number of digits to the right of the decimal point.
 
@@ -33,9 +39,9 @@ SMALLINT(size)|Small integer|-32,768 to 32,767| 0 to 65,535
 MEDIUMINT(size)|Medium integer|-8,388,608 to 8,388,607| 0 to 16,777,215
 INT(size)|Normal integer|-2,147,483,648 to 2,147,483,647| 0 to 4,294,967,295
 BIGINT(size)|Extremely big integer|-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807|0 to 18,446,744,073,709,551,615
-FLOAT(size,dec)|A small number with a floating decimal point.
-DOUBLE(size,dec)|A large number with a floating decimal point.
-DECIMAL(size,d)|A DOUBLE stored as a string, allowing for a fixed decimal point.
+FLOAT(size,dec)|A small number with a floating decimal point.| |
+DOUBLE(size,dec)|A large number with a floating decimal point.| |
+DECIMAL(size,d)|A DOUBLE stored as a string, allowing for a fixed decimal point.| |
 
 Generally, float values are good for scientific Calculations, but should not be used for financial/monetary values. For business oriented math, always use Decimal.
 
@@ -58,12 +64,12 @@ YEAR()|A year|YYYY|'1901' to '2155'
 This is an example for an ENUM and SET:
 ```sql
 CREATE TABLE dogs(
-id int(5) NOT NULL AUTO_INCREMENT,
-name varchar(255) NOT NULL,
-chip_id int(5),
-gender enum('male', 'female'),
-coat_color set('black', 'white', 'brown', 'beige'),
-primary key(id)
+   id int(5) NOT NULL AUTO_INCREMENT,
+   name varchar(255) NOT NULL,
+   chip_id int(5),
+   gender enum('male', 'female'),
+   coat_color set('black', 'white', 'brown', 'beige'),
+   primary key(id)
 );
 
 INSERT INTO dogs(name, chip_id, gender, coat_color)
