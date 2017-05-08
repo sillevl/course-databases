@@ -77,13 +77,14 @@ https://docs.oracle.com/javase/7/docs/api/java/sql/Statement.html#executeUpdate(
 Iterating the an ResultSet object can be done by calling the `next()` method. This will place the cursor to the next item of the results. Then the `getInt()`, `getString()` and other methods can be used to fetch data from a single column.
 
 ```java
-
 while(resultset.next()){
    int id = resultset.getInt("id");
    String name = resultset.getString("name");
    // Do you stuff with id and name
 }
 ```
+
+https://docs.oracle.com/javase/7/docs/api/java/sql/ResultSet.html
 
 
 
