@@ -40,5 +40,12 @@ Note: the code above can throw exceptions, thus the code must be placed within a
 
 ## Creating a Statement
 
-`Statement statement = connection.createStatement();`
+```java
+String query = "SELECT * FROM mytable";
+
+Statement statement = connection.createStatement();
+statement.executeQuery(query)
+```
+
+
 
