@@ -87,6 +87,62 @@ while(resultset.next()){
 https://docs.oracle.com/javase/7/docs/api/java/sql/ResultSet.html
 
 
+## Example application
+
+
+
+```java
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package be.vives.databases.helloworld;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+/**
+ *
+ * @author sille
+ */
+public class DatabaseHelloworld {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
+        String connectionString = "jdbc:mysql://localhost:3306/yourdatabase";
+        String user = "username";
+        String password = "password";
+
+        // Load the Connector/J driver
+        Class.forName("com.mysql.jdbc.Driver").newInstance();
+        Connection connection = DriverManager.getConnection(connectionString, user, password);
+        
+        String query = "SELECT * FROM mytable";
+
+        Statement statement = connection.createStatement();
+
+        ResultSet resultset = statement.executeQuery(query);
+
+        while(resultset.next()){
+            int id = resultset.getInt("id");
+            String name = resultset.getString("name");
+            System.out.println("ID: " + id + " Name: " + name);
+        }
+    }
+}
+
+
+```
+
+
+
 
 
 
