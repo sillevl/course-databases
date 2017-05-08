@@ -4,7 +4,7 @@
 
 ### Using Netbeans
 
-If you are using Netbeans, the MySQL JDBC driver is already installed on your system. You only need to import it into you project.
+If you are using Netbeans, the MySQL JDBC (Java DataBase Connectivity) driver is already installed on your system. You only need to import it into you project.
 
 #### Importing MySQL JDBC driver
 
@@ -15,5 +15,24 @@ In the list with available libraries, find and select the `MySQL JDBC Driver`, a
 The library is now available in your project.
 
 ### Download from internet
-Download JDBC (Java DataBase Connectivity) driver from mysql.com: https://dev.mysql.com/downloads/connector/j/
+
+If the library is not available in Netbeans, or you are not using Netbeans, you can download it manually from mysql.com: https://dev.mysql.com/downloads/connector/j/
+
+## Creating a database object
+
+```java
+String url = "jdbc:mysql://hostname/dbname";
+String user = "user";
+String password = "mypassword"
+
+Class.forName("com.mysql.jdbc.Driver");
+connection = DriverManager.getConnection(url, user, password);     
+```
+
+### Connection string
+
+`jdbc:mysql://hostname/dbname`
+
+* hostname: hostname or ip address of the MySQL server
+* dbname: Database name to connect to
 
