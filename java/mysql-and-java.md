@@ -29,6 +29,8 @@ Class.forName("com.mysql.jdbc.Driver");
 connection = DriverManager.getConnection(url, user, password);     
 ```
 
+Note: the code above can throw exceptions, thus the code must be placed within a try/catch.
+
 ### Connection string
 
 `jdbc:mysql://hostname/dbname`
