@@ -40,12 +40,55 @@ Note: the code above can throw exceptions, thus the code must be placed within a
 
 ## Creating a Statement
 
+### SELECT statement
+
+Create an `Statement` object and call its `executeQuery` method with the query as an argument.
+
+The `executeQuery()` method will return an object of type `ResultSet` with all the results of the query.
+
 ```java
 String query = "SELECT * FROM mytable";
 
 Statement statement = connection.createStatement();
-statement.executeQuery(query)
+statement.executeQuery(query);
 ```
+
+https://docs.oracle.com/javase/7/docs/api/java/sql/Statement.html#executeQuery(java.lang.String)
+
+the `executeQuery()` method will return an object of type `ResultSet` with all the results of the query.
+
+### INSERT, UPDATE and DELETE statements
+
+Create an `Statement` object and call its `executeUpdate` method with the query as an argument.
+
+The `executeUpdate()` method will return an `int` containing the number of affected rows.
+
+```java
+String query = "INSERT into foo (id, name) VALUES (0, 'bar')";
+
+Statement statement = connection.createStatement();
+statement.executeUpdate(query);
+```
+
+https://docs.oracle.com/javase/7/docs/api/java/sql/Statement.html#executeUpdate(java.lang.String)
+
+## Iterating a ResultSet
+
+Iterating the an ResultSet object can be done by calling the `next()` method. This will place the cursor to the next item of the results. Then the `getInt()`, `getString()` and other methods can be used to fetch data from a single column.
+
+```java
+
+while(resultset.next()){
+   int id = resultset.getInt("id");
+   String name = resultset.getString("name");
+   // Do you stuff with id and name
+}
+```
+
+
+
+
+
 
 
 
