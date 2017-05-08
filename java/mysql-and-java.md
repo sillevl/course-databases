@@ -38,3 +38,7 @@ Note: the code above can throw exceptions, thus the code must be placed within a
 * hostname: hostname or ip address of the MySQL server
 * dbname: Database name to connect to
 
+## Creating a Statement
+
+`Statement statement = connection.createStatement();`
+
