@@ -1,6 +1,6 @@
 # Creating a sample database
 
-In this course we use the forta database. this database is made by Ben Forta (http://forta.com/). 
+In this course we use the forta database. This database is made by Ben Forta (http://forta.com/). 
 On this page we will go step by step how to create this database.
 
 You will need a mysql server (XAMPP) and a mysql client(commandprompt, Bash or PowerShell will do).
@@ -14,23 +14,23 @@ You will also need to download the files [http://forta.com/books/0672327120/mysq
 
 ## Connecting to the database
 
-first start up your databaseserver as you learned on the previous page. 
-now open your mysql client in the folder where you unziped the files. you can open the client by typing `PowerShell` in the adress bar in your windows explorer.
-now type `mysql -u root` in your client.
+First start up your databaseserver as you learned on the previous page. 
+Now open your mysql client in the folder where you unziped the files. You can open the client by typing `PowerShell` in the adress bar in your windows explorer.
+Now type `mysql -u root` in your client.
 
 * `mysql`: this tells your commandpromp or powerschell to start the mysql client.
 * `-u root`: the -u tells the client to log with the given name, in this case 'root'.
 * `-p`: the -p tells the client to ask for a password after you pressed enter.
 * `-h 127.0.0.1`: this tells the client to connect on ip-adress 127.0.0.1, can be used for connection on remote servers, when not specified it will use localhost.
 
-you should be connected now and see 
+You should be connected now and see 
 
 ```
 MariaDB [(none)]>
 ```
 
 MarioDB is the name of the database server that is used in xampp.
-between the `[ ]`is the name of the selected database, for the moment we don't have a database selected so it says `(none)`.
+Between the `[ ]`is the name of the selected database, for the moment we don't have a database selected so it says `(none)`.
 
 Before we create a new database, let's see what is already in here with 
 
@@ -52,12 +52,11 @@ This will show a list of available databases.
 +--------------------+
 ```
 
-a database named test, let's look in there.
+We can see a database named test, let's have a look.
 Do  `USE name;` to select the database with that name.
 you see that the name of the selected database now `test` is.
-Do `show tables;`do ask the list of tables in the database.
-```Empty set (0.00 sec)```
-it looks like this database is completely empty, you can leave it or delete it with `DROP DATABASE test;`
+Do `show tables;`to ask the list of tables in the database.
+`Empty set (0.00 sec)`, it looks like this database is completely empty, you can leave it or delete it with `DROP DATABASE test;`
 
 ## Creating the database
 First we will create a completely empty database with:
@@ -66,31 +65,31 @@ First we will create a completely empty database with:
 CREATE DATABASE forta;
 ```
 
-Now a empty database with name forta has been created and we will now use that database with: 
+Now an empty database with name forta has been created and we will now use that database with: 
 
 ```sql
 USE forta;
 ```
 
-When you see that the prompt has changed to: `MariaDB [forta]>` then you can continue.
-We are now gonna create tables and cullomns in those tables but we are not doing it ourself.
-to execute a script, use the command `SOURCE scriptname;`, 
-we want to execute create.sql that you got from the zipmap first.
+Once you see that the prompt has changed to: `MariaDB [forta]>`, you can continue.
+We are now going to create tables and columns in those tables but we are not doing it ourselfs.
+To execute a script, use the `SOURCE scriptname;` command, 
+we want to execute the create.sql file we got from the zip folder first.
 
 ```sql
 SOURCE create.sql;
 ```
 
-if you get an error like:
+If you get an error like this;
 
 ```
 ERROR: Failed to open file 'create.sql', error: 2
 ``` 
 
-Then check if the create.sql file is in the folder where you started you PowerShell or commandprompt.
+Check if the create.sql file is in the folder where you started you PowerShell or commandprompt.
 
-Now wait till the promp is back to his normal state.
-There should be table in this database now, let's check with
+Now wait until the prompt is back to its normal state.
+There should be a table in this database now, let's check with
 `SHOW TABLES;`.
 
 ```
@@ -120,32 +119,32 @@ To see how a table was made, use `DESC tablename;`so let's test it with `DESC pr
 +------------+--------------+------+-----+---------+-------+
 ```
 
-We can see for every collumn in this table what the name is, what the type is, if it can be empty(Null), if it is a key and what the default vallue is.
-This one don't have any default values so it says NULL.
-To see all info in a table you can always do:
+In this table we can see what the name, the type, if it can be empty(Null), if it is a key and what the default value is for every column.
+This one doesn't have any default values so it says NULL.
+To see all of the information inside of a table, you can always use:
 
 ```sql
 SELECT* FROM tablename;
 ```
 
 (more info on this will come in the next chapter: Retreiving data)
-So we are gonna look in the products table to know what products this firma sells.
+So now we are going to look inside the products table to know what products this company sells.
 
 ```sql
 SELECT * FROM products;
 ```
 
-And we get this as answer: `Empty set (0.00 sec)`.
-This means that they don't have any products yet so let's put some in then.
+We get this as answer: `Empty set (0.00 sec)`.
+This means that the company doesn't have any products yet, so let's put some in.
 
 ##  Filling the database
-Again, we are not gonna do this ourself but use the other script for this:
+Again, we are not going to do this ourself but use another script for this:
 
 ```sql
 SOURCE populate.sql;
 ```
 
-If we try it again now then we get this:
+If we try to execute the command again now we can see the following:
 
 ```
 MariaDB [forta]> select * from products;
@@ -172,21 +171,21 @@ MariaDB [forta]> select * from products;
 ## A larger test database (optional)
 
 Some of the examples use a larger testdatabase, a fake database with employees to be exact.
-If you want test on this bigger database then you can get it over [datacharmer/test\_db](https://github.com/datacharmer/test_db) on Github.
-Download the respository as zip or using `git clone`. go in the folder where you saved it(unziped) and start your mysql client here.
-connect again to your database with the following command:
+If you want test on this bigger database you can get it over at [datacharmer/test\_db](https://github.com/datacharmer/test_db) on Github.
+Download the respository as zip or use `git clone`. Select the folder where you saved the repository and start your mysql client here.
+Now reconnect to your database using the following command:
 
 ```sql
 mysql -u root
 ```
 
-We don't need to create a database ourself because that is done in the script so we only need to run 
+We don't need to create a database ourselfs because that's what the script does so we only need to run 
 
 ```sql
 SOURCE employees.sql
 ```
 
-This will take a little longer because it is a way bigger script.
-You can open another client and connect to continue this course while that is still running.
+This will take a little longer because this script is way bigger.
+You can open another client and connect to continue this course while the other client is still running.
 
-So now you have a database to test stuff on and you can continue to the next chapter: Retreiving data.
+So now you have a database to test on. To continue go to the next chapter: Retreiving data.
