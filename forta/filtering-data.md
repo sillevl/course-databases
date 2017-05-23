@@ -343,6 +343,8 @@ WHERE cust_email IS NULL;
 
 ## Wildcard filtering
 
-* `Like` operator
-* `%` wildcard
-* `_` wildcard
+When using a wildcard, you'll no longer be able to use `WHERE ... = ...`, instead of `=` use `LIKE`.
+
+There are two types of wildcard:
+* `%` wildcard: represents zero, one, or multiple characters. 
+* `_` wildcard: represents a single character.
