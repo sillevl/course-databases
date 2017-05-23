@@ -22,13 +22,13 @@ SELECT name, email FROM employees ORDER BY name DESC;
 
 ### Multiple sorting statements
 
-When sorting data, the chances are high that you will have the same value for something. For example, you want to sort the names of the employees but the men need to come first in the list and then the women. 
+When sorting data, the chances are high that you will have the same value for something. For example, you want to sort the names of your employees in alphabetical order but you also want to sort by gender (first Male, than Female). 
 
 ```sql
 SELECT name, gender FROM employees ORDER BY gender DESC, name;
 ```
 
-Here will you get something like this:
+The result should look something like this:
 
 name|gender
 ----|-----
@@ -41,8 +41,7 @@ Ellen|Female
 Lucy|Female
 Mary|Female
 
-As you can see, the men come first then the women. When these are sorted they are placed alphabetically from A to Z.
-When you take a look at the query you can see I placed `DESC` behind gender. I did this because the 'F' from female comes earlier then the 'M' from male in the alphabet. This shows that you can choose for every table how they are sorted.
+As you can see, first the men and then women will be shown alphabetically. When you take a look at the query you can see I placed `DESC` behind gender. I did this because the 'F' from female comes earlier then the 'M' from male in the alphabet. This shows you that you can decide how to sort any table.
 
 
 
