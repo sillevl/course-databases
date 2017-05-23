@@ -330,7 +330,7 @@ WHERE cust_email IS NULL;
 
 ## Wildcard filtering
 
-When using a wildcard, you'll no longer be able to use `WHERE`, instead of `WHERE` use `LIKE`.
+When using a wildcard, you'll no longer be able to use `WHERE ... = ...`, instead of `=` use `LIKE`.
 
 There are two wildcards, `%` and `_`. 
 The percent sign represents zero, one, or multiple characters. 
