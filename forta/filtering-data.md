@@ -345,9 +345,6 @@ WHERE cust_email IS NULL;
 
 When using a wildcard, you'll no longer be able to use `WHERE ... = ...`, instead of `=` use `LIKE`.
 
-There are two wildcards, `%` and `_`. 
-The percent sign represents zero, one, or multiple characters. 
-The underscore represents a single character.
-
-
-
+There are two types of wildcard:
+* `%` wildcard: represents zero, one, or multiple characters. 
+* `_` wildcard: represents a single character.
