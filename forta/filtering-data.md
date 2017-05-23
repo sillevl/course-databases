@@ -1,6 +1,8 @@
 # Filtering data
+In this chapter you can see examples that show you the different ways to filter data.
 
-
+The following query will display `prod_name` (product names) from the `product` database, with a `LIMIT` of five.
+The word `LIMIT` ensures that only the first five elements are displayed.
 ```sql
 SELECT prod_name
 FROM products
@@ -18,6 +20,8 @@ LIMIT 5;
 +--------------+
 5 rows in set (0.00 sec)
 ```
+This query doesn't differ much from the previous. The only difference can be found by the `LIMIT` part.
+This time the `LIMIT` displays only five elements, starting from the fifth element in the table.
 
 ```sql
 SELECT prod_name
@@ -36,6 +40,15 @@ LIMIT 5, 5;
 +--------------+
 5 rows in set (0.00 sec)
 ```
+Maybe this will help you to understand LIMIT better:
+
+LIMIT offset , count;
+
+-> The `offset` specifies the offset of the first row to return (rows start from 1, not 0).
+
+-> The `count` specifies the maximum number of rows to return.
+
+Source: http://www.mysqltutorial.org/mysql-limit.aspx
 
 ```sql
 SELECT products.prod_name
@@ -333,4 +346,3 @@ WHERE cust_email IS NULL;
 * `Like` operator
 * `%` wildcard
 * `_` wildcard
-
