@@ -13,6 +13,8 @@ XAMPP stands for:
 
 XAMPP can be download for free on the website of Apachefriends: https://www.apachefriends.org
 
+[Installation guide](https://sillevl.gitbooks.io/software-installation-guide/content/xampp/xampp.html)
+
 ## MySQL Workbench
 
 MySQL Workbench is a set of tools that is mainly used to create and manage MySQL or MariaDB databases in a graphical interface. 
@@ -41,6 +43,7 @@ For source code management we will use GIT. Download and install GIT from the of
 
 [https://git-scm.com](https://git-scm.com/)
 
+[Installation guide](https://sillevl.gitbooks.io/software-installation-guide/content/git/git.html)
 
 ## Posh-Git
 
@@ -48,8 +51,13 @@ PoshGit or PowerShell Git, is a tool to extend powershell with some handy featur
 
 https://github.com/dahlbyk/posh-git
 
-### Atom
+[Installation guide](https://sillevl.gitbooks.io/software-installation-guide/content/git/posh-git/poshgit.html)
 
-Atom will be our text and code editor of choice.
+### Visual Studio Code
 
-[https://atom.io](https://atom.io)
+Visual Studio Code
+ will be our text and code editor of choice.
+
+[code.visualstudio.com/](https://code.visualstudio.com/)
+
+[Installation guide](https://sillevl.gitbooks.io/software-installation-guide/content/visual-studio-code/visual-studio-code.html)
