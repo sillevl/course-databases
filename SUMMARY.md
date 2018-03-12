@@ -22,6 +22,12 @@
 ## MySQL
 
 * [MySQL introduction](forta/mysql-introduction.md)
+* [MySQL datatypes](forta/mysql-datatypes.md)
+* [Creating and manipulating tables](forta/creating-and-manipulating-tables.md)
+* [Updating and deleting data](forta/update-and-delete.md)
+* [Inserting data](forta/inserting-data.md)
+* [Entity-Relation Diagram](forta/er-diagram.md)
+
 * [Retreiving data](forta/retreiving-data.md)
 * [Sorting retreived data](forta/sorting-retreived-data.md)
 * [Filtering data](forta/filtering-data.md)
@@ -34,9 +40,6 @@
 * [Joining tables](forta/joins.md)
 * [Combining queries](forta/combining-queries.md)
 * [Full-text searching](forta/full-text-searching.md)
-* [Inserting data](forta/inserting-data.md)
-* [Updating and deleting data](forta/update-and-delete.md)
-* [Creating and manipulating tables](forta/creating-and-manipulating-tables.md)
 * [Using views](forta/views.md)
 * [Stored procedures](forta/stored-procedures.md)
 * [Using cursors](forta/cursors.md)
@@ -54,7 +57,7 @@
 
 ## Other
 
-* [Entity-Relation Diagram](forta/er-diagram.md)
-* [MySQL datatypes](forta/mysql-datatypes.md)
+
+
 * [MySQL and Java](java/mysql-and-java.md)
 
