@@ -36,19 +36,21 @@
 * [Data manipulation](forta/data-manipulation.md)
 * [Summarizing data](forta/summarizing-data.md)
 * [Grouping data](forta/grouping-data.md)
+* [Order of execution](forta/order-of-execution.md)
+
 * [Working with subqueries](forta/subqueries.md)
 * [Joining tables](forta/joins.md)
 * [Combining queries](forta/combining-queries.md)
-* [Full-text searching](forta/full-text-searching.md)
+* ~[Full-text searching](forta/full-text-searching.md)~
 * [Using views](forta/views.md)
-* [Stored procedures](forta/stored-procedures.md)
-* [Using cursors](forta/cursors.md)
+* ~[Stored procedures](forta/stored-procedures.md)~
+* ~[Using cursors](forta/cursors.md)~
 * [Using triggers](forta/triggers.md)
-* [Managing transaction processing](forta/transactions.md)
-* [Globalization and localization](forta/globalization-and-localization.md)
+* ~[Managing transaction processing](forta/transactions.md)~
+* ~[Globalization and localization](forta/globalization-and-localization.md)~
 * [Managing database users](forta/database-users.md)
-* [Database maintenance](forta/database-maintenance.md)
-* [Concurrency](forta/concurrency.md)
+* ~[Database maintenance](forta/database-maintenance.md)~
+* ~[Concurrency](forta/concurrency.md)~
 
 ## Database driven PHP webpages
 
@@ -56,8 +58,6 @@
 * [PHP PDO's](php/php-pdo.md)
 
 ## Other
-
-
 
 * [MySQL and Java](java/mysql-and-java.md)
 
