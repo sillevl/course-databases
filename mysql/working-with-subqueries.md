@@ -2,9 +2,9 @@
 
 ```sql
 SELECT
-(SELECT count(*) as aantalusers FROM users),
-(SELECT count(*) as aantalgames FROM games),
-(SELECT count(*) as aantalreviews FROM reviews);
+(SELECT count(*) FROM users) AS aantalusers ,
+(SELECT count(*) FROM games) AS aantalgames,
+(SELECT count(*) FROM reviews) AS aantalreviews;
 ```
 
 ```text
