@@ -41,16 +41,16 @@
 * [Working with subqueries](mysql/working-with-subqueries.md)
 * [Joining tables](mysql/joining-tables.md)
 * [Combining queries](mysql/combining-queries.md)
-* [Full-text searching](mysql/full-text-searching.md)
+* [~~Full-text searching~~](mysql/full-text-searching.md)
 * [Using views](mysql/using-views.md)
 * [Stored procedures](mysql/stored-procedures.md)
-* [Using cursors](mysql/using-cursors.md)
+* [~~Using cursors~~](mysql/using-cursors.md)
 * [Using triggers](mysql/using-triggers.md)
-* [Managing transaction processing](mysql/managing-transaction-processing.md)
-* [Globalization and localization](mysql/globalization-and-localization.md)
+* [~~Managing transaction processing~~](mysql/managing-transaction-processing.md)
+* [~~Globalization and localization~~](mysql/globalization-and-localization.md)
 * [Managing database users](mysql/managing-database-users.md)
-* [Database maintenance](mysql/database-maintenance.md)
-* [Concurrency](mysql/concurrency.md)
+* [~~Database maintenance~~](mysql/database-maintenance.md)
+* [~~Concurrency~~](mysql/concurrency.md)
 
 ## Database driven PHP webpages
 
@@ -60,4 +60,6 @@
 ## Other
 
 * [MySQL and Java](other/mysql-and-java.md)
+
+
 
