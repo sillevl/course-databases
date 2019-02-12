@@ -235,3 +235,26 @@ The need to place a namespace can be eliminated in each element by useing the `x
 </directory>
 ```
 
+## Example
+
+```markup
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<people>
+   <person>
+      <name>james</name>
+      <age>21</age>
+      <gender>m</gender>
+   </person>
+   <person>
+      <name>lauren</name>
+      <age>19</age>
+      <gender>f</gender>
+   </person>
+   <person>
+      <name>simon</name>
+      <age>57</age>
+      <gender>m</gender>
+   </person>
+</people>
+```

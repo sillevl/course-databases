@@ -81,3 +81,17 @@ animal: pets
 
 Source: [https://learn.getgrav.org/advanced/yaml](https://learn.getgrav.org/advanced/yaml)
 
+## Example
+
+```yaml
+people:
+  - age: 21
+    gender: m
+    name: james
+  - age: 19
+    gender: f
+    name: lauren
+  - age: 57
+    gender: m
+    name: simon
+```

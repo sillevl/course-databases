@@ -57,6 +57,28 @@ Source:
 
 ### Examples
 
+```javascript
+{
+    "people": [
+        {
+            "name": "james",
+            "age": 21,
+            "gender": "m"
+        },
+        {
+            "name": "lauren",
+            "age": 19,
+            "gender": "f"
+        },
+        {
+            "name": "simon",
+            "age": 57,
+            "gender": "m"
+        }
+    ]
+}
+```
+
 Source: [https://www.sitepoint.com/10-example-json-files/](https://www.sitepoint.com/10-example-json-files/)
 
 This is an example of a Customer Form JSON file which you might see used to store configuration settings to setup your system. It might also be used to contain record information which can be easily shared across components using the simple JSON format.
@@ -226,7 +248,10 @@ JSON example of a Widget:
 }}
 ```
 
-## JSON Schema
+<!-- ## JSON Schema
 
 TODO
+
+https://json-schema.org/
+https://json-schema.org/learn/getting-started-step-by-step.html -->
 
