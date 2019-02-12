@@ -8,10 +8,10 @@
 * [Evaluation](introduction/evaluation.md)
 * [Software](introduction/software.md)
 * [Setting up example databases](introduction/setting-up-example-databases.md)
-* [Excercises](introduction/excercises/README.md)
+<!-- * [Excercises](introduction/excercises/README.md)
   * [Using Git for excercises](introduction/excercises/using-git-for-excercises.md)
   * [Gitlab setup](introduction/excercises/gitlab-setup.md)
-  * [Markdown](introduction/excercises/markdown.md)
+  * [Markdown](introduction/excercises/markdown.md) -->
 
 ## Data Interchange Formats
 
@@ -41,16 +41,16 @@
 * [Working with subqueries](mysql/working-with-subqueries.md)
 * [Joining tables](mysql/joining-tables.md)
 * [Combining queries](mysql/combining-queries.md)
-* ~~[Full-text searching](mysql/full-text-searching.md)~~
+<!-- * ~~[Full-text searching](mysql/full-text-searching.md)~~ -->
 * [Using views](mysql/using-views.md)
 * [Stored procedures](mysql/stored-procedures.md)
-* ~~[Using cursors](mysql/using-cursors.md)~~
+<!-- * ~~[Using cursors](mysql/using-cursors.md)~~ -->
 * [Using triggers](mysql/using-triggers.md)
-* ~~[Managing transaction processing](mysql/managing-transaction-processing.md)~~
-* ~~[Globalization and localization](mysql/globalization-and-localization.md)~~
+<!-- * ~~[Managing transaction processing](mysql/managing-transaction-processing.md)~~ -->
+<!-- * ~~[Globalization and localization](mysql/globalization-and-localization.md)~~ -->
 * [Managing database users](mysql/managing-database-users.md)
-* ~~[Database maintenance](mysql/database-maintenance.md)~~
-* ~~[Concurrency](mysql/concurrency.md)~~
+<!-- * ~~[Database maintenance](mysql/database-maintenance.md)~~ -->
+<!-- * ~~[Concurrency](mysql/concurrency.md)~~ -->
 
 ## Database driven PHP webpages
 

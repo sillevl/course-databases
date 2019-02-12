@@ -1,7 +1,5 @@
 # Objectives
 
-This version is created at 
-
 ## Objectives
 
 * Introduction in data exchange formats

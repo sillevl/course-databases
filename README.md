@@ -1,7 +1,5 @@
 # Introduction
 
-This version is created at 
-
 ## Objectives
 
 * Introduction in data exchange formats
@@ -25,4 +23,3 @@ This version is created at
 Extra:
 
 * Workflow and revision control with GIT
-

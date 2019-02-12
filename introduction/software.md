@@ -14,7 +14,7 @@ XAMPP stands for:
 
 XAMPP can be download for free on the website of Apachefriends: [https://www.apachefriends.org](https://www.apachefriends.org)
 
-[Installation guide](https://sillevl.gitbooks.io/software-installation-guide/content/xampp/xampp.html)
+[Installation guide](https://vives.gitbook.io/software-installation-guide/xampp)
 
 ## MySQL Workbench
 
@@ -38,13 +38,15 @@ Lucid Chart is an online tool to create diagrams and charts for software project
 
 For source code management we will use GIT. Download and install GIT from the official GIT website.
 
-> #### Note::Installation settings
->
-> Use default settings in the installation wizard, except the "Adjust your PATH environment" settings MUST be set using the third option "Use Git and optional Unix tools from the Windows Command Prompt"
+{% hint style="info" %}
+**Installation settings**
+
+Use default settings in the installation wizard, except the "Adjust your PATH environment" settings MUST be set using the third option "Use Git and optional Unix tools from the Windows Command Prompt"
+{% endhint %}
 
 [https://git-scm.com](https://git-scm.com/)
 
-[Installation guide](https://sillevl.gitbooks.io/software-installation-guide/content/git/git.html)
+[Installation guide](https://vives.gitbook.io/software-installation-guide/git/git)
 
 ## Posh-Git
 
@@ -52,7 +54,7 @@ PoshGit or PowerShell Git, is a tool to extend powershell with some handy featur
 
 [https://github.com/dahlbyk/posh-git](https://github.com/dahlbyk/posh-git)
 
-[Installation guide](https://sillevl.gitbooks.io/software-installation-guide/content/git/posh-git/poshgit.html)
+[Installation guide](https://vives.gitbook.io/software-installation-guide/git/poshgit)
 
 ### Visual Studio Code
 
@@ -60,5 +62,5 @@ Visual Studio Code will be our text and code editor of choice.
 
 [code.visualstudio.com/](https://code.visualstudio.com/)
 
-[Installation guide](https://sillevl.gitbooks.io/software-installation-guide/content/visual-studio-code/visual-studio-code.html)
+[Installation guide](https://vives.gitbook.io/software-installation-guide/visual-studio-code)
 
