@@ -16,10 +16,10 @@
 ## Data Interchange Formats
 
 * [Introduction](data-interchange-formats/introduction.md)
-* [CSV - Comma Separated Values](data-interchange-formats/csv-comma-separated-values.md)
-* [JSON - JavaScript Object Notation](data-interchange-formats/json-javascript-object-notation.md)
-* [YAML - Yet Another Markup Language](data-interchange-formats/yaml-yet-another-markup-language.md)
-* [XML - eXtensible Markup Language](data-interchange-formats/xml-extensible-markup-language.md)
+* [CSV](data-interchange-formats/csv.md)
+* [JSON](data-interchange-formats/json.md)
+* [YAML](data-interchange-formats/yaml.md)
+* [XML](data-interchange-formats/xml.md)
 
 ## MySQL
 

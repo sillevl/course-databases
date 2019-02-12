@@ -23,31 +23,31 @@ In JSON, they take on these forms:
 
 An object is an unordered set of name/value pairs. An object begins with { \(left brace\) and ends with } \(right brace\). Each name is followed by : \(colon\) and the name/value pairs are separated by , \(comma\).
 
-![Structure of a JSON Object](../.gitbook/assets/object.gif)
+![Structure of a JSON Object](./img/object.gif)
 
 ### Arrays
 
 An array is an ordered collection of values. An array begins with \[ \(left bracket\) and ends with \] \(right bracket\). Values are separated by , \(comma\).
 
-![Structure of a JSON Array](../.gitbook/assets/array.gif)
+![Structure of a JSON Array](./img/array.gif)
 
 ### Values
 
 A value can be a string in double quotes, or a number, or true or false or null, or an object or an array. These structures can be nested.
 
-![Structure of a JSON Value](../.gitbook/assets/value.gif)
+![Structure of a JSON Value](./img/value.gif)
 
 ### Strings
 
 A string is a sequence of zero or more Unicode characters, wrapped in double quotes, using backslash escapes. A character is represented as a single character string. A string is very much like a C or Java string.
 
-![Structure of a JSON String](../.gitbook/assets/string.gif)
+![Structure of a JSON String](./img/string.gif)
 
 ### Numbers
 
 A number is very much like a C or Java number, except that the octal and hexadecimal formats are not used.
 
-![Structure of a JSON Number](../.gitbook/assets/number.gif)
+![Structure of a JSON Number](./img/number.gif)
 
 Whitespace can be inserted between any pair of tokens. Excepting a few encoding details, that completely describes the language.
 
