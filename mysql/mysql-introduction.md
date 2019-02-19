@@ -1,10 +1,12 @@
 # MySQL introduction
 
-> #### Info::MySQL vs MariaDB
->
-> MySQL is maintained by Oracle. MySQL is free to use but not entirely open source. Some parts are closed source. This was not the vision of the original developers. Therefor they created a fork that replaces the closed source parts with open source alternatives. This fork is called **MariaDB**, and guarantees to stay open source.
->
-> MariaDB and MySQL are therefor compatible. All MySQL command are compatible with MariaDB and vica versa.
+{% hint style="info" %}
+**MySQL vs MariaDB**
+
+MySQL is maintained by Oracle. MySQL is free to use but not entirely open source. Some parts are closed source. This was not the vision of the original developers. Therefor they created a fork that replaces the closed source parts with open source alternatives. This fork is called **MariaDB**, and guarantees to stay open source.
+
+MariaDB and MySQL are therefor compatible. All MySQL command are compatible with MariaDB and vica versa.
+{% endhint %}
 
 MySQL has become one of the most popular database management systems in the world. It can be used for small development projects to large and prestigious sites on the web. MySQL has proven itself to be solid, reliable, fast and trusted to all sorts of data storage needs
 
@@ -168,9 +170,11 @@ MariaDB [(none)]>
 
 Take a look at the last line. MariaDB is the name of the database server that is installed and used by XAMPP. Between the `[ ]`is the name of the selected database, for the moment we don't have a database selected so it says `(none)`.
 
-> #### Info::MySQL vs MariaDB
->
-> To test and use the examples in this chapter, you must follow the [setup for the example](mysql-introduction.md)\(forta/creating\_forta\_database.md\) database first.
+{% hint style="info" %}
+**MySQL vs MariaDB**
+
+To test and use the examples in this chapter, you must follow the [setup for the example](mysql-introduction.md)\(forta/creating\_forta\_database.md\) database first.
+{% endhint %}
 
 ## Inspecting existing databases
 

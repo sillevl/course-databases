@@ -255,3 +255,11 @@ TODO
 https://json-schema.org/
 https://json-schema.org/learn/getting-started-step-by-step.html -->
 
+<!-- ```javascript
+const response = await fetch('https://api.github.com/users/sillevl/repos')
+const json = await response.json()
+json.forEach( item => console.log(item.name))
+``` -->
+
+
+<!-- https://github.com/toddmotto/public-apis -->
