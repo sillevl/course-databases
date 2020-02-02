@@ -1,0 +1,19 @@
+{
+  "name": "databases",
+  "version": "1.0.0",
+  "description": "* Introduction in data exchange formats\r   * Using schema's to validate data\r * Introduction in the relational databases\r * Understanding basic principles of databases\r   * Relational databases\r   * NoSQL databases\r * Using databases\r   * CRUD - Create, Read, Update, Delete\r * Designing and creating databases\r   * Modeling databases with ER-diagrams\r   * Modeling vs implementing database designs\r * Table relationships\r * Managing databases\r   * Adding users and permissions to a database\r   * Database replication\r   * Restoring and backing-up databases\r * Database driven webapplications with PHP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sillevl/course-databases.git"
+  },
+  "author": "Sille Van Landschoot <info@sillevl.be>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sillevl/course-databases/issues"
+  },
+  "homepage": "https://github.com/sillevl/course-databases#readme"
+}
