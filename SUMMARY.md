@@ -24,8 +24,8 @@
 ## MySQL
 
 * [MySQL introduction](mysql/mysql-introduction.md)
-* [MySQL datatypes](mysql/mysql-datatypes.md)
 * [Creating and manipulating tables](mysql/creating-and-manipulating-tables.md)
+* [MySQL datatypes](mysql/mysql-datatypes.md)
 * [Updating and deleting data](mysql/updating-and-deleting-data.md)
 * [Inserting data](mysql/inserting-data.md)
 * [Retreiving data](mysql/retreiving-data.md)
