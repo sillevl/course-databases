@@ -6,11 +6,10 @@ You will need a mysql server \(XAMPP\) and a mysql client\(commandprompt, Bash o
 
 You will also need to download the files [http://forta.com/books/0672327120/mysql\_scripts.zip](http://forta.com/books/0672327120/mysql_scripts.zip) and unzip them.
 
-{% hint style="info" %}
-**SQL Keywords in capital letters**
+::: tip SQL Keywords in capital letters
 
 In this course we will put all the SQL-code in capitals, this is not necessary but it will make clear to you what is static SQL-code and what are names that you can change.
-{% endhint %}
+:::
 
 ## Connecting to the database
 
@@ -27,7 +26,7 @@ You should be connected now and see
 MariaDB [(none)]>
 ```
 
-MarioDB is the name of the database server that is used in xampp. Between the `[ ]`is the name of the selected database, for the moment we don't have a database selected so it says `(none)`.
+MariaDB is the name of the database server that is used in xampp. Between the `[ ]`is the name of the selected database, for the moment we don't have a database selected so it says `(none)`.
 
 Before we create a new database, let's see what is already in here with
 

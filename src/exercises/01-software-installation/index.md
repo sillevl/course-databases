@@ -38,11 +38,10 @@ Lucid Chart is an online tool to create diagrams and charts for software project
 
 For source code management we will use GIT. Download and install GIT from the official GIT website.
 
-{% hint style="info" %}
-**Installation settings**
+::: tip Installation settings
 
 Use default settings in the installation wizard, except the "Adjust your PATH environment" settings MUST be set using the third option "Use Git and optional Unix tools from the Windows Command Prompt"
-{% endhint %}
+:::
 
 [https://git-scm.com](https://git-scm.com/)
 
