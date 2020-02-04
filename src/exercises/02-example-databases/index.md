@@ -154,7 +154,27 @@ MariaDB [forta]> select * from products;
 +---------+---------+----------------+------------+----------------------------------------------------------------+
 ```
 
-## A larger test database \(optional\)
+## Game Reviews database
+
+Download the [gamereviews_example.zip](./sql/gamereviews_example.zip) file and import the `gamereviews_example.sql` file in your database to get access to the tables for this exercise.
+
+Execute the following command in this project directory with the `mysql` client:
+
+```sql
+source gamereviews_example.sql
+```
+
+## SpaceX database
+
+Download the [spacex.zip](./sql/spacex.zip) file and import the `spacex.sql` file in your database to get access to the tables for this exercise.
+
+Execute the following command in this project directory with the `mysql` client:
+
+```sql
+source spacex.sql
+```
+
+## A larger test database
 
 Some of the examples use a larger testdatabase, a fake database with employees to be exact. If you want test on this bigger database you can get it over at [datacharmer/test\_db](https://github.com/datacharmer/test_db) on Github. Download the respository as zip or use `git clone`. Select the folder where you saved the repository and start your mysql client here. Now reconnect to your database using the following command:
 
