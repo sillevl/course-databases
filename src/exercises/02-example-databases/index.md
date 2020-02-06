@@ -2,9 +2,9 @@
 
 In this course we use the forta database. This database is made by Ben Forta \([http://forta.com/](http://forta.com/)\). On this page we will go step by step how to create this database.
 
-You will need a mysql server \(XAMPP\) and a mysql client\(commandprompt, Bash or PowerShell will do\).
+You will need a mysql server \(XAMPP\) and a mysql client\(command prompt, Bash or PowerShell will do\).
 
-You will also need to download the files [http://forta.com/books/0672327120/mysql\_scripts.zip](http://forta.com/books/0672327120/mysql_scripts.zip) and unzip them.
+You will also need to download the files [https://forta.com/wp-content/uploads/books/0672327120/mysql_scripts.zip](https://forta.com/wp-content/uploads/books/0672327120/mysql_scripts.zip) and unzip them.
 
 ::: tip SQL Keywords in capital letters
 
@@ -13,12 +13,12 @@ In this course we will put all the SQL-code in capitals, this is not necessary b
 
 ## Connecting to the database
 
-First start up your databaseserver as you learned on the previous page. Now open your mysql client in the folder where you unziped the files. You can open the client by typing `PowerShell` in the adress bar in your windows explorer. Now type `mysql -u root` in your client.
+First start up your databaseserver as you learned on the previous page. Now open your mysql client in the folder where you unziped the files. You can open the client by typing `PowerShell` in the address bar in your windows explorer. Now type `mysql -u root` in your client.
 
-* `mysql`: this tells your commandpromp or powerschell to start the mysql client.
+* `mysql`: this tells your command prompt or powerschell to start the mysql client.
 * `-u root`: the -u tells the client to log with the given name, in this case 'root'.
 * `-p`: the -p tells the client to ask for a password after you pressed enter.
-* `-h 127.0.0.1`: this tells the client to connect on ip-adress 127.0.0.1, can be used for connection on remote servers, when not specified it will use localhost.
+* `-h 127.0.0.1`: this tells the client to connect on ip-address 127.0.0.1, can be used for connection on remote servers, when not specified it will use localhost.
 
 You should be connected now and see
 
@@ -64,7 +64,7 @@ Now an empty database with name forta has been created and we will now use that 
 USE forta;
 ```
 
-Once you see that the prompt has changed to: `MariaDB [forta]>`, you can continue. We are now going to create tables and columns in those tables but we are not doing it ourselfs. To execute a script, use the `SOURCE scriptname;` command, we want to execute the create.sql file we got from the zip folder first.
+Once you see that the prompt has changed to: `MariaDB [forta]>`, you can continue. We are now going to create tables and columns in those tables but we are not doing it ourself. To execute a script, use the `SOURCE scriptname;` command, we want to execute the create.sql file we got from the zip folder first.
 
 ```sql
 SOURCE create.sql;
@@ -76,7 +76,7 @@ If you get an error like this;
 ERROR: Failed to open file 'create.sql', error: 2
 ```
 
-Check if the create.sql file is in the folder where you started you PowerShell or commandprompt.
+Check if the create.sql file is in the folder where you started you PowerShell or command prompt.
 
 Now wait until the prompt is back to its normal state. There should be a table in this database now, let's check with `SHOW TABLES;`.
 
@@ -155,7 +155,7 @@ MariaDB [forta]> select * from products;
 
 ## Game Reviews database
 
-Download the [gamereviews_example.zip](./sql/gamereviews_example.zip) file and import the `gamereviews_example.sql` file in your database to get access to the tables for this exercise.
+Download the [gamereviews_example.zip](/files/gamereviews_example.zip) file and import the `gamereviews_example.sql` file in your database to get access to the tables for this exercise.
 
 Execute the following command in this project directory with the `mysql` client:
 
@@ -165,7 +165,7 @@ source gamereviews_example.sql
 
 ## SpaceX database
 
-Download the [spacex.zip](./sql/spacex.zip) file and import the `spacex.sql` file in your database to get access to the tables for this exercise.
+Download the [spacex.zip](/files/spacex.zip) file and import the `spacex.sql` file in your database to get access to the tables for this exercise.
 
 Execute the following command in this project directory with the `mysql` client:
 
@@ -190,4 +190,3 @@ SOURCE employees.sql
 This will take a little longer because this script is way bigger. You can open another client and connect to continue this course while the other client is still running.
 
 So now you have a database to test on. To continue go to the next chapter: Retreiving data.
-
