@@ -6,7 +6,13 @@ layout: courseIntroduction
 
 ## Chapters
 
-1) [Databases](chapters/01-databases)
+1) Databases
+   1) [Introduction](chapters/01-databases/introduction/index.md)
+   2) [Foreign Keys](chapters/01-databases/foreign-keys/index.md)
+   3) [Datatypes](chapters/01-databases/datatypes/index.md)
+   4) [Indexes](chapters/01-databases/indexes/index.md)
+   5) [SQL Language](chapters/01-databases/sql-language/index.md)
+   6) [MySQL Client](chapters/01-databases/mysql-client/index.md)
 2) [Tables](chapters/02-tables/index.md)
 3) [Data](chapters/03-data/index.md)
 4) [ER Diagrams](chapters/04-er-diagrams/index.md)
