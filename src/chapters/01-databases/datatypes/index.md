@@ -52,11 +52,11 @@ Generally, float values are good for scientific Calculations, but should not be 
 
 | Type | Description | Format | Range |
 | --- | --- | --- | --- |
-| DATE\(\) | A date | YYYY-MM-DD | '1000-01-01' to '9999-12-31' |
-| DATETIME\(\) | A date and time | YYYY-MM-DD HH:MI:SS | '1000-01-01 00:00:00' to '9999-12-31 23:59:59' |
-| TIMESTAMP\(\) | A date and time that is stored as the number of seconds since the Unix epoch. This value also automatically updates to the current time when doing an INSERT or UPDATE | YYYY-MM-DD HH:MI:SS | '1970-01-01 00:00:01' UTC to '2038-01-09 03:14:07' UTC |
-| TIME\(\) | A time | HH:MI:SS | '-838:59:59' to '838:59:59' |
-| YEAR\(\) | A year | YYYY | '1901' to '2155' |
+| DATE | A date | YYYY-MM-DD | '1000-01-01' to '9999-12-31' |
+| DATETIME | A date and time | YYYY-MM-DD HH:MI:SS | '1000-01-01 00:00:00' to '9999-12-31 23:59:59' |
+| TIMESTAMP | A date and time that is stored as the number of seconds since the Unix epoch. This value also automatically updates to the current time when doing an INSERT or UPDATE | YYYY-MM-DD HH:MI:SS | '1970-01-01 00:00:01' UTC to '2038-01-09 03:14:07' UTC |
+| TIME | A time | HH:MI:SS | '-838:59:59' to '838:59:59' |
+| YEAR | A year | YYYY | '1901' to '2155' |
 
 ## Examples
 
