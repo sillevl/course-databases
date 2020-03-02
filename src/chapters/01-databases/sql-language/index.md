@@ -31,7 +31,7 @@ In computer programming, **create**, **read**, **update**, and **delete** (CRUD)
 
 Virtualy any software application makes use of this CRUD functionality.
 
-For relational databases we can even apply this to the data definition and data manipulation languages. 
+For relational databases we can even apply this to the data definition and data manipulation languages.
 
 Action | DDL | DML
 ---|---|---
