@@ -1,5 +1,11 @@
 # Calculated fields
 
+Cases:
+
+- Merging multiple columns into a single column
+- Calculating new data based on existing data
+  - eg: quantity * price = total price
+
 ## Concatinating fields
 
 ```sql
@@ -68,9 +74,7 @@ WHERE order_num = 20005;
 ```
 
 ```sql
-SELECT  prod_id,
-        quantity,
-        item_price,
+SELECT  prod_id, quantity, item_price,
         quantity * item_price AS expanded_price
 FROM orderitems
 WHERE order_num = 20005;
@@ -94,3 +98,26 @@ WHERE order_num = 20005;
 | \* | Multiplication |
 | / | Division |
 
+## Filtering on calculated fields
+
+It is not possible to filter on aliased fields using the `WHERE` clause. This is caused by the way SQL queries are executed. At the moment of evaluating the `WHERE` the column value may not be determined yet.
+
+The following statement is illegal and will result in an error.
+
+```sql
+SELECT  quantity * item_price AS expanded_price
+FROM orderitems
+WHERE expanded_price < 30;
+```
+
+```text
+ERROR 1054 (42S22): Unknown column 'expanded_price' in 'where clause'
+```
+
+To solve this problem, the `HAVING` clause can be used. The `HAVING` clause will be discussed later, but makes it possible to filter on groups of data. Because groups are calculated after the `WHERE` conditions, all the information to filter is available when the `HAVING` clause is executed.
+
+```sql
+SELECT  quantity * item_price AS expanded_price
+FROM orderitems
+HAVING expanded_price < 30;
+```
