@@ -108,7 +108,7 @@ ALTER TABLE games
 
 ```sql
 ALTER TABLE table_name
-  RENAME COLUMN old_col_name TO new_col_name;
+    CHANGE COLUMN old_col_name new_col_name same_data_type;
 ```
 
 #### Changing a Datatype
