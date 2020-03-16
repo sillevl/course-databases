@@ -21,10 +21,13 @@ layout: courseIntroduction
    2) [Sorting](chapters/05-retreiving-data/sorting/index.md)
    3) [Filtering](chapters/05-retreiving-data/filtering/index.md)
    4) [Calculated Fields](chapters/05-retreiving-data/calculated-fields/index.md)
+   5) [Manipulation](chapters/05-retreiving-data/manipulation/index.md)
+   6) [Summarizing](chapters/05-retreiving-data/summarizing/index.md)
+   7) [Grouping](chapters/05-retreiving-data/grouping/index.md)
 6) [Combining Data](chapters/06-combining-data/index.md)
 7) [Users & Privileges](chapters/07-users-and-privileges/index.md)
 8) [Storing Passwords](chapters/08-passwords/index.md)
-9)  [Building Applications](chapters/09-applications/index.md)
+9) [Building Applications](chapters/09-applications/index.md)
 
 ## Exercises
 
