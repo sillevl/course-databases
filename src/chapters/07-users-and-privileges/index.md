@@ -141,7 +141,7 @@ can only log in and do nothing. In order to give access to some tasks and resour
 permissions must be created (granted) to that user.
 
 ```sql
-GRANT ALL PRIVILIGES ON forta.products
+GRANT ALL PRIVILEGES ON forta.products
 TO 'thomas'@'localhost';
 ```
 
@@ -157,7 +157,7 @@ tables or databases as well.
 The following query will give thomas permissions to all the tables in the forta database:
 
 ```sql
-GRANT ALL PRIVILIGES ON forta.*
+GRANT ALL PRIVILEGES ON forta.*
 TO 'thomas'@'localhost';
 ```
 
@@ -165,7 +165,7 @@ The following query will give thomas permissions to all databases and all tables
 (just like the root user):
 
 ```sql
-GRANT ALL PRIVILIGES ON *.*
+GRANT ALL PRIVILEGES ON *.*
 TO 'thomas'@'localhost';
 ```
 
@@ -176,7 +176,7 @@ Here is a list of privileges that can be used to `GRANT`.
 
 | Name | Description |
 | --- | --- |
-| ALL PRIVILIGES | You can do anything the database allows |
+| ALL PRIVILEGES | You can do anything the database allows |
 | CREATE | Allows the user to create new tables or databases |
 | DROP | Allows the user to delete tables or databases |
 | DELETE | Allows the user to delete rows from tables |
