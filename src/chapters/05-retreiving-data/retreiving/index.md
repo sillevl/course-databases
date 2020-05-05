@@ -89,7 +89,7 @@ SELECT * FROM products;
 For example take the following query. The result is a single columns with the `vend_id`'s. Some id's are defined in multiple rows.
 
 ```sql
--SELECT vend_id FROM products;
+SELECT vend_id FROM products;
 ```
 
 ```text
