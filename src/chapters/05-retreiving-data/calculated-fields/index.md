@@ -14,7 +14,7 @@ FROM vendors
 ORDER BY vend_name;
 ```
 
-Using the function **Concat\(\)** in this example results in: Concat\(arg1 , 'String1' , arg2 , 'String2'\) &lt;/br&gt; with arg1 = vend\_name , String1 = '\(' , arg2 = vend\_country , String2 = '\)'
+Using the function **Concat\(\)** in this example results in: Concat\(arg1 , 'String1' , arg2 , 'String2'\) </br> with arg1 = vend\_name , String1 = '\(' , arg2 = vend\_country , String2 = '\)'
 
 ```text
 +--------------------------------------------+
