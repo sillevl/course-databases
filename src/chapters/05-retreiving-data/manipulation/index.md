@@ -23,12 +23,12 @@ ORDER BY vend_name;
 
 | Function | Description |
 | :--- | :--- |
-| Left\(\) | Returns characters from left of string.  **Left\('String' , int\)** &lt;/br&gt; with **int** the amount of left characters |
+| Left\(\) | Returns characters from left of string.  **Left\('String' , int\)** </br> with **int** the amount of left characters |
 | Length\(\) | Returns the length of a string |
-| Locate\(\) | Finds a substring within a string.    **Locate\('SubString', 'String'\)** &lt;/br&gt; with SubString = the string you are searching for |
+| Locate\(\) | Finds a substring within a string.    **Locate\('SubString', 'String'\)** <br> with SubString = the string you are searching for |
 | Lower\(\) | Converts string to lowercase |
 | LTrim\(\) | Trims white space from left of string |
-| Right\(\) | Returns chraracters from right of string. **Right\('String' , int\)** &lt;/br&gt; with **int** the amount of right characters |
+| Right\(\) | Returns chraracters from right of string. **Right\('String' , int\)** </br> with **int** the amount of right characters |
 | RTrim\(\) | Trims white space from right of string |
 | Soundex\(\) | Returns a string's SOUNDEX value |
 | SubString\(\) | Returns characters from within a string. **SubString\('String', intStart, intLength\)** example: SubString\('w3resource',4,3'\) returns 'eso' |
